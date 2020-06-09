@@ -1,0 +1,66 @@
+{
+	"pages": [
+		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/home",
+			"style": {}
+		}    ,{
+            "path" : "pages/user/user",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/duiren/duiren",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/chishenme/chishenme",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/rmbZhuanHuan/rmbZhuanHuan",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/sfzQuery/sfzQuery",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/iphonePlaceFfOwnershipQuery/iphonePlaceFfOwnershipQuery",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/goodNickName/goodNickName",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"mp-alipay": {
+			/* 支付宝小程序特有相关 */
+			"transparentTitle": "always",
+			"allowsBounceVertical": "NO"
+		},
+		"navigationBarBackgroundColor": "#0081ff",
+		"navigationBarTitleText": "ColorUi for UniApp",
+		"navigationStyle": "custom",
+		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#3cc51f",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+		"height":"40px",
+	    "list": [{
+	        "pagePath": "pages/home/home",
+	        "iconPath": "static/tabbar/basics.png",
+	        "selectedIconPath": "static/tabbar/basics_cur.png",
+	        "text": "工具集"
+	    }, {
+	        "pagePath": "pages/user/user",
+	        "iconPath": "static/tabbar/about.png",
+	        "selectedIconPath": "static/tabbar/about_cur.png",
+	        "text": "关于"
+	    }]
+	}
+
+}
