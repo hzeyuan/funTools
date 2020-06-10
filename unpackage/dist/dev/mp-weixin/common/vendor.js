@@ -1735,6 +1735,9 @@ function normalizeComponent (
       s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s;
     }
     return head + s.replace(/(零.)*零元/, '元').replace(/(零.)+/g, '零').replace(/^整$/, '零元整');
+  },
+  xuankunicheng: function xuankunicheng() {
+
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

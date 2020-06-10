@@ -32,5 +32,8 @@ export default {
 			s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s;
 		}
 		return head + s.replace(/(零.)*零元/, '元').replace(/(零.)+/g, '零').replace(/^整$/, '零元整');
+	},
+	xuankunicheng(){
+		
 	}
 }
