@@ -207,7 +207,7 @@ var _default =
         var top = (_this.windowHeight - 150) * topRand < 30 ? 30 + _this.windowHeight * topRand + 'px' : (_this.windowHeight - 150) * topRand + 'px';
         var left = (_this.windowWidth - 30) * leftRand < 30 ? 30 + _this.windowWidth * leftRand + 'px' : (_this.windowWidth - 30) * leftRand + 'px';
         console.log(top + ' ' + left);
-        _this.foodList.push({ top: top, left: left, name: m[0][1][number], 'animationDelay': Math.random() * 1.5 + 's' });
+        _this.foodList.push({ top: top, left: left, name: m[0][1][number] });
         _this.food = m[0][1][number];
         //随机生成出现的区域坐标
         //设置动画时间

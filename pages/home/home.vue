@@ -95,11 +95,13 @@ export default {
 				{
 					name: 'slide-right',
 					color: 'purple',
-					function: '敬请期待'
+					name:'bmiWeightIndex',
+					function: 'BMl指数'
 				},{
 					name: 'slide-right',
 					color: 'purple',
-					function: '敬请期待'
+					name:'ip2Locations',
+					function: 'ip定位'
 				},{
 					name: 'slide-right',
 					color: 'purple',
@@ -192,6 +194,17 @@ export default {
 					uni.navigateTo({
 						url:'/pages/screenTwinkle/screenTwinkle'
 					})
+					break
+				case 'bmiWeightIndex':
+					uni.navigateTo({
+						url:'/pages/bmiWeightIndex/bmiWeightIndex'
+					})
+					break
+				case 'ip2Locations':
+					uni.navigateTo({
+						url:'/pages/ip2Locations/ip2Locations'
+					})
+					break
 			}
 			
 		}

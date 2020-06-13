@@ -8,7 +8,9 @@
     "pages/sfzQuery/sfzQuery",
     "pages/iphonePlaceFfOwnershipQuery/iphonePlaceFfOwnershipQuery",
     "pages/goodNickName/goodNickName",
-    "pages/screenTwinkle/screenTwinkle"
+    "pages/screenTwinkle/screenTwinkle",
+    "pages/bmiWeightIndex/bmiWeightIndex",
+    "pages/ip2Locations/ip2Locations"
   ],
   "subPackages": [],
   "window": {

@@ -36,6 +36,14 @@
             "path" : "pages/screenTwinkle/screenTwinkle",
             "style" : {}
         }
+        ,{
+            "path" : "pages/bmiWeightIndex/bmiWeightIndex",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/ip2Locations/ip2Locations",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

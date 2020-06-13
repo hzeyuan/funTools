@@ -176,7 +176,7 @@ var _default =
     var r = this.utils.rmbDaXieZhuanHuan(10120.521);
     console.log(r);
   },
-  data: function data() {var _ref, _ref2, _ref3;
+  data: function data() {var _ref, _ref2, _ref3, _ref4, _ref5;
     return {
       CustomBar: this.CustomBar,
       animation: '',
@@ -228,16 +228,18 @@ var _default =
         name: 'shake',
         color: 'mauve' }, _defineProperty(_ref3, "name",
       'screenTwinkle'), _defineProperty(_ref3, "function",
-      '屏幕闪烁'), _ref3),
+      '屏幕闪烁'), _ref3), (_ref4 = {
 
-      {
+
         name: 'slide-right',
-        color: 'purple',
-        function: '敬请期待' },
-      {
+        color: 'purple' }, _defineProperty(_ref4, "name",
+      'bmiWeightIndex'), _defineProperty(_ref4, "function",
+      'BMl指数'), _ref4), (_ref5 = {
+
         name: 'slide-right',
-        color: 'purple',
-        function: '敬请期待' },
+        color: 'purple' }, _defineProperty(_ref5, "name",
+      'ip2Locations'), _defineProperty(_ref5, "function",
+      'ip定位'), _ref5),
       {
         name: 'slide-right',
         color: 'purple',
@@ -328,8 +330,19 @@ var _default =
           break;
         case 'screenTwinkle':
           uni.navigateTo({
-            url: '/pages/screenTwinkle/screenTwinkle' });}
+            url: '/pages/screenTwinkle/screenTwinkle' });
 
+          break;
+        case 'bmiWeightIndex':
+          uni.navigateTo({
+            url: '/pages/bmiWeightIndex/bmiWeightIndex' });
+
+          break;
+        case 'ip2Locations':
+          uni.navigateTo({
+            url: '/pages/ip2Locations/ip2Locations' });
+
+          break;}
 
 
     } } };exports.default = _default;
