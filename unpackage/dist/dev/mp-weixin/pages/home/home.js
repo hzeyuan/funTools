@@ -176,7 +176,7 @@ var _default =
     var r = this.utils.rmbDaXieZhuanHuan(10120.521);
     console.log(r);
   },
-  data: function data() {var _ref, _ref2;
+  data: function data() {var _ref, _ref2, _ref3;
     return {
       CustomBar: this.CustomBar,
       animation: '',
@@ -222,7 +222,13 @@ var _default =
         name: 'shake',
         color: 'mauve' }, _defineProperty(_ref2, "name",
       'goodNickName'), _defineProperty(_ref2, "function",
-      '炫酷昵称'), _ref2),
+      '炫酷昵称'), _ref2), (_ref3 = {
+
+
+        name: 'shake',
+        color: 'mauve' }, _defineProperty(_ref3, "name",
+      'screenTwinkle'), _defineProperty(_ref3, "function",
+      '屏幕闪烁'), _ref3),
 
       {
         name: 'slide-right',
@@ -319,7 +325,11 @@ var _default =
           uni.navigateTo({
             url: '/pages/goodNickName/goodNickName' });
 
-          break;}
+          break;
+        case 'screenTwinkle':
+          uni.navigateTo({
+            url: '/pages/screenTwinkle/screenTwinkle' });}
+
 
 
     } } };exports.default = _default;

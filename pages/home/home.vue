@@ -87,6 +87,12 @@ export default {
 					function: '炫酷昵称'
 				},
 				{
+					name: 'shake',
+					color: 'mauve',
+					name:'screenTwinkle',
+					function: '屏幕闪烁'
+				},
+				{
 					name: 'slide-right',
 					color: 'purple',
 					function: '敬请期待'
@@ -182,6 +188,10 @@ export default {
 					url: '/pages/goodNickName/goodNickName'
 					})
 					break
+				case 'screenTwinkle':
+					uni.navigateTo({
+						url:'/pages/screenTwinkle/screenTwinkle'
+					})
 			}
 			
 		}

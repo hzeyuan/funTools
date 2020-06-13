@@ -5,7 +5,7 @@
 			<block slot="content">今天吃什么</block>
 		</cu-custom>
 		<view class="randomPosition" style="position: relative;">
-			<view class="animation-reverse animation-scale-down" v-for="(item,index) in foodList" style="position: absolute;" :style="[{top:item.top,left:item.left,animationDelay:item.animationDelay}]">
+			<view class="animation-reverse animation-scale-down" v-for="(item,index) in foodList" :key="index" style="position: absolute;" :style="[{top:item.top,left:item.left,animationDelay:item.animationDelay}]">
 				<span class="text-xxxxl text-bold text-shadow">{{item.name }}</span>
 			</view>
 		</view>
@@ -23,6 +23,14 @@
 
 <script>
 export default {
+	onUnload() {
+		if(this.intervalId){
+			clearInterval(this.intervalId)
+		}
+	},
+	onHide(){
+		console.log("21312")
+	},
 	data() {
 		return {
 			windowHeight: this.windowHeight,
@@ -36,12 +44,6 @@ export default {
 		};
 	},
 	methods: {
-		// randomWindowHeight(){
-		// 	Math.random()*
-		// },
-		// randomWindowWidth(){
-			
-		// },
 		startRunFood() {
 			//随机食物
 			let m = [

@@ -32,6 +32,10 @@
             "path" : "pages/goodNickName/goodNickName",
             "style" : {}
         }
+        ,{
+            "path" : "pages/screenTwinkle/screenTwinkle",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

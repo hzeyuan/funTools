@@ -7,7 +7,8 @@
     "pages/rmbZhuanHuan/rmbZhuanHuan",
     "pages/sfzQuery/sfzQuery",
     "pages/iphonePlaceFfOwnershipQuery/iphonePlaceFfOwnershipQuery",
-    "pages/goodNickName/goodNickName"
+    "pages/goodNickName/goodNickName",
+    "pages/screenTwinkle/screenTwinkle"
   ],
   "subPackages": [],
   "window": {
@@ -40,6 +41,5 @@
   "permission": {},
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  },
-  "sitemapLocation": "sitemap47.json"
+  }
 }

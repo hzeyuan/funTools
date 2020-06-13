@@ -155,6 +155,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 var _default =
 {
+  onUnload: function onUnload() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  },
+  onHide: function onHide() {
+    console.log("21312");
+  },
   data: function data() {
     return {
       windowHeight: this.windowHeight,
@@ -168,12 +176,6 @@ var _default =
 
   },
   methods: {
-    // randomWindowHeight(){
-    // 	Math.random()*
-    // },
-    // randomWindowWidth(){
-
-    // },
     startRunFood: function startRunFood() {var _this = this;
       //随机食物
       var m = [
