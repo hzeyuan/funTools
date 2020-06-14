@@ -1,7 +1,6 @@
 
 .content.data-v-d9b60d8c{
 	padding: 9rpx;
-	-webkit-border-radius: 6rpx;
 	border-radius: 6rpx;
 	display: block;
 	line-height: 1.6;

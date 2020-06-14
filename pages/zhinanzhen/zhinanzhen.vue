@@ -7,7 +7,7 @@
 		<view class="container">
 			<view class="text">
 				<text>{{ direction }}</text>
-				<text>{{ angle }}Â°</text>
+				<text>{{ angle }}°</text>
 			</view>
 			<view class="picZnz"><image src="../../static/znz.jpg" :style="[{ transform: 'rotate(' + rotate + 'deg);' }]"></image></view>
 		</view>
@@ -27,8 +27,16 @@ export default {
 		            this.angle = o
 					this.rotate = 360-a
 					this.direction = t(a)
+					console.log(a)
 					console.log("zghuan"+this.rotate)
 		        });
+	},
+	onUnload() {
+		uni.stopCompass({
+			success: () => {
+				console.log('stop')
+			}
+		})
 	},
 	data() {
 		return {

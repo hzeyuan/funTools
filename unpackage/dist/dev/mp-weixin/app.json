@@ -11,7 +11,8 @@
     "pages/screenTwinkle/screenTwinkle",
     "pages/bmiWeightIndex/bmiWeightIndex",
     "pages/ip2Locations/ip2Locations",
-    "pages/zhinanzhen/zhinanzhen"
+    "pages/zhinanzhen/zhinanzhen",
+    "pages/relationship/relationship"
   ],
   "subPackages": [],
   "window": {
@@ -44,6 +45,5 @@
   "permission": {},
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  },
-  "sitemapLocation": "sitemap82.json"
+  }
 }

@@ -76,7 +76,7 @@ export default {
 				},
 				{
 					name: 'slide-right',
-					color: 'purple',
+					color: 'blue',
 					name:'iphonePlaceFfOwnershipQuery',
 					function: '手机号码归属地'
 				},
@@ -88,29 +88,30 @@ export default {
 				},
 				{
 					name: 'shake',
-					color: 'mauve',
+					color: 'pink',
 					name:'screenTwinkle',
 					function: '屏幕闪烁'
 				},
 				{
 					name: 'slide-right',
-					color: 'purple',
+					color: 'brown',
 					name:'bmiWeightIndex',
 					function: 'BMl指数'
 				},{
 					name: 'slide-right',
-					color: 'purple',
+					color: 'grey',
 					name:'ip2Locations',
 					function: 'ip定位'
 				},{
 					name: 'slide-right',
-					color: 'purple',
+					color: 'gray',
 					name:'zhinanzhen',
 					function: '指南针'
 				},{
 					name: 'slide-right',
-					color: 'purple',
-					function: '敬请期待'
+					color: 'black',
+					name:'relationship',
+					function: '亲戚计算器'
 				},{
 					name: 'slide-right',
 					color: 'purple',
@@ -209,6 +210,11 @@ export default {
 				case 'zhinanzhen':
 					uni.navigateTo({
 						url:'/pages/zhinanzhen/zhinanzhen'
+					})
+					break
+				case 'relationship':
+					uni.navigateTo({
+						url:'/pages/relationship/relationship'
 					})
 					break
 			}

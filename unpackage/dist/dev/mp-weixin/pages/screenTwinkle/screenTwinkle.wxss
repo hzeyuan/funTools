@@ -320,8 +320,7 @@
 .menu .value.data-v-0d41951c {
 	width: 24rpx;
 	height: 24rpx;
-	-webkit-border-radius: 100%;
-	        border-radius: 100%;
+	border-radius: 100%;
 	border: 2rpx #fff solid;
 	text-align: center;
 	color: #fff;
@@ -334,8 +333,7 @@
 .menu .value-black.data-v-0d41951c {
 	width: 24rpx;
 	height: 24rpx;
-	-webkit-border-radius: 100%;
-	        border-radius: 100%;
+	border-radius: 100%;
 	border: 2rpx #000 solid;
 	text-align: center;
 	color: #000;

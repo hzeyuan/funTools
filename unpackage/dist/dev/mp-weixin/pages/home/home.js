@@ -176,7 +176,7 @@ var _default =
     var r = this.utils.rmbDaXieZhuanHuan(10120.521);
     console.log(r);
   },
-  data: function data() {var _ref, _ref2, _ref3, _ref4, _ref5, _ref6;
+  data: function data() {var _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
     return {
       CustomBar: this.CustomBar,
       animation: '',
@@ -214,7 +214,7 @@ var _default =
 
 
         name: 'slide-right',
-        color: 'purple' }, _defineProperty(_ref, "name",
+        color: 'blue' }, _defineProperty(_ref, "name",
       'iphonePlaceFfOwnershipQuery'), _defineProperty(_ref, "function",
       '手机号码归属地'), _ref), (_ref2 = {
 
@@ -226,29 +226,30 @@ var _default =
 
 
         name: 'shake',
-        color: 'mauve' }, _defineProperty(_ref3, "name",
+        color: 'pink' }, _defineProperty(_ref3, "name",
       'screenTwinkle'), _defineProperty(_ref3, "function",
       '屏幕闪烁'), _ref3), (_ref4 = {
 
 
         name: 'slide-right',
-        color: 'purple' }, _defineProperty(_ref4, "name",
+        color: 'brown' }, _defineProperty(_ref4, "name",
       'bmiWeightIndex'), _defineProperty(_ref4, "function",
       'BMl指数'), _ref4), (_ref5 = {
 
         name: 'slide-right',
-        color: 'purple' }, _defineProperty(_ref5, "name",
+        color: 'grey' }, _defineProperty(_ref5, "name",
       'ip2Locations'), _defineProperty(_ref5, "function",
       'ip定位'), _ref5), (_ref6 = {
 
         name: 'slide-right',
-        color: 'purple' }, _defineProperty(_ref6, "name",
+        color: 'gray' }, _defineProperty(_ref6, "name",
       'zhinanzhen'), _defineProperty(_ref6, "function",
-      '指南针'), _ref6),
-      {
+      '指南针'), _ref6), (_ref7 = {
+
         name: 'slide-right',
-        color: 'purple',
-        function: '敬请期待' },
+        color: 'black' }, _defineProperty(_ref7, "name",
+      'relationship'), _defineProperty(_ref7, "function",
+      '亲戚计算器'), _ref7),
       {
         name: 'slide-right',
         color: 'purple',
@@ -347,6 +348,11 @@ var _default =
         case 'zhinanzhen':
           uni.navigateTo({
             url: '/pages/zhinanzhen/zhinanzhen' });
+
+          break;
+        case 'relationship':
+          uni.navigateTo({
+            url: '/pages/relationship/relationship' });
 
           break;}
 

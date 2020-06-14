@@ -80,8 +80,16 @@ var _default =
       _this.angle = o;
       _this.rotate = 360 - a;
       _this.direction = t(a);
+      console.log(a);
       console.log("zghuan" + _this.rotate);
     });
+  },
+  onUnload: function onUnload() {
+    uni.stopCompass({
+      success: function success() {
+        console.log('stop');
+      } });
+
   },
   data: function data() {
     return {

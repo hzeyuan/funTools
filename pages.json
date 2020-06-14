@@ -48,6 +48,10 @@
             "path" : "pages/zhinanzhen/zhinanzhen",
             "style" : {}
         }
+        ,{
+            "path" : "pages/relationship/relationship",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
