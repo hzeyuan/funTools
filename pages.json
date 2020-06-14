@@ -44,6 +44,10 @@
             "path" : "pages/ip2Locations/ip2Locations",
             "style" : {}
         }
+        ,{
+            "path" : "pages/zhinanzhen/zhinanzhen",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

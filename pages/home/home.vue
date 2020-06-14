@@ -105,7 +105,8 @@ export default {
 				},{
 					name: 'slide-right',
 					color: 'purple',
-					function: '敬请期待'
+					name:'zhinanzhen',
+					function: '指南针'
 				},{
 					name: 'slide-right',
 					color: 'purple',
@@ -203,6 +204,11 @@ export default {
 				case 'ip2Locations':
 					uni.navigateTo({
 						url:'/pages/ip2Locations/ip2Locations'
+					})
+					break
+				case 'zhinanzhen':
+					uni.navigateTo({
+						url:'/pages/zhinanzhen/zhinanzhen'
 					})
 					break
 			}

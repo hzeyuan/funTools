@@ -14,21 +14,26 @@
 			<input placeholder="请输入ip" name="input" @input="setIp"></input>
 			<button class='cu-btn bg-green shadow' @tap="searchIPLocations">定位</button>
 		</view>
-		<view class="cu-dialog" style="width: 100%;" v-if="locations">
+		<view class="cu-dialog margin-top" style="width: 100%;" v-if="locations">
 			<view class="cu-list menu text-left solid-top">
 				<view class="cu-item">
 					<view class="content">
-						<text>省份: {{locations.province}}</text>
+						<text>省份: {{locations.address_detail.province}}</text>
 					</view>
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text>城市: {{locations.city}}</text>
+						<text>城市: {{locations.address_detail.city}}</text>
 					</view>
 				</view>
 				<view class="cu-item">
 					<view class="content">
-						<text>adcode: {{locations.adcode}}</text>
+						<text>经度: {{locations.point.x}}</text>
+					</view>
+				</view>
+				<view class="cu-item">
+					<view class="content">
+						<text>纬度: {{locations.point.y}}</text>
 					</view>
 				</view>
 			</view>
@@ -78,7 +83,7 @@
 				  .then(res => {
 					  console.log('jieguo ')
 						console.log(res.result)
-						this.locations = res.result
+						this.locations = res.result.content
 				  });
 			}
 		}
