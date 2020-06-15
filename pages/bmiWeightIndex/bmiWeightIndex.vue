@@ -24,7 +24,8 @@
 	   <view class="cu-timeline" v-if="resultList.length>0">
 			<view class="BMireusltTitle">标准体重计算详情</view>
 			<view class="cu-item cur cuIcon-title" v-for="(item,index) in resultList" :key="item.text">
-			<view class="content"><text>{{item.text}}</text>{{item.desc}}</view>
+				<view class="content"><text>{{item.text}}</text>{{item.desc}}</view>
+			</view>
 	   	</view>
 	   	<!-- <view class="cu-item text-red cuIcon-title">
 			<view class="content"><text>危险性处于:</text> 【广州市】快件已到达地球</view>

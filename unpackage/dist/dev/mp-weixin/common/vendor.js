@@ -1766,6 +1766,167 @@ function normalizeComponent (
 
 /***/ }),
 
+/***/ 120:
+/*!************************************************************************!*\
+  !*** /Users/sharknet/Documents/HBuilderProjects/万能工具集/utils/sanwei.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+  SanweiResult: function SanweiResult(e) {
+    return [{
+      current: !1,
+      done: !1,
+      text: "您的标准胸围: ",
+      desc: Math.round(.535 * e) + "cm" },
+    {
+      done: !1,
+      current: !1,
+      text: "您的标准腰围: ",
+      desc: Math.round(.365 * e) + "cm" },
+    {
+      done: !1,
+      current: !1,
+      text: "您的标准臀围: ",
+      desc: Math.round(.565 * e) + "cm" }];
+
+  } };
+
+/***/ }),
+
+/***/ 137:
+/*!******************************************************************************************************!*\
+  !*** /Users/sharknet/Documents/HBuilderProjects/万能工具集/components/vue-calendar-component/calendar.js ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(n);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var _default = {
+  // 当某月的天数
+  getDaysInOneMonth: function getDaysInOneMonth(date) {
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var d = new Date(year, month, 0);
+    return d.getDate();
+  },
+  // 向前空几个
+  getMonthweek: function getMonthweek(date) {
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var dateFirstOne = new Date(year + '/' + month + '/1');
+    return this.sundayStart ?
+    dateFirstOne.getDay() == 0 ? 7 : dateFirstOne.getDay() :
+    dateFirstOne.getDay() == 0 ? 6 : dateFirstOne.getDay() - 1;
+  },
+  /**
+      * 获取当前日期上个月或者下个月
+     */
+  getOtherMonth: function getOtherMonth(date) {var str = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'nextMonth';
+    var timeArray = this.dateFormat(date).split('/');
+    var year = timeArray[0];
+    var month = timeArray[1];
+    var day = timeArray[2];
+    var year2 = year;
+    var month2;
+    if (str === 'nextMonth') {
+      month2 = parseInt(month) + 1;
+      if (month2 == 13) {
+        year2 = parseInt(year2) + 1;
+        month2 = 1;
+      }
+    } else {
+      month2 = parseInt(month) - 1;
+      if (month2 == 0) {
+        year2 = parseInt(year2) - 1;
+        month2 = 12;
+      }
+    }
+    var day2 = day;
+    var days2 = new Date(year2, month2, 0).getDate();
+    if (day2 > days2) {
+      day2 = days2;
+    }
+    if (month2 < 10) {
+      month2 = '0' + month2;
+    }
+    if (day2 < 10) {
+      day2 = '0' + day2;
+    }
+    var t2 = year2 + '/' + month2 + '/' + day2;
+    return new Date(t2);
+  },
+  // 上个月末尾的一些日期
+  getLeftArr: function getLeftArr(date) {
+    var arr = [];
+    var leftNum = this.getMonthweek(date);
+    var num = this.getDaysInOneMonth(this.getOtherMonth(date, 'preMonth')) - leftNum + 1;
+    var preDate = this.getOtherMonth(date, 'preMonth');
+    // 上个月多少开始
+    for (var i = 0; i < leftNum; i++) {
+      var nowTime = preDate.getFullYear() + '/' + (preDate.getMonth() + 1) + '/' + (num + i);
+      arr.push({
+        id: num + i,
+        date: nowTime,
+        isToday: false,
+        otherMonth: 'preMonth' });
+
+    }
+    return arr;
+  },
+  // 下个月末尾的一些日期
+  getRightArr: function getRightArr(date) {
+    var arr = [];
+    var nextDate = this.getOtherMonth(date, 'nextMonth');
+    var leftLength = this.getDaysInOneMonth(date) + this.getMonthweek(date);
+    var _length = 42 - leftLength;
+    console.log(_length);
+    for (var i = 0; i < _length; i++) {
+      var nowTime = nextDate.getFullYear() + '/' + (nextDate.getMonth() + 1) + '/' + (i + 1);
+      arr.push({
+        id: i + 1,
+        date: nowTime,
+        isToday: false,
+        otherMonth: 'nextMonth' });
+
+    }
+    return arr;
+  },
+  // format日期
+  dateFormat: function dateFormat(date) {
+    date = typeof date === 'string' ? new Date(date.replace(/\-/g, '/')) : date;
+    return date.getFullYear() + '/' + (date.getMonth() + 1) + '/' +
+    date.getDate();
+  },
+  // 获取某月的列表不包括上月和下月
+  getMonthListNoOther: function getMonthListNoOther(date) {
+    var arr = [];
+    var num = this.getDaysInOneMonth(date);
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var toDay = this.dateFormat(new Date());
+
+    for (var i = 0; i < num; i++) {
+      var nowTime = year + '/' + month + '/' + (i + 1);
+      arr.push({
+        id: i + 1,
+        date: nowTime,
+        isToday: toDay === nowTime,
+        otherMonth: 'nowMonth' });
+
+    }
+    return arr;
+  },
+  // 获取某月的列表 用于渲染
+  getMonthList: function getMonthList(date) {
+    return [].concat(_toConsumableArray(this.getLeftArr(date)), _toConsumableArray(this.getMonthListNoOther(date)), _toConsumableArray(this.getRightArr(date)));
+  },
+  // 默认是周一开始
+  sundayStart: false };exports.default = _default;
+
+/***/ }),
+
 /***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!

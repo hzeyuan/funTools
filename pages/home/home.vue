@@ -115,7 +115,14 @@ export default {
 				},{
 					name: 'slide-right',
 					color: 'purple',
-					function: '敬请期待'
+					name:'biaozhunsanwei',
+					function: '标准三围'
+				},
+				{
+					name: 'slide-right',
+					color: 'purple',
+					name:'wannianli',
+					function: '万年历'
 				},
 				{
 					animation: 'slide-bottom',
@@ -127,6 +134,7 @@ export default {
 					color: 'blue',
 					function: '语音文字互转'
 				}
+				
 			],
 			toggleDelay: false
 		};
@@ -215,6 +223,16 @@ export default {
 				case 'relationship':
 					uni.navigateTo({
 						url:'/pages/relationship/relationship'
+					})
+					break
+				case 'biaozhunsanwei':
+					uni.navigateTo({
+						url:'/pages/biaozhunsanwei/biaozhunsanwei'
+					})
+					break
+				case 'wannianli':
+					uni.navigateTo({
+						url:'/pages/wannianli/wannianli'
 					})
 					break
 			}

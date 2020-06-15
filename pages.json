@@ -52,6 +52,14 @@
             "path" : "pages/relationship/relationship",
             "style" : {}
         }
+        ,{
+            "path" : "pages/biaozhunsanwei/biaozhunsanwei",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/wangnianli/wangnianli",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

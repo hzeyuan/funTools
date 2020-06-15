@@ -12,7 +12,9 @@
     "pages/bmiWeightIndex/bmiWeightIndex",
     "pages/ip2Locations/ip2Locations",
     "pages/zhinanzhen/zhinanzhen",
-    "pages/relationship/relationship"
+    "pages/relationship/relationship",
+    "pages/biaozhunsanwei/biaozhunsanwei",
+    "pages/wangnianli/wangnianli"
   ],
   "subPackages": [],
   "window": {

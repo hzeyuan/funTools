@@ -176,7 +176,7 @@ var _default =
     var r = this.utils.rmbDaXieZhuanHuan(10120.521);
     console.log(r);
   },
-  data: function data() {var _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7;
+  data: function data() {var _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     return {
       CustomBar: this.CustomBar,
       animation: '',
@@ -249,11 +249,18 @@ var _default =
         name: 'slide-right',
         color: 'black' }, _defineProperty(_ref7, "name",
       'relationship'), _defineProperty(_ref7, "function",
-      '亲戚计算器'), _ref7),
-      {
+      '亲戚计算器'), _ref7), (_ref8 = {
+
         name: 'slide-right',
-        color: 'purple',
-        function: '敬请期待' },
+        color: 'purple' }, _defineProperty(_ref8, "name",
+      'biaozhunsanwei'), _defineProperty(_ref8, "function",
+      '标准三围'), _ref8), (_ref9 = {
+
+
+        name: 'slide-right',
+        color: 'purple' }, _defineProperty(_ref9, "name",
+      'wannianli'), _defineProperty(_ref9, "function",
+      '万年历'), _ref9),
 
       {
         animation: 'slide-bottom',
@@ -264,6 +271,7 @@ var _default =
         animation: 'slide-left',
         color: 'blue',
         function: '语音文字互转' }],
+
 
 
       toggleDelay: false };
@@ -353,6 +361,16 @@ var _default =
         case 'relationship':
           uni.navigateTo({
             url: '/pages/relationship/relationship' });
+
+          break;
+        case 'biaozhunsanwei':
+          uni.navigateTo({
+            url: '/pages/biaozhunsanwei/biaozhunsanwei' });
+
+          break;
+        case 'wannianli':
+          uni.navigateTo({
+            url: '/pages/wannianli/wannianli' });
 
           break;}
 

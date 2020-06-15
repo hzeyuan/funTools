@@ -1,0 +1,1 @@
+<view><cu-custom vue-id="0bbc6b80-1" isBack="{{true}}" bgColor="bg-gradual-green" bind:__l="__l" vue-slots="{{['content']}}"><view slot="content">万年历</view></cu-custom><calendar bind:choseDay="__e" bind:changeMonth="__e" vue-id="0bbc6b80-2" data-event-opts="{{[['^choseDay',[['clickDay']]],['^changeMonth',[['changeDate']]]]}}" bind:__l="__l"></calendar></view>
