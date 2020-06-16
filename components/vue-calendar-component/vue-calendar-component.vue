@@ -21,19 +21,21 @@ li {
 
 .wh_top_title {
 	display: flex;
-	justify-content: ;
+	justify-content: space-between;
 	align-items: center;
 	padding: 2% 2%;
 }
 .wh_top_title button,
 text {
-	flex: 0.5;
+	flex: 0.1;
 }
 
 .wh_top_changge {
 	display: flex;
 	justify-content: center;
 	flex: 4;
+	position: absolute;
+	width: 100%;
 }
 
 .wh_top_changge li {
@@ -49,7 +51,7 @@ text {
 
 .wh_top_changge .wh_content_li {
 	cursor: auto;
-	flex: 0.4;
+	flex: 0.25;
 }
 .wh_content_all {
 	font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', STHeiti, 'Microsoft Yahei', Tahoma, Simsun, sans-serif;
@@ -175,13 +177,13 @@ wh_content_item_tag {
 	<section class="wh_container">
 		<div class="wh_content_all">
 			<div class="wh_top_title">
-				<button class="cu-btn" style="margin: 0;">今天</button>
+				<button class="cu-btn" style="margin: 0;z-index: 100;" @click="goToToday()">今天</button>
 				<div class="wh_top_changge">
 					<li @click="PreMonth(myDate, false)"><div class="wh_jiantou1"></div></li>
 					<li class="wh_content_li">{{ dateTop }}</li>
 					<li @click="NextMonth(myDate, false)"><div class="wh_jiantou2"></div></li>
 				</div>
-				<text class=" text-gray cuIcon-vipcard" style="font-size: 54rpx;"></text>
+				<text class=" text-gray cuIcon-vipcard" style="font-size: 54rpx;z-index: 100;"></text>
 			</div>
 			<div class="wh_content">
 				<div class="wh_content_item" v-for="tag in textTop">
@@ -350,6 +352,11 @@ export default {
 			let l = date.split('/');
 			let lunar = lc.solarToLunar(l[0], l[1], l[2]);
 			return lunar.lunarDayName;
+		},
+		goToToday(){
+			let date = new Date()
+			this.ChoseMonth(date)
+			console.log('12321')
 		}
 	},
 	mounted() {

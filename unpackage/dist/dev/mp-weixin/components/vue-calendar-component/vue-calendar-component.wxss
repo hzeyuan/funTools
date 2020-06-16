@@ -16,9 +16,9 @@
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
-	-webkit-box-pack: ;
-	-webkit-justify-content: ;
-	        justify-content: ;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
 	        align-items: center;
@@ -26,9 +26,9 @@
 }
 .wh_top_title button.data-v-aff219a0,
 text.data-v-aff219a0 {
-	-webkit-box-flex: 0.5;
-	-webkit-flex: 0.5;
-	        flex: 0.5;
+	-webkit-box-flex: 0.1;
+	-webkit-flex: 0.1;
+	        flex: 0.1;
 }
 .wh_top_changge.data-v-aff219a0 {
 	display: -webkit-box;
@@ -40,6 +40,8 @@ text.data-v-aff219a0 {
 	-webkit-box-flex: 4;
 	-webkit-flex: 4;
 	        flex: 4;
+	position: absolute;
+	width: 100%;
 }
 .wh_top_changge ._li.data-v-aff219a0 {
 	cursor: pointer;
@@ -61,9 +63,9 @@ text.data-v-aff219a0 {
 }
 .wh_top_changge .wh_content_li.data-v-aff219a0 {
 	cursor: auto;
-	-webkit-box-flex: 0.4;
-	-webkit-flex: 0.4;
-	        flex: 0.4;
+	-webkit-box-flex: 0.25;
+	-webkit-flex: 0.25;
+	        flex: 0.25;
 }
 .wh_content_all.data-v-aff219a0 {
 	font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', STHeiti, 'Microsoft Yahei', Tahoma, Simsun, sans-serif;
