@@ -83,9 +83,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   var l0 = _vm.__map(_vm.list, function(item, index) {
     var m0 = _vm.setClass(item)
+    var m1 = _vm.getLunar(item.date)
     return {
       $orig: _vm.__get_orig(item),
-      m0: m0
+      m0: m0,
+      m1: m1
     }
   })
 
@@ -293,14 +295,64 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _calendar = _interopRequireDefault(__webpack_require__(/*! ./calendar */ 137));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _createForOfIteratorHelper(o) {if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) {var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e2) {throw _e2;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var it,normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e3) {didErr = true;err = _e3;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(n);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}var _default2 =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _calendar = _interopRequireDefault(__webpack_require__(/*! ./calendar */ 137));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _createForOfIteratorHelper(o) {if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) {var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e2) {throw _e2;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var it,normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e3) {didErr = true;err = _e3;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(n);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}
+var lc = __webpack_require__(/*! ../../utils/LunarCalendar.min.js */ 152);var _default2 =
 {
   data: function data() {
     return {
       myDate: [],
       list: [],
       historyChose: [],
-      dateTop: "" };
+      dateTop: '' };
 
   },
   props: {
@@ -314,7 +366,7 @@ var _calendar = _interopRequireDefault(__webpack_require__(/*! ./calendar */ 137
 
     textTop: {
       type: Array,
-      default: function _default() {return ["一", "二", "三", "四", "五", "六", "日"];} },
+      default: function _default() {return ['一', '二', '三', '四', '五', '六', '日'];} },
 
     sundayStart: {
       type: Boolean,
@@ -343,19 +395,18 @@ var _calendar = _interopRequireDefault(__webpack_require__(/*! ./calendar */ 137
       return obj;
     },
     clickDay: function clickDay(item, index) {
-      if (item.otherMonth === "nowMonth" && !item.dayHide) {
+      console.log(item);
+      if (item.otherMonth === 'nowMonth' && !item.dayHide) {
         this.getList(this.myDate, item.date);
       }
-      if (item.otherMonth !== "nowMonth") {
-        item.otherMonth === "preMonth" ?
-        this.PreMonth(item.date) :
-        this.NextMonth(item.date);
+      if (item.otherMonth !== 'nowMonth') {
+        item.otherMonth === 'preMonth' ? this.PreMonth(item.date) : this.NextMonth(item.date);
       }
     },
     ChoseMonth: function ChoseMonth(date) {var isChosedDay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
       date = _calendar.default.dateFormat(date);
       this.myDate = new Date(date);
-      this.$emit("changeMonth", _calendar.default.dateFormat(this.myDate));
+      this.$emit('changeMonth', _calendar.default.dateFormat(this.myDate));
       if (isChosedDay) {
         this.getList(this.myDate, date, isChosedDay);
       } else {
@@ -364,8 +415,8 @@ var _calendar = _interopRequireDefault(__webpack_require__(/*! ./calendar */ 137
     },
     PreMonth: function PreMonth(date) {var isChosedDay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
       date = _calendar.default.dateFormat(date);
-      this.myDate = _calendar.default.getOtherMonth(this.myDate, "preMonth");
-      this.$emit("changeMonth", _calendar.default.dateFormat(this.myDate));
+      this.myDate = _calendar.default.getOtherMonth(this.myDate, 'preMonth');
+      this.$emit('changeMonth', _calendar.default.dateFormat(this.myDate));
       if (isChosedDay) {
         this.getList(this.myDate, date, isChosedDay);
       } else {
@@ -374,8 +425,8 @@ var _calendar = _interopRequireDefault(__webpack_require__(/*! ./calendar */ 137
     },
     NextMonth: function NextMonth(date) {var isChosedDay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
       date = _calendar.default.dateFormat(date);
-      this.myDate = _calendar.default.getOtherMonth(this.myDate, "nextMonth");
-      this.$emit("changeMonth", _calendar.default.dateFormat(this.myDate));
+      this.myDate = _calendar.default.getOtherMonth(this.myDate, 'nextMonth');
+      this.$emit('changeMonth', _calendar.default.dateFormat(this.myDate));
       if (isChosedDay) {
         this.getList(this.myDate, date, isChosedDay);
       } else {
@@ -399,7 +450,7 @@ var _calendar = _interopRequireDefault(__webpack_require__(/*! ./calendar */ 137
       this.dateTop = "".concat(date.getFullYear(), "\u5E74").concat(date.getMonth() + 1, "\u6708");
       var arr = _calendar.default.getMonthList(this.myDate);
       for (var i = 0; i < arr.length; i++) {
-        var markClassName = "";
+        var markClassName = '';
         var k = arr[i];
         k.chooseDay = false;
         var nowTime = k.date;
@@ -407,7 +458,7 @@ var _calendar = _interopRequireDefault(__webpack_require__(/*! ./calendar */ 137
         //看每一天的class
         var _iterator = _createForOfIteratorHelper(markDateMore),_step;try {for (_iterator.s(); !(_step = _iterator.n()).done;) {var c = _step.value;
             if (c.date === nowTime) {
-              markClassName = c.className || "";
+              markClassName = c.className || '';
             }
           }
           //标记选中某些天 设置class
@@ -416,22 +467,23 @@ var _calendar = _interopRequireDefault(__webpack_require__(/*! ./calendar */ 137
         //无法选中某天
         k.dayHide = t < this.agoDayHide || t > this.futureDayHide;
         if (k.isToday) {
-          this.$emit("isToday", nowTime);
+          this.$emit('isToday', nowTime);
         }
-        var flag = !k.dayHide && k.otherMonth === "nowMonth";
+        var flag = !k.dayHide && k.otherMonth === 'nowMonth';
         if (chooseDay && chooseDay === nowTime && flag) {
-          this.$emit("choseDay", nowTime);
+          this.$emit('choseDay', nowTime);
           this.historyChose.push(nowTime);
           k.chooseDay = true;
-        } else if (
-        this.historyChose[this.historyChose.length - 1] === nowTime &&
-        !chooseDay &&
-        flag)
-        {
+        } else if (this.historyChose[this.historyChose.length - 1] === nowTime && !chooseDay && flag) {
           k.chooseDay = true;
         }
       }
       this.list = arr;
+    },
+    getLunar: function getLunar(date) {
+      var l = date.split('/');
+      var lunar = lc.solarToLunar(l[0], l[1], l[2]);
+      return lunar.lunarDayName;
     } },
 
   mounted: function mounted() {

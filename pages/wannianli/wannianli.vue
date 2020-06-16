@@ -13,9 +13,15 @@
 
 <script>
 	import Calendar from '../../components/vue-calendar-component/vue-calendar-component.vue';
+	var lc = require('../../utils/LunarCalendar.min.js');
 	// import calendar from '../../components/calendar.vue'
 	export default {
 		components:{Calendar},
+		onLoad(){
+			var solarDate = new Date(2020, 6, 15)
+			let r = lc.solarToLunar(solarDate.getFullYear(),solarDate.getMonth(),solarDate.getDate());
+			console.log(r)
+		},
 		data() {
 			return {
 				
