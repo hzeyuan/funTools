@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:////Users/sharknet/Documents/HBuilderProjects/万能工具集/main.js"],"names":["createPage","Page"],"mappings":";;;;;;;;;;kDAAA;AACA;AACA,2F;AACAA,UAAU,CAACC,aAAD,CAAV,C","file":"pages/basics/icon.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './pages/basics/icon.vue'\ncreatePage(Page)"],"sourceRoot":""}
