@@ -6,7 +6,7 @@
 }
 }
 .wh_container.data-v-aff219a0 {
-	max-width: 410px;
+	/* max-width: 410px; */
 	margin: auto;
 }
 ._li.data-v-aff219a0 {
@@ -26,9 +26,7 @@
 }
 .wh_top_title button.data-v-aff219a0,
 text.data-v-aff219a0 {
-	-webkit-box-flex: 0.1;
-	-webkit-flex: 0.1;
-	        flex: 0.1;
+	/* flex: 0.1; */
 }
 .wh_top_changge.data-v-aff219a0 {
 	display: -webkit-box;
@@ -40,7 +38,7 @@ text.data-v-aff219a0 {
 	-webkit-box-flex: 4;
 	-webkit-flex: 4;
 	        flex: 4;
-	position: absolute;
+	/* position: absolute; */
 	width: 100%;
 }
 .wh_top_changge ._li.data-v-aff219a0 {
@@ -63,9 +61,9 @@ text.data-v-aff219a0 {
 }
 .wh_top_changge .wh_content_li.data-v-aff219a0 {
 	cursor: auto;
-	-webkit-box-flex: 0.25;
-	-webkit-flex: 0.25;
-	        flex: 0.25;
+	-webkit-box-flex: 0.4;
+	-webkit-flex: 0.4;
+	        flex: 0.4;
 }
 .wh_content_all.data-v-aff219a0 {
 	font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', STHeiti, 'Microsoft Yahei', Tahoma, Simsun, sans-serif;

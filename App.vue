@@ -123,7 +123,7 @@ export default {
 
 page {
 	background-color: white;
-	height: 90%;
+	height: 100%;
 }
 
 .nav-list {

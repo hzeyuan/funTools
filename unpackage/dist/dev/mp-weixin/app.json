@@ -14,7 +14,9 @@
     "pages/zhinanzhen/zhinanzhen",
     "pages/relationship/relationship",
     "pages/biaozhunsanwei/biaozhunsanwei",
-    "pages/wannianli/wannianli"
+    "pages/wannianli/wannianli",
+    "pages/24jiemi/24jiemi",
+    "pages/yingwenyishuziti/yingwenyishuziti"
   ],
   "subPackages": [],
   "window": {
@@ -48,5 +50,5 @@
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
   },
-  "sitemapLocation": "sitemap54.json"
+  "sitemapLocation": "sitemap51.json"
 }

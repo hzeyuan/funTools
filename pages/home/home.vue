@@ -133,6 +133,18 @@ export default {
 					animation: 'slide-left',
 					color: 'blue',
 					function: '语音文字互转'
+				},
+				{
+					animation: 'slide-left',
+					color: 'blue',
+					name:'24jiemi',
+					function: '24点游戏'
+				},
+				{
+					animation: 'slide-left',
+					color: 'blue',
+					name:'yingwenyishuziti',
+					function: '英文艺术字体'
 				}
 				
 			],
@@ -233,6 +245,16 @@ export default {
 				case 'wannianli':
 					uni.navigateTo({
 						url:'/pages/wannianli/wannianli'
+					})
+					break
+				case '24jiemi':
+					uni.navigateTo({
+						url:'/pages/24jiemi/24jiemi'
+					})
+					break
+				case 'yingwenyishuziti':
+					uni.navigateTo({
+						url:'/pages/yingwenyishuziti/yingwenyishuziti'
 					})
 					break
 			}

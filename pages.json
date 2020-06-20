@@ -60,6 +60,14 @@
             "path" : "pages/wannianli/wannianli",
             "style" : {}
         }
+        ,{
+            "path" : "pages/24jiemi/24jiemi",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/yingwenyishuziti/yingwenyishuziti",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

@@ -1816,7 +1816,99 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ 138:
+/***/ 136:
+/*!************************************************************************!*\
+  !*** /Users/sharknet/Documents/HBuilderProjects/万能工具集/utils/game24.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _createForOfIteratorHelper(o) {if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) {var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e) {throw _e;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var it,normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e2) {didErr = true;err = _e2;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(n);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function node(value, exp) {
+  this.value = value;
+  this.exp = exp;
+}
+module.exports = {
+  game24: function game24(arr) {
+    var result = [];
+    var answers = new Set();
+    var S = new Map();
+    var A = arr;
+
+    function run() {
+      for (var i = 0; i < 1 << 4; i++) {
+        var set = new Set();
+        S.set(i, set);
+      }
+      for (var i = 0; i < 4; i++) {
+        var n = new node(A[i], A[i] + "");
+        var _set = new Set();
+        _set.add(n);
+        S.set(1 << i, _set);
+      }
+      for (var i = 1; i < 1 << 4; i++) {
+        fork(i);
+      }
+
+      var mSet = S.get((1 << 4) - 1);var _iterator = _createForOfIteratorHelper(
+      mSet.values()),_step;try {for (_iterator.s(); !(_step = _iterator.n()).done;) {var v = _step.value;
+          if (v.value == 24) {
+            answers.add(v.exp);
+          }
+        }} catch (err) {_iterator.e(err);} finally {_iterator.f();}
+      if (answers.size == 0) {
+        console.log("It's no possible");
+      } else {var _iterator2 = _createForOfIteratorHelper(
+        answers),_step2;try {for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {var _i = _step2.value;
+            // console.log(i) 
+            result.push(_i);
+            if (result.length >= 10) {
+              return result;
+            }
+          }} catch (err) {_iterator2.e(err);} finally {_iterator2.f();}
+      }
+      return result;
+    }
+
+    function fork(m) {
+      var mSet = S.get(m);
+      if (mSet.size > 0)
+      return mSet;else
+      {
+        for (var x = 1; x < m; x++) {
+          if ((x & m) == x) {
+            var s1 = fork(x);
+            var s2 = fork(m - x);var _iterator3 = _createForOfIteratorHelper(
+            s1),_step3;try {for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {var n1 = _step3.value;var _iterator4 = _createForOfIteratorHelper(
+                s2),_step4;try {for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {var n2 = _step4.value;
+                    var str = "(" + n1.exp + "+" + n2.exp + ")";
+                    mSet.add(new node(n1.value + n2.value, str));
+                    str = "(" + n1.exp + "-" + n2.exp + ")";
+                    mSet.add(new node(n1.value - n2.value, str));
+                    // str = "(" + n2.exp + "-" + n1.exp + ")";
+                    // mSet.add(new node(n1.value - n2.value, str));
+                    str = "(" + n1.exp + "*" + n2.exp + ")";
+                    mSet.add(new node(n1.value * n2.value, str));
+                    // if (n1.value != 0) {
+                    // 	str = "(" + n2.exp + "/" + n1.exp + ")";
+                    // 	mSet.add(new node(n2.value / n1.value, str));
+                    // }
+                    if (n2.value != 0) {
+                      str = "(" + n1.exp + "/" + n2.exp + ")";
+                      mSet.add(new node(n1.value / n2.value, str));
+                    }
+                  }} catch (err) {_iterator4.e(err);} finally {_iterator4.f();}}} catch (err) {_iterator3.e(err);} finally {_iterator3.f();}
+          }
+        }
+        return mSet;
+      }
+
+    }
+    return run();
+  } };
+
+/***/ }),
+
+/***/ 157:
 /*!******************************************************************************************************!*\
   !*** /Users/sharknet/Documents/HBuilderProjects/万能工具集/components/vue-calendar-component/calendar.js ***!
   \******************************************************************************************************/
