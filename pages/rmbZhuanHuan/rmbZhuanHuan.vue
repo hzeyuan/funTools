@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<cu-custom  :isBack="true" bgColor="bg-gradual-green">
+		<cu-custom  :isBack="true" bgColor="bg-gradual-blue">
 			<!-- <block slot="backText">返回</block> -->
 			<block slot="content">人民币大小写转换</block>
 		</cu-custom>

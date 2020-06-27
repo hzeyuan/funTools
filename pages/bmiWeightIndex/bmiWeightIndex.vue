@@ -1,6 +1,6 @@
 <template>
 	<view>
-	   <cu-custom :isBack="true" bgColor="bg-gradual-green">
+	   <cu-custom :isBack="true" bgColor="bg-gradual-blue">
 	   	<block slot="content">BMI体重指数</block>
 	   </cu-custom>
 	   <view class="cu-form-group">

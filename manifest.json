@@ -1,15 +1,13 @@
 {
-    "name" : "万能工具集",
+    "name" : "四次元口袋",
     "appid" : "__UNI__FF3633F",
     "description" : "",
-    "versionName" : "ColorUi for UniApp 2.1.4",
-    "versionCode" : 214,
+    "versionName" : "1.1.8",
+    "versionCode" : 118,
     "transformPx" : false,
     "app-plus" : {
         /* 5+App特有相关 */
-        "modules" : {
-            "Maps" : {}
-        },
+        "modules" : {},
         /* 模块配置 */
         "distribute" : {
             /* 应用发布信息 */
@@ -40,17 +38,17 @@
                     "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
-                ]
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a" ]
             },
             "ios" : {},
             /* ios打包配置 */
             "sdkConfigs" : {
                 "maps" : {},
-                "ad" : {
-                    "csj" : {}
-                }
+                "ad" : {}
             }
-        }
+        },
+        "nvueLaunchMode" : ""
     },
     /* SDK配置 */
     "quickapp" : {},
@@ -60,14 +58,26 @@
         "appid" : "wx44ec656d8bcf71ac",
         "setting" : {
             "urlCheck" : false,
-            "es6" : true,
+            "es6" : false,
             "postcss" : false,
             "minified" : true
         },
-        "permission" : {}
+        "permission" : {},
+        "optimization" : {
+            "subPackages" : true
+        },
+        "uniStatistics" : {
+            "enable" : true
+        }
     },
+    //"usingComponents":true
     "h5" : {
         "title" : "ColorUi for UniApp",
         "domain" : "demo.color-ui.com"
+    },
+    "mp-qq" : {
+        "setting" : {
+            "postcss" : true
+        }
     }
 }

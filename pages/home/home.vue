@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<cu-custom  :isBack="true" bgColor="bg-gradual-green">
+		<cu-custom  bgColor="bg-gradual-blue">
 			<!-- <block slot="backText">返回</block> -->
-			<block slot="content">真·万能工具</block>
+			<block slot="content">四次元口袋</block>
 		</cu-custom>
 		<scroll-view scroll-y class="scrollPage">
 			<view class="cu-bar bg-white search fixed" :style="[{top:CustomBar + 'px'}]">
@@ -21,22 +21,29 @@
 						v-for="(item, index) in list"
 						:key="index"
 					>
-						{{ item.function }}
+						{{ item.Function }}
 					</button>
 				</view>
 			</view>
 		</scroll-view>
-		
+		<view class="cu-bar bg-white solid-bottom margin-top flex-direction">
+			<view class="cu-progress radius striped" style="width:85%">
+				<view class="bg-red" :style="[{ width:'10%'}]">10%</view>
+			</view>
+			<view class="action text-sm">
+				<text class="cuIcon-title text-blue text-sm"></text><span class="text-sm">这是一个励志成为好工具的app的故事.群:1087851472</span>
+			</view>
+		</view>
 	</view>
 </template>
 
 <script>
 export default {
 	mounted() {
+
+	},
+	onLoad(){
 		this.ToggleDelay();
-		console.log("ceshi")
-		let r = this.utils.rmbDaXieZhuanHuan(10120.521)
-		console.log(r)
 	},
 	data() {
 		return {
@@ -47,105 +54,125 @@ export default {
 					animation: 'fade',
 					color: 'red',
 					name:'chp',
-					function: '彩虹屁捧杀',
+					Function: '彩虹屁捧杀',
 				},
 				{
 					animation: 'scale-up',
 					color: 'orange',
 					name:'duiren',
-					function: '怼人不带脏'
+					Function: '怼人不带脏'
 				},
 				{
 					animation: 'scale-down',
 					color: 'olive',
 					name:'chishenme',
-					function: '今天吃神马'
+					Function: '今天吃神马'
 				},
 				{
 					animation: 'slide-top',
 					color: 'green',
 					name:'rmbZhuanHuan',
-					function: '人民币大写转换'
+					Function: '人民币大写转换'
 				},
 				
-				{
+				/*{
 					animation: 'scale-down',
 					color: 'purple',
 					name:'sfzQuery',
-					function: '身份证查询'
+					Function: '身份证查询'
 				},
 				{
 					name: 'slide-right',
 					color: 'blue',
 					name:'iphonePlaceFfOwnershipQuery',
-					function: '手机号码归属地'
-				},
+					Function: '手机号码归属地'
+				},*/
 				{
 					name: 'shake',
 					color: 'mauve',
 					name:'goodNickName',
-					function: '炫酷昵称'
+					Function: '炫酷昵称'
 				},
+				// #ifdef MP-WEIXIN
 				{
 					name: 'shake',
 					color: 'pink',
 					name:'screenTwinkle',
-					function: '屏幕闪烁'
+					Function: '屏幕闪烁'
 				},
+				// #endif
 				{
 					name: 'slide-right',
 					color: 'brown',
 					name:'bmiWeightIndex',
-					function: 'BMl指数'
+					Function: 'BMl指数'
 				},{
 					name: 'slide-right',
 					color: 'grey',
 					name:'ip2Locations',
-					function: 'ip定位'
+					Function: 'ip定位'
 				},{
 					name: 'slide-right',
 					color: 'gray',
 					name:'zhinanzhen',
-					function: '指南针'
+					Function: '指南针'
 				},{
 					name: 'slide-right',
 					color: 'black',
 					name:'relationship',
-					function: '亲戚计算器'
+					Function: '亲戚计算器'
 				},{
 					name: 'slide-right',
 					color: 'purple',
 					name:'biaozhunsanwei',
-					function: '标准三围'
+					Function: '标准三围'
 				},
 				{
 					name: 'slide-right',
 					color: 'purple',
 					name:'wannianli',
-					function: '万年历'
+					Function: '万年历'
 				},
-				{
+				/* {
 					animation: 'slide-bottom',
 					color: 'cyan',
-					function: '图像文字识别'
-				},
+					Function: '图像文字识别'
+				}, 
 				{
 					animation: 'slide-left',
 					color: 'blue',
-					function: '语音文字互转'
-				},
+					Function: '语音文字互转'
+				},*/
 				{
 					animation: 'slide-left',
 					color: 'blue',
 					name:'24jiemi',
-					function: '24点游戏'
+					Function: '24点游戏'
 				},
 				{
 					animation: 'slide-left',
 					color: 'blue',
 					name:'yingwenyishuziti',
-					function: '英文艺术字体'
-				}
+					Function: '英文艺术字体'
+				},
+				{
+					animation: 'slide-left',
+					color: 'blue',
+					name:'img2char',
+					Function: '图片转字符画'
+				},
+				{
+					animation: 'slide-left',
+					color: 'blue',
+					name:'jianTi2FanTi',
+					Function: '翻译'
+				},
+				{
+					animation: 'slide-left',
+					color: 'blue',
+					name:'img2char',
+					Function: '敬请期待!'
+				},
 				
 			],
 			toggleDelay: false
@@ -161,9 +188,6 @@ export default {
 		},
 		ToggleDelay() {
 			this.toggleDelay = true;
-			/*setTimeout(() => {
-				this.toggleDelay = false;
-			}, 1000);*/
 		},
 		useFunction(name){
 			console.log("dsa"+name)
@@ -212,11 +236,13 @@ export default {
 					url: '/pages/goodNickName/goodNickName'
 					})
 					break
+				//	#ifdef MP-WEIXIN
 				case 'screenTwinkle':
 					uni.navigateTo({
 						url:'/pages/screenTwinkle/screenTwinkle'
 					})
 					break
+				//	#endif 
 				case 'bmiWeightIndex':
 					uni.navigateTo({
 						url:'/pages/bmiWeightIndex/bmiWeightIndex'
@@ -244,7 +270,7 @@ export default {
 					break
 				case 'wannianli':
 					uni.navigateTo({
-						url:'/pages/wannianli/wannianli'
+						url:'/pagesComm/wannianli/wannianli'
 					})
 					break
 				case '24jiemi':
@@ -254,7 +280,17 @@ export default {
 					break
 				case 'yingwenyishuziti':
 					uni.navigateTo({
-						url:'/pages/yingwenyishuziti/yingwenyishuziti'
+						url:'/pagesComm/yingwenyishuziti/yingwenyishuziti'
+					})
+					break
+				case 'img2char':
+					uni.navigateTo({
+						url:'/pagesComm/img2char/img2char'
+					})
+					break
+				case 'jianTi2FanTi':
+					uni.navigateTo({
+						url:'/pages/jianTi2FanTi/jianTi2FanTi'
 					})
 					break
 			}
@@ -265,7 +301,7 @@ export default {
 </script>
 
 <style>
-@import '../../colorui/animation.css'
+@import '../../colorui/animation.css';
 image[class*='gif-'] {
 	border-radius: 6upx;
 	display: block;

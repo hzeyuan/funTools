@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<cu-custom :isBack="true" bgColor="bg-gradual-green"><block slot="content">亲戚计算器</block></cu-custom>
+		<cu-custom :isBack="true" bgColor="bg-gradual-blue"><block slot="content">亲戚计算器</block></cu-custom>
 		<view class="container">
 			<view class="cu-form-group">
 				<view class="title">您的性别:</view>

@@ -1,0 +1,9 @@
+
+.calendarDetail.data-v-4ee9358c{
+	margin: 2%;
+}
+.day.data-v-4ee9358c{
+	font-size: 84px;
+	color: #F7982A;
+}
+

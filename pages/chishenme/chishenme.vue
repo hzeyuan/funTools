@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<cu-custom :isBack="true" bgColor="bg-gradual-green">
+		<cu-custom :isBack="true" bgColor="bg-gradual-blue">
 			<!-- <block slot="backText">返回</block> -->
 			<block slot="content">今天吃什么</block>
 		</cu-custom>
@@ -23,13 +23,15 @@
 
 <script>
 export default {
+	onLoad: () => {
+		// console.log(this.windowHeight)
+	},
 	onUnload() {
 		if(this.intervalId){
 			clearInterval(this.intervalId)
 		}
 	},
 	onHide(){
-		console.log("21312")
 	},
 	data() {
 		return {
@@ -74,7 +76,7 @@ export default {
 				
 				let top = (this.windowHeight-150)*topRand<30?30+this.windowHeight*topRand+'px':(this.windowHeight-150)*topRand+'px'
 				let left = (this.windowWidth-30)*leftRand<30?30+this.windowWidth*leftRand+'px':(this.windowWidth-30)*leftRand+'px'
-				console.log(top+' '+left)
+				//console.log(top+' '+left)
 				this.foodList.push({top:top,left:left,name:m[0][1][number]})
 				this.food = m[0][1][number];
 				//随机生成出现的区域坐标

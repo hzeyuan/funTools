@@ -10,9 +10,14 @@ export default {
 				Vue.prototype.StatusBar = e.statusBarHeight;
 				if (e.platform == 'android') {
 					Vue.prototype.CustomBar = e.statusBarHeight + 50;
+					Vue.prototype.windowHeight = e.windowHeight -50 - e.statusBarHeight
+					Vue.prototype.windowWidth = e.windowWidth
 				} else {
 					Vue.prototype.CustomBar = e.statusBarHeight + 45;
+					Vue.prototype.windowHeight = e.windowHeight -45 - e.statusBarHeight
+					Vue.prototype.windowWidth = e.windowWidth
 				}
+				
 				// #endif
 
 				// #ifdef MP-WEIXIN
@@ -257,5 +262,54 @@ page {
 	100% {
 		transform: translateY(0px);
 	}
+}
+.UCenter-bg {
+	background-image: url("https://wngj.oss-cn-shenzhen.aliyuncs.com/blue.jpg");
+	background-size: cover;
+	height: 550rpx;
+	display: flex;
+	justify-content: center;
+	padding-top: 40rpx;
+	overflow: hidden;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	color: #fff;
+	font-weight: 300;
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+	filter: contrast(210%);
+}
+
+.UCenter-bg text {
+	opacity: 0.8;
+}
+
+.UCenter-bg image {
+	width: 200rpx;
+	height: 200rpx;
+}
+
+.UCenter-bg .gif-wave {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	z-index: 99;
+	mix-blend-mode: screen;
+	height: 100rpx;
+}
+
+map,
+.mapBox {
+	left: 0;
+	z-index: 99;
+	mix-blend-mode: screen;
+	height: 100rpx;
+}
+
+map,
+.mapBox {
+	width: 750rpx;
+	height: 300rpx;
 }
 </style>

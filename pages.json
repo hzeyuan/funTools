@@ -4,71 +4,91 @@
 		{
 			"path": "pages/home/home",
 			"style": {}
-		}    ,{
-            "path" : "pages/user/user",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/duiren/duiren",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/chishenme/chishenme",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/rmbZhuanHuan/rmbZhuanHuan",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/sfzQuery/sfzQuery",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/iphonePlaceFfOwnershipQuery/iphonePlaceFfOwnershipQuery",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/goodNickName/goodNickName",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/screenTwinkle/screenTwinkle",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/bmiWeightIndex/bmiWeightIndex",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/ip2Locations/ip2Locations",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/zhinanzhen/zhinanzhen",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/relationship/relationship",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/biaozhunsanwei/biaozhunsanwei",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/wannianli/wannianli",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/24jiemi/24jiemi",
-            "style" : {}
-        }
-        ,{
-            "path" : "pages/yingwenyishuziti/yingwenyishuziti",
+		},{
+			"path": "pages/user/user",
+			"style": {}
+		}, {
+			"path": "pages/duiren/duiren",
+			"style": {}
+		}, {
+			"path": "pages/chishenme/chishenme",
+			"style": {}
+		}, {
+			"path": "pages/rmbZhuanHuan/rmbZhuanHuan",
+			"style": {}
+		}, {
+			"path": "pages/sfzQuery/sfzQuery",
+			"style": {}
+		}, {
+			"path": "pages/iphonePlaceFfOwnershipQuery/iphonePlaceFfOwnershipQuery",
+			"style": {}
+		}, {
+			"path": "pages/goodNickName/goodNickName",
+			"style": {}
+		}, {
+			"path": "pages/screenTwinkle/screenTwinkle",
+			"style": {}
+		}, {
+			"path": "pages/bmiWeightIndex/bmiWeightIndex",
+			"style": {}
+		}, {
+			"path": "pages/ip2Locations/ip2Locations",
+			"style": {}
+		}, {
+			"path": "pages/zhinanzhen/zhinanzhen",
+			"style": {}
+		}, {
+			"path": "pages/relationship/relationship",
+			"style": {}
+		}, {
+			"path": "pages/biaozhunsanwei/biaozhunsanwei",
+			"style": {}
+		}, {
+			"path": "pages/24jiemi/24jiemi",
+			"style": {}
+		}
+
+
+		, {
+			"path": "pages/index/index",
+			"style": {}
+		}
+	    ,{
+            "path" : "pages/jianTi2FanTi/jianTi2FanTi",
             "style" : {}
         }
     ],
+	"subPackages": [{
+		"root": "pagesComm",
+		"pages": [{
+			"path": "img2char/img2char",
+			"style": {}
+		}, {
+			"path": "yingwenyishuziti/yingwenyishuziti",
+			"style": {}
+		}, {
+			"path": "wannianli/wannianli",
+			"style": {}
+		}]
+	}],
+	"preloadRule": {
+		"pages/home/home": {
+			"network": "all",
+			"packages": ["__APP__"]
+		},
+		"pagesComm/img2char/img2char": {
+			"network": "all",
+			"packages": ["pagesComm"]
+		},
+		"pagesComm/yingwenyishuziti/yingwenyishuziti": {
+			"network": "all",
+			"packages": ["pagesComm"]
+		},
+		"pagesComm/wannianli/wannianli": {
+			"network": "all",
+			"packages": ["pagesComm"]
+		}
+	},
 	"globalStyle": {
 		"mp-alipay": {
 			/* 支付宝小程序特有相关 */
@@ -81,22 +101,22 @@
 		"navigationBarTextStyle": "white"
 	},
 	"tabBar": {
-	    "color": "#7A7E83",
-	    "selectedColor": "#3cc51f",
-	    "borderStyle": "black",
-	    "backgroundColor": "#ffffff",
-		"height":"40px",
-	    "list": [{
-	        "pagePath": "pages/home/home",
-	        "iconPath": "static/tabbar/basics.png",
-	        "selectedIconPath": "static/tabbar/basics_cur.png",
-	        "text": "工具集"
-	    }, {
-	        "pagePath": "pages/user/user",
-	        "iconPath": "static/tabbar/about.png",
-	        "selectedIconPath": "static/tabbar/about_cur.png",
-	        "text": "关于"
-	    }]
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"height": "40px",
+		"list": [{
+			"pagePath": "pages/home/home",
+			"iconPath": "static/tabbar/basics.png",
+			"selectedIconPath": "static/tabbar/basics_cur.png",
+			"text": "工具集"
+		}, {
+			"pagePath": "pages/user/user",
+			"iconPath": "static/tabbar/about.png",
+			"selectedIconPath": "static/tabbar/about_cur.png",
+			"text": "关于"
+		}]
 	}
 
 }

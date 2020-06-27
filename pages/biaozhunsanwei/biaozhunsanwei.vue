@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<cu-custom :isBack="true" bgColor="bg-gradual-green">
+		<cu-custom :isBack="true" bgColor="bg-gradual-blue">
 			<block slot="content">标准三围</block>
 		</cu-custom>
 		<view class="cu-form-group margin-tb-sm  solids-top solids-bottom padding flex align-center">

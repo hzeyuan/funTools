@@ -1,17 +1,18 @@
 <template>
-	<view>
+	<view style="width: 100%;">
 		<!-- 		<cu-custom :isBack="true" bgColor="bg-gradual-green" >
 			<block slot="content">屏幕闪烁</block>
 		</cu-custom> -->
-		<view :class="bgColor == 1 ? 'bg-white' : 'bg-' + styleBgList[StyleIdx]" :style="[{ height: windowHeight + CustomBar + 'px' }]">
+		<view :class="bgColor == 1 ? 'bg-white' : 'bg-' + styleBgList[StyleIdx]" :style="[{ height: windowHeight + CustomBar + 'px',width:windowWidth+'px'}]">
 			<view @click="startOrStopGame" class="text-white flex  justify-center align-center" style="height: 100%;width: 100%;font-size: 60rpx;">
 				<h1 class="animation-reverse " :class="[animation!=''?animation:'']">点击屏幕开始/停止</h1>
 			</view>
 		</view>
 		<!-- <cover-view bindtap="onShowMenu" class="light {{!ShowMenu?'':StyleList[StyleIdx]+'-stop'}}" style="opacity:{{ShowCamera?0.4:1}}; animation: {{!ShowMenu?StyleList[StyleIdx]+' '+SpeedList[SpeedIdx]+'s infinite':''}};"></cover-view> -->
-
+		<!-- <view>·1312312312</view> -->
 		<!-- style="animation: {{ShowMenu?'rise':'fall'}} 0.5s;" -->
-		<cover-view v-if="showBgMenu" class="menu flex" style="animation-fill-mode: forwards;">
+		<cover-view  class="menu flex" style="animation-fill-mode: forwards;">
+			
 			<block v-if="switchBgMenuColor[StyleIdx] == 1">
 				<cover-view @tap="onChangeStyle" class="item">
 					<cover-view class="value">{{ StyleIdx + 1 }}</cover-view>
@@ -32,6 +33,7 @@
 			<block v-else>
 				<cover-view @tap="onChangeStyle" class="item">
 					<cover-view class="value-black">{{ StyleIdx + 1 }}</cover-view>
+					<cover-view>123123123123121</cover-view>
 					<cover-image class="style" src="../../static/style_black.png"></cover-image>
 					<cover-view class="title-black">样式</cover-view>
 				</cover-view>
@@ -57,11 +59,18 @@
 <script>
 export default {
 	onLoad() {
+		console.log(this.windowHeight)
+		console.log(this.windowWidth)
 		setTimeout(()=>{
 			this.animation ='animation-fade'
 			console.log('quchu')
 		}, 4000)
 		this.startOrStopGame()
+	},
+	onUnload() {
+		if(this.bgIntervalId){
+			clearInterval(this.bgIntervalId)
+		}
 	},
 	data() {
 		return {
@@ -71,6 +80,7 @@ export default {
 			speedList: [300, 250, 200, 150, 100, 80, 50], //速度列表
 			windowHeight: this.windowHeight,
 			CustomBar: this.CustomBar,
+			windowWidth:this.windowWidth,
 			switchStartOrStop: 0, //闪烁动画开关
 			switchBgMenuColor: [0, 1, 1], // 菜单颜色切换
 			showBgMenu: 1, // 显示菜单
@@ -104,7 +114,7 @@ export default {
 			this.bgIntervalId = setInterval(() => {
 				this.bgColor = !this.bgColor;
 				this.switchStartOrStop =1
-				console.log(this.bgColor);
+				//console.log(this.bgColor);
 			}, this.speedList[this.SpeedIdx]);
 		},
 		stopInterval() {

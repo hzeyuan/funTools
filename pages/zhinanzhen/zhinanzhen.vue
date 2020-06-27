@@ -9,7 +9,7 @@
 				<text>{{ direction }}</text>
 				<text>{{ angle }}°</text>
 			</view>
-			<view class="picZnz"><image src="../../static/znz.jpg" :style="[{ transform: 'rotate(' + rotate + 'deg);' }]"></image></view>
+			<view class="picZnz"><image src="https://wngj.oss-accelerate.aliyuncs.com/znz.jpg" :style="[{ transform: 'rotate(' + rotate + 'deg);' }]"></image></view>
 		</view>
 	</view>
 </template>

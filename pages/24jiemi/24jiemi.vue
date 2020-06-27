@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<cu-custom :isBack="true" bgColor="bg-gradual-green">
+		<cu-custom :isBack="true" bgColor="bg-gradual-blue">
 			<block slot="content">24点解密游戏</block>
 		</cu-custom>
 		<view class="margin bg-gradual-blue light text-center">
