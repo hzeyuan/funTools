@@ -6,20 +6,29 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": false,
-		"postcss": true,
+		"postcss": false,
 		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
 		"coverView": true,
+		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
-		"useCompilerModule": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.2",
+	"libVersion": "",
 	"appid": "wx44ec656d8bcf71ac",
-	"projectname": "%E5%9B%9B%E6%AC%A1%E5%85%83%E5%8F%A3%E8%A2%8B",
+	"projectname": "四次元口袋",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {

@@ -57,6 +57,10 @@
             "path" : "pages/jianTi2FanTi/jianTi2FanTi",
             "style" : {}
         }
+        ,{
+            "path" : "pages/tuchuang/tuchuang",
+            "style" : {}
+        }
     ],
 	"subPackages": [{
 		"root": "pagesComm",
