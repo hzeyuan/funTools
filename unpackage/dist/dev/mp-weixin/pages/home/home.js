@@ -313,7 +313,14 @@ var _default =
         animation: 'slide-left',
         color: 'blue',
         name: 'img2char',
-        Function: '敬请期待!' }],
+        Function: '敬请期待!' },
+
+      {
+        animation: 'slide-left',
+        color: 'blue',
+        name: 'morseCode',
+        Function: '摩斯电码' }],
+
 
 
 
@@ -433,6 +440,11 @@ var _default =
         case 'jianTi2FanTi':
           uni.navigateTo({
             url: '/pages/jianTi2FanTi/jianTi2FanTi' });
+
+          break;
+        case 'morseCode':
+          uni.navigateTo({
+            url: '/pages/morseCode/morseCode' });
 
           break;}
 

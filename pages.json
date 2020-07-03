@@ -56,7 +56,11 @@
 	    ,{
             "path" : "pages/jianTi2FanTi/jianTi2FanTi",
             "style" : {}
-        }
+        },
+		{
+		    "path" : "pages/morseCode/morseCode",
+		    "style" : {}
+		}
     ],
 	"subPackages": [{
 		"root": "pagesComm",
