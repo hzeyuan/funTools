@@ -4,7 +4,7 @@
 		{
 			"path": "pages/home/home",
 			"style": {}
-		},{
+		}, {
 			"path": "pages/user/user",
 			"style": {}
 		}, {
@@ -46,22 +46,20 @@
 		}, {
 			"path": "pages/24jiemi/24jiemi",
 			"style": {}
-		}
-
-
-		, {
+		}, {
 			"path": "pages/index/index",
 			"style": {}
+		}, {
+			"path": "pages/jianTi2FanTi/jianTi2FanTi",
+			"style": {}
+		}, {
+			"path": "pages/tuchuang/tuchuang",
+			"style": {}
+		}, {
+			"path": "pages/morseCode/morseCode",
+			"style": {}
 		}
-	    ,{
-            "path" : "pages/jianTi2FanTi/jianTi2FanTi",
-            "style" : {}
-        },
-		{
-		    "path" : "pages/morseCode/morseCode",
-		    "style" : {}
-		}
-    ],
+	],
 	"subPackages": [{
 		"root": "pagesComm",
 		"pages": [{

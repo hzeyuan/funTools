@@ -17,6 +17,7 @@
     "pages/24jiemi/24jiemi",
     "pages/index/index",
     "pages/jianTi2FanTi/jianTi2FanTi",
+    "pages/tuchuang/tuchuang",
     "pages/morseCode/morseCode"
   ],
   "subPackages": [

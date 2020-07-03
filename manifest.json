@@ -48,7 +48,8 @@
                 "ad" : {}
             }
         },
-        "nvueLaunchMode" : ""
+        "nvueLaunchMode" : "",
+        "renderer" : "native"
     },
     /* SDK配置 */
     "quickapp" : {},

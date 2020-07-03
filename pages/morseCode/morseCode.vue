@@ -5,16 +5,16 @@
 			<block slot="content">莫斯电码转换</block>
 		</cu-custom>
 		<view class="cu-form-group solids align-start">			
-			<textarea maxlength="-1" @input="textareaInput" style="height: 15em;" :value='value1' :placeholder="placeholderA"></textarea>
+			<textarea maxlength="-1" @input="textareaInput" style="height: 15em;" :value='valueI' :placeholder="placeholderA"></textarea>
 			</view>
 		
 		<view class="cu-form-group text-center align-center">
 			<button class="cu-btn bg-blue round shadow" @click="encode">编码</button>
 			<button class="cu-btn bg-blue round shadow" @click="decode">译码</button>
-			<button class="cu-btn bg-blue round shadow" @click="cleanup">清空</button>
+			<button class="cu-btn bg-blue round shadow" @tap="cleanup">清空</button>
 		</view>
 		<view class="cu-form-group align-start solids">
-			<textarea maxlength="-1" @input="textareaOutput" style="height: 15em;" :value="value2" :placeholder="placeholderB"></textarea>	
+			<textarea maxlength="-1" @input="textareaOutput" style="height: 15em;" :value="valueO" :placeholder="placeholderB"></textarea>	
 		</view>
 			
 		
@@ -33,10 +33,8 @@
 				placeholderA: '需要转换的文本',
 				placeholderB: '转换后的文本',
 				message: '22232',
-				value1: '',
-				value2: '',
-				valueT: "",
-				valutO: '',
+				valueI: '',
+				valueO: '',
 				standard: {
 					'A': '01',
 					'B': '1000',
@@ -107,26 +105,30 @@
 				console.log("ssss")
 			},
 			textareaInput(e){
-				console.log(this._encode(e.target.value));
-				 this.valueT = this._encode(e.target.value);
+				this.valueI = e.target.value 
+				 //this.valueT = this._encode(e.target.value);
 			},
 			textareaOutput(e){
 				console.log(this._decode(e.target.value));
-				this.valutO = this._decode(e.target.value);
+				//this.valutO = this._decode(e.target.value);
+				this.valueO = e.target.value
 			},
 			encode(){
-				
-				this.value2 = this.valueT;
+				let code = this._encode(this.valueI)
+				//this.value2 = code
+				this.valueO = code
+				//this.value2 = this.valueT;
 				console.log('encode');
 			},
 			decode(){
 				console.log('decode');
-				this.value1 = this.valutO;
+				//this.value1 = this.valutO;
+				this.valueI = this._decode(this.valueO);
 			},
 			cleanup(){
 				console.log('cleanup');
-				this.value1 = '';
-				this.value2 = '';
+				this.valueI = '';
+				this.valueO = '';
 			},
 			unicodeHexMorse(ch) {
 			    let r = [];
@@ -156,8 +158,9 @@
 			        return '';
 			    return unescape('%u' + mor.toString(16));
 			},
-			 _decode(morse) {
+			_decode(morse) {
 			    let msg = [];
+				console.log(morse)
 			    morse = morse.split(option[0]);
 			    let mor, r;
 			    for (let i = 0, l = morse.length; i < l; i++) {
@@ -168,12 +171,7 @@
 			        msg.push(r);
 			    }
 			    return msg.join('');
-			},
-			
-
-			
-		
-			
+			},		
 		}
 	}
 </script>

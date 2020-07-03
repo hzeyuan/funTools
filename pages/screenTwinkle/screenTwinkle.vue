@@ -33,7 +33,6 @@
 			<block v-else>
 				<cover-view @tap="onChangeStyle" class="item">
 					<cover-view class="value-black">{{ StyleIdx + 1 }}</cover-view>
-					<cover-view>123123123123121</cover-view>
 					<cover-image class="style" src="../../static/style_black.png"></cover-image>
 					<cover-view class="title-black">样式</cover-view>
 				</cover-view>

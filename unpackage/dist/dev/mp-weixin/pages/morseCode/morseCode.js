@@ -163,10 +163,8 @@ var _standardReverse = {};var _default =
       placeholderA: '需要转换的文本',
       placeholderB: '转换后的文本',
       message: '22232',
-      value1: '',
-      value2: '',
-      valueT: "",
-      valutO: '',
+      valueI: '',
+      valueO: '',
       standard: {
         'A': '01',
         'B': '1000',
@@ -237,26 +235,30 @@ var _standardReverse = {};var _default =
       console.log("ssss");
     },
     textareaInput: function textareaInput(e) {
-      console.log(this._encode(e.target.value));
-      this.valueT = this._encode(e.target.value);
+      this.valueI = e.target.value;
+      //this.valueT = this._encode(e.target.value);
     },
     textareaOutput: function textareaOutput(e) {
       console.log(this._decode(e.target.value));
-      this.valutO = this._decode(e.target.value);
+      //this.valutO = this._decode(e.target.value);
+      this.valueO = e.target.value;
     },
     encode: function encode() {
-
-      this.value2 = this.valueT;
+      var code = this._encode(this.valueI);
+      //this.value2 = code
+      this.valueO = code;
+      //this.value2 = this.valueT;
       console.log('encode');
     },
     decode: function decode() {
       console.log('decode');
-      this.value1 = this.valutO;
+      //this.value1 = this.valutO;
+      this.valueI = this._decode(this.valueO);
     },
     cleanup: function cleanup() {
       console.log('cleanup');
-      this.value1 = '';
-      this.value2 = '';
+      this.valueI = '';
+      this.valueO = '';
     },
     unicodeHexMorse: function unicodeHexMorse(ch) {
       var r = [];
@@ -288,6 +290,7 @@ var _standardReverse = {};var _default =
     },
     _decode: function _decode(morse) {
       var msg = [];
+      console.log(morse);
       morse = morse.split(option[0]);
       var mor, r;
       for (var i = 0, l = morse.length; i < l; i++) {

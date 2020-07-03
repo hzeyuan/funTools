@@ -310,6 +310,6 @@ image[class*='gif-'] {
 	display: block;
 }
 page {
-		padding-top: 50px;
+	padding-top: 50px;
 }
 

@@ -1,0 +1,17 @@
+
+.content.data-v-e5d4c574{
+	padding: 9rpx;
+	border-radius: 6rpx;
+	display: block;
+	line-height: 1.6;
+}
+.BMireusltTitle.data-v-e5d4c574{
+	text-align: center;
+	padding: 30rpx 30rpx;
+	font-size: 26rpx;
+	color: #888;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+

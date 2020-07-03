@@ -109,6 +109,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  if (!_vm._isMounted) {
+    _vm.e0 = function($event) {
+      return _vm.utils.copyText("1087851472")
+    }
+  }
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -179,6 +184,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var _default =
 {
   mounted: function mounted() {
@@ -187,12 +195,13 @@ var _default =
   onLoad: function onLoad() {
     this.ToggleDelay();
   },
-  data: function data() {var _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8;
+  data: function data() {var _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9;
     return {
       CustomBar: this.CustomBar,
       animation: '',
-      list: [
-      {
+      searchResult: [],
+      heightercentage: 0.65,
+      list: [{
         animation: 'fade',
         color: 'red',
         name: 'chp',
@@ -200,19 +209,19 @@ var _default =
 
       {
         animation: 'scale-up',
-        color: 'orange',
+        color: 'red',
         name: 'duiren',
         Function: '怼人不带脏' },
 
       {
         animation: 'scale-down',
-        color: 'olive',
+        color: 'orange',
         name: 'chishenme',
         Function: '今天吃神马' },
 
       {
         animation: 'slide-top',
-        color: 'green',
+        color: 'orange',
         name: 'rmbZhuanHuan',
         Function: '人民币大写转换' }, (_ref = {
 
@@ -231,75 +240,81 @@ var _default =
 
 
         name: 'shake',
-        color: 'mauve' }, _defineProperty(_ref, "name",
+        color: 'olive' }, _defineProperty(_ref, "name",
       'goodNickName'), _defineProperty(_ref, "Function",
       '炫酷昵称'), _ref), (_ref2 = {
 
 
 
         name: 'shake',
-        color: 'pink' }, _defineProperty(_ref2, "name",
+        color: 'olive' }, _defineProperty(_ref2, "name",
       'screenTwinkle'), _defineProperty(_ref2, "Function",
       '屏幕闪烁'), _ref2), (_ref3 = {
 
 
 
         name: 'slide-right',
-        color: 'brown' }, _defineProperty(_ref3, "name",
+        color: 'green' }, _defineProperty(_ref3, "name",
       'bmiWeightIndex'), _defineProperty(_ref3, "Function",
       'BMl指数'), _ref3), (_ref4 = {
 
         name: 'slide-right',
-        color: 'grey' }, _defineProperty(_ref4, "name",
+        color: 'green' }, _defineProperty(_ref4, "name",
       'ip2Locations'), _defineProperty(_ref4, "Function",
       'ip定位'), _ref4), (_ref5 = {
 
         name: 'slide-right',
-        color: 'gray' }, _defineProperty(_ref5, "name",
+        color: 'mauve' }, _defineProperty(_ref5, "name",
       'zhinanzhen'), _defineProperty(_ref5, "Function",
       '指南针'), _ref5), (_ref6 = {
 
         name: 'slide-right',
-        color: 'black' }, _defineProperty(_ref6, "name",
+        color: 'mauve' }, _defineProperty(_ref6, "name",
       'relationship'), _defineProperty(_ref6, "Function",
       '亲戚计算器'), _ref6), (_ref7 = {
 
         name: 'slide-right',
-        color: 'purple' }, _defineProperty(_ref7, "name",
+        color: 'pink' }, _defineProperty(_ref7, "name",
       'biaozhunsanwei'), _defineProperty(_ref7, "Function",
       '标准三围'), _ref7), (_ref8 = {
 
 
         name: 'slide-right',
-        color: 'purple' }, _defineProperty(_ref8, "name",
+        color: 'pink' }, _defineProperty(_ref8, "name",
       'wannianli'), _defineProperty(_ref8, "Function",
-      '万年历'), _ref8),
+      '万年历'), _ref8), (_ref9 = {
+
+
+        name: 'slide-right',
+        color: 'purple' }, _defineProperty(_ref9, "name",
+      'tuchuang'), _defineProperty(_ref9, "Function",
+      '免费公共图床'), _ref9),
 
       /* {
-                      	animation: 'slide-bottom',
-                      	color: 'cyan',
-                      	Function: '图像文字识别'
-                      }, 
-                      {
-                      	animation: 'slide-left',
-                      	color: 'blue',
-                      	Function: '语音文字互转'
-                      },*/
+                         	animation: 'slide-bottom',
+                         	color: 'cyan',
+                         	Function: '图像文字识别'
+                         }, 
+                         {
+                         	animation: 'slide-left',
+                         	color: 'blue',
+                         	Function: '语音文字互转'
+                         },*/
       {
         animation: 'slide-left',
-        color: 'blue',
+        color: 'purple',
         name: '24jiemi',
         Function: '24点游戏' },
 
       {
         animation: 'slide-left',
-        color: 'blue',
+        color: 'brown',
         name: 'yingwenyishuziti',
         Function: '英文艺术字体' },
 
       {
         animation: 'slide-left',
-        color: 'blue',
+        color: 'brown',
         name: 'img2char',
         Function: '图片转字符画' },
 
@@ -312,19 +327,18 @@ var _default =
       {
         animation: 'slide-left',
         color: 'blue',
-        name: 'img2char',
-        Function: '敬请期待!' },
+        name: 'morseCode',
+        Function: '摩斯电码' },
 
       {
         animation: 'slide-left',
         color: 'blue',
-        name: 'morseCode',
-        Function: '摩斯电码' }],
+        name: 'img2char',
+        Function: '敬请期待!' }],
 
 
-
-
-      toggleDelay: false };
+      toggleDelay: false,
+      windowHeight: this.windowHeight };
 
   },
   methods: {
@@ -342,7 +356,6 @@ var _default =
       console.log("dsa" + name);
       switch (name) {
         case 'chp':
-          console.log("12312312312");
           wx.navigateToMiniProgram({
             appId: 'wx23c230a07932c6ef',
             path: 'pages/home/home',
@@ -442,13 +455,33 @@ var _default =
             url: '/pages/jianTi2FanTi/jianTi2FanTi' });
 
           break;
+        case 'tuchuang':
+          uni.navigateTo({
+            url: '/pages/tuchuang/tuchuang' });
+
+          break;
         case 'morseCode':
           uni.navigateTo({
             url: '/pages/morseCode/morseCode' });
 
           break;}
 
-
+    },
+    search: function search(e) {
+      var name = e.detail.value;
+      if (name === '') {
+        this.searchResult = [];
+        this.heightercentage = 0.65;
+        return;
+      }
+      var reg = new RegExp(name);
+      this.searchResult = [];
+      for (var i = 0; i < this.list.length; i++) {
+        if (this.list[i].Function.toLowerCase().match(reg)) {
+          this.heightercentage = 0.55;
+          this.searchResult.push(this.list[i]);
+        }
+      }
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
