@@ -180,6 +180,12 @@
 					{
 						animation: 'slide-left',
 						color: 'blue',
+						name: 'morseCode',
+						Function: '摩斯电码'
+					},
+					{
+						animation: 'slide-left',
+						color: 'blue',
 						name: 'img2char',
 						Function: '敬请期待!'
 					}
@@ -307,6 +313,11 @@
 							url: '/pages/tuchuang/tuchuang'
 						})
 						break
+					case 'morseCode':
+						uni.navigateTo({
+							url: '/pages/morseCode/morseCode'
+						})
+						break
 				}
 			},
 			search(e) {
@@ -330,6 +341,9 @@
 	};
 </script>
 
+
+
+
 <style>
 	@import '../../colorui/animation.css';
 
@@ -340,6 +354,5 @@
 
 	page {
 		padding-top: 50px;
-		height: auto;
 	}
 </style>

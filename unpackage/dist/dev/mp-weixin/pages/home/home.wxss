@@ -311,6 +311,5 @@ image[class*='gif-'] {
 }
 page {
 	padding-top: 50px;
-	height: auto;
 }
 
