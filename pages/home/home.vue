@@ -12,7 +12,7 @@
 				</view>
 			</view>
 
-			<view v-if="searchResult===[]" class="flex flex-wrap justify-around" :style="[{height:windowHeight*0.1+'px'}]">
+			<view v-if="searchResult.length>0" class="flex flex-wrap justify-around align-center padding-top-sm" :style="[{height:windowHeight*0.1+'px'}]">
 				<button @tap="useFunction(item.name)" class="margin-sm  basis-sm shadow cu-btn light" :class="['bg-' + item.color]"
 				 style="width: 25%;" v-for="(item, index) in searchResult" :key="index">
 					{{ item.Function }}
@@ -20,7 +20,7 @@
 			</view>
 
 			<view class="padding-sm">
-				<view class="flex flex-wrap justify-around" :style="[{height:windowHeight*0.65+'px'}]">
+				<view class="flex flex-wrap justify-around" :style="[{height:windowHeight*heightercentage+'px'}]">
 					<button @tap="useFunction(item.name)" class="margin-sm  basis-sm shadow cu-btn light" :class="['bg-' + item.color, toggleDelay ? 'animation-slide-bottom' : '']"
 					 :style="[{ animationDelay: (index + 1) * 0.1 + 's' }]" style="width: 25%;" v-for="(item, index) in list" :key="index">
 						{{ item.Function }}
@@ -53,6 +53,7 @@
 				CustomBar: this.CustomBar,
 				animation: '',
 				searchResult: [],
+				heightercentage: 0.65,
 				list: [{
 						animation: 'fade',
 						color: 'red',
@@ -311,15 +312,16 @@
 			search(e) {
 				let name = e.detail.value
 				if (name === '') {
+					this.searchResult = []
+					this.heightercentage = 0.65
 					return
 				}
 				var reg = new RegExp(name);
 				this.searchResult = []
 				for (let i = 0; i < this.list.length; i++) {
 					if (this.list[i].Function.toLowerCase().match(reg)) {
-						console.log(name)
+						this.heightercentage = 0.55
 						this.searchResult.push(this.list[i])
-						// break
 					}
 				}
 			}
