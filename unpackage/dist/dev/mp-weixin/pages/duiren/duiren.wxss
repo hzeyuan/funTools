@@ -1,5 +1,5 @@
 
-.container.data-v-36f1945a {
+.container.data-v-86385f34 {
     height: 530rpx;
     display: -webkit-box;
     display: -webkit-flex;
@@ -12,12 +12,12 @@
             justify-content: center;
 	margin: 4%;
 }
-.main.data-v-36f1945a {
+.main.data-v-86385f34 {
     margin: 0rpx 40rpx 0rpx 40rpx;
     padding-bottom: 20rpx;
     border-bottom: 1rpx solid rgba(0,0,0,0.3);
 }
-.main text.data-v-36f1945a {
+.main text.data-v-86385f34 {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
             flex: 1;
