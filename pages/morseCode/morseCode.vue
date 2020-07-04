@@ -2,7 +2,7 @@
 	<view class="margin-sm">
 		<cu-custom :isBack="true" bgColor="bg-gradual-blue">
 			<!-- <block slot="backText">返回</block> -->
-			<block slot="content">莫斯电码转换</block>
+			<block slot="content">摩斯电码转换</block>
 		</cu-custom>
 		<view class="cu-form-group solids align-start">			
 			<textarea maxlength="-1" @input="textareaInput" style="height: 15em;" :value='valueI' :placeholder="placeholderA"></textarea>
@@ -81,7 +81,7 @@
 		'@': '011010'
 		
 	};
-	let standardReverse = {};
+	const standardReverse = {};
 	for(let key in standard){
 	standardReverse[standard[key]] = key;
 	}
@@ -100,16 +100,12 @@
 			
 		},
 		methods:{
-		
-			translate(){
-				console.log("ssss")
-			},
 			textareaInput(e){
 				this.valueI = e.target.value 
 				 //this.valueT = this._encode(e.target.value);
 			},
 			textareaOutput(e){
-				console.log(this._decode(e.target.value));
+				// console.log(this._decode(e.target.value));
 				//this.valutO = this._decode(e.target.value);
 				this.valueO = e.target.value
 			},
@@ -118,15 +114,15 @@
 				//this.value2 = code
 				this.valueO = code
 				//this.value2 = this.valueT;
-				console.log('encode');
+				// console.log('encode');
 			},
 			decode(){
-				console.log('decode');
+				// console.log('decode');
 				//this.value1 = this.valutO;
 				this.valueI = this._decode(this.valueO);
 			},
 			cleanup(){
-				console.log('cleanup');
+				// console.log('cleanup');
 				this.valueI = '';
 				this.valueO = '';
 			},
@@ -160,7 +156,7 @@
 			},
 			_decode(morse) {
 			    let msg = [];
-				console.log(morse)
+				// console.log(morse)
 			    morse = morse.split(option[0]);
 			    let mor, r;
 			    for (let i = 0, l = morse.length; i < l; i++) {
