@@ -184,6 +184,12 @@
 						Function: '摩斯电码'
 					},
 					{
+						animation: 'slide-top',
+						color: 'orange',
+						name: 'joke',
+						Function: '笑话大全'
+					},
+					{
 						animation: 'slide-left',
 						color: 'blue',
 						name: 'img2char',
@@ -316,6 +322,11 @@
 					case 'morseCode':
 						uni.navigateTo({
 							url: '/pages/morseCode/morseCode'
+						})
+						break
+					case 'joke':
+						uni.navigateTo({
+							url: '/pages/joke/joke'
 						})
 						break
 				}
