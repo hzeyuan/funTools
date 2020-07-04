@@ -59,7 +59,11 @@
 			"path": "pages/morseCode/morseCode",
 			"style": {}
 		}
-	],
+	    ,{
+            "path" : "pages/huilv/huilv",
+            "style" : {}
+        }
+    ],
 	"subPackages": [{
 		"root": "pagesComm",
 		"pages": [{
