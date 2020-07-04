@@ -6,41 +6,23 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": false,
-		"enhance": true,
 		"postcss": false,
 		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
-<<<<<<< HEAD
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
-=======
-		"nodeModules": false,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"uglifyFileName": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"compileHotReLoad": false,
->>>>>>> origin/hdh
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-<<<<<<< HEAD
-		"useCompilerModule": true,
-=======
-		"useIsolateContext": true,
 		"useCompilerModule": false,
->>>>>>> origin/hdh
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -64,18 +46,7 @@
 		},
 		"miniprogram": {
 			"current": -1,
-<<<<<<< HEAD
-			"list": [
-				{
-					"id": -1,
-					"name": "pages/joke/joke",
-					"pathName": "pages/joke/joke",
-					"scene": null
-				}
-			]
-=======
 			"list": []
->>>>>>> origin/hdh
 		}
 	}
 }
