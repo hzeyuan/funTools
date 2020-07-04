@@ -23,7 +23,7 @@
 				<view class="flex flex-wrap justify-around" :style="[{height:windowHeight*heightercentage+'px'}]">
 					<button @tap="useFunction(item.name)" class="margin-sm  basis-sm shadow cu-btn light" :class="['bg-' + item.color, toggleDelay ? 'animation-slide-bottom' : '']"
 					 :style="[{ animationDelay: (index + 1) * 0.1 + 's' }]" style="width: 25%;" v-for="(item, index) in list" :key="index">
-						{{ item.Function }}
+						{{index+1}}.{{ item.Function }}
 					</button>
 				</view>
 			</view>
@@ -56,32 +56,31 @@
 				heightercentage: 0.65,
 				list: [{
 						animation: 'fade',
-						color: 'red',
+						color: 'blue',
 						name: 'chp',
 						Function: '彩虹屁捧杀',
 					},
 					{
 						animation: 'scale-up',
-						color: 'red',
+						color: 'blue',
 						name: 'duiren',
 						Function: '怼人不带脏'
 					},
 					{
 						animation: 'scale-down',
-						color: 'orange',
+						color: 'blue',
 						name: 'chishenme',
 						Function: '今天吃神马'
 					},
 					{
 						animation: 'slide-top',
-						color: 'orange',
+						color: 'blue',
 						name: 'rmbZhuanHuan',
 						Function: '人民币大写转换'
 					},
-
-					/*{
+					{
 						animation: 'scale-down',
-						color: 'purple',
+						color: 'blue',
 						name:'sfzQuery',
 						Function: '身份证查询'
 					},
@@ -90,56 +89,56 @@
 						color: 'blue',
 						name:'iphonePlaceFfOwnershipQuery',
 						Function: '手机号码归属地'
-					},*/
+					},
 					{
 						name: 'shake',
-						color: 'olive',
+						color: 'blue',
 						name: 'goodNickName',
 						Function: '炫酷昵称'
 					},
 					// #ifdef MP-WEIXIN
 					{
 						name: 'shake',
-						color: 'olive',
+						color: 'blue',
 						name: 'screenTwinkle',
 						Function: '屏幕闪烁'
 					},
 					// #endif
 					{
 						name: 'slide-right',
-						color: 'green',
+						color: 'blue',
 						name: 'bmiWeightIndex',
 						Function: 'BMl指数'
 					}, {
 						name: 'slide-right',
-						color: 'green',
+						color: 'blue',
 						name: 'ip2Locations',
 						Function: 'ip定位'
 					}, {
 						name: 'slide-right',
-						color: 'mauve',
+						color: 'blue',
 						name: 'zhinanzhen',
 						Function: '指南针'
 					}, {
 						name: 'slide-right',
-						color: 'mauve',
+						color: 'blue',
 						name: 'relationship',
 						Function: '亲戚计算器'
 					}, {
 						name: 'slide-right',
-						color: 'pink',
+						color: 'blue',
 						name: 'biaozhunsanwei',
 						Function: '标准三围'
 					},
 					{
 						name: 'slide-right',
-						color: 'pink',
+						color: 'blue',
 						name: 'wannianli',
 						Function: '万年历'
 					},
 					{
 						name: 'slide-right',
-						color: 'purple',
+						color: 'blue',
 						name: 'tuchuang',
 						Function: '免费公共图床'
 					},
@@ -155,19 +154,19 @@
 					},*/
 					{
 						animation: 'slide-left',
-						color: 'purple',
+						color: 'blue',
 						name: '24jiemi',
 						Function: '24点游戏'
 					},
 					{
 						animation: 'slide-left',
-						color: 'brown',
+						color: 'blue',
 						name: 'yingwenyishuziti',
 						Function: '英文艺术字体'
 					},
 					{
 						animation: 'slide-left',
-						color: 'brown',
+						color: 'blue',
 						name: 'img2char',
 						Function: '图片转字符画'
 					},
@@ -185,7 +184,7 @@
 					},
 					{
 						animation: 'slide-top',
-						color: 'orange',
+						color: 'blue',
 						name: 'joke',
 						Function: '笑话大全'
 					},
