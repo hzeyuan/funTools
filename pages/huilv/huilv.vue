@@ -75,29 +75,29 @@
 				value2:'',
 				pri:{},
 				CurrencyPick:CurrencyPick,
-				CurrencyRate: [
-					'USD',
-					'EUR',
-					'HKD',
-					'JPY',
-					'GBP',
-					'ASP',
-					'SPD',
-					'SFC',
-					'DKE',
-					'PTA',
-					'RGT',
-					'NKE',
-					'NZD',
-					'PSO',
-					'RBE',
-					'SKA',
-					'NTD',
-					'BRL',
-					'WON',
-					'SAR',
+				// CurrencyRate: [
+				// 	'USD',
+				// 	'EUR',
+				// 	'HKD',
+				// 	'JPY',
+				// 	'GBP',
+				// 	'ASP',
+				// 	'SPD',
+				// 	'SFC',
+				// 	'DKE',
+				// 	'PTA',
+				// 	'RGT',
+				// 	'NKE',
+				// 	'NZD',
+				// 	'PSO',
+				// 	'RBE',
+				// 	'SKA',
+				// 	'NTD',
+				// 	'BRL',
+				// 	'WON',
+				// 	'SAR',
 					
-				],
+				// ],
 					
 				
 			}
@@ -112,12 +112,11 @@
 				this.index2 = e.detail.value; 
 			},
 			exchange(e) {
-				let src = this.CurrencyRate[this.index1];
-				let dst = this.CurrencyRate[this.index2];
+				// let src = this.CurrencyRate[this.index1];
+				// let dst = this.CurrencyRate[this.index2];
 				this.value1 = e.detail.value
 				console.log(this.value1);
-				console.log(src);
-				console.log(dst);
+			
 				uni.showLoading({
 					title: "兑换中",
 					success: () => {
@@ -144,7 +143,7 @@
 									console.log(r[0][0]);
 									console.log(r);
 									this.value2 = this.value1*(r[this.index1][0]/100)/(r[this.index2][0]/100)
-									console.log(this.value1*(r[0][1]/100))
+									
 									console.log(this.index1)
 									console.log(this.index2)
 									console.log(this.value1)
