@@ -35,6 +35,9 @@
 			},
 			getReuslt(){
 				this.result=sanwei.SanweiResult(this.height)
+			},
+			onShareAppMessage(options){
+				
 			}
 		}
 	}

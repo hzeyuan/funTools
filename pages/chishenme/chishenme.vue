@@ -92,6 +92,9 @@ export default {
 		stopRunFood() {
 			this.start = false;
 			clearInterval(this.intervalId);
+		},
+		onShareAppMessage(options){
+			
 		}
 	}
 };

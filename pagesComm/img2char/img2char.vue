@@ -204,6 +204,9 @@ XXXEEXXXXXXEEEEEEEEEEEEEEEEEEEEEXXXXXXXCCCCXXXXXXXXXXXXXXXXXXXXEEEEOOOO$$$$$$$$$
 					}
 				}
 			});
+		},
+		onShareAppMessage(options){
+			
 		}
 	}
 };

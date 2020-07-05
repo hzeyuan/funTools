@@ -266,6 +266,9 @@ export default {
 				 this.sfzInfo.city= res.result
 			  })
 			return result
+		},
+		onShareAppMessage(options){
+			
 		}
 	}
 };

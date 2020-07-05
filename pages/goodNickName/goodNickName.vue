@@ -74,6 +74,9 @@
 				// uni.showToast({
 				// 	title:'复制成功'
 				// })
+			},
+			onShareAppMessage(options){
+				
 			}
 		}
 	}

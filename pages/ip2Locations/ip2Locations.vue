@@ -85,6 +85,9 @@
 						console.log(res.result)
 						this.locations = res.result.content
 				  });
+			},
+			onShareAppMessage(options){
+				
 			}
 		}
 	}

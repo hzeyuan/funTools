@@ -66,6 +66,9 @@
 			},
 			change(){
 				this.result =  this.utils.rmbDaXieZhuanHuan(this.money)
+			},
+			onShareAppMessage(options){
+				
 			}
 		}
 	}

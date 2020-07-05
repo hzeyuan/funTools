@@ -117,6 +117,9 @@
 						})
 					}
 				})
+			},
+			onShareAppMessage(options){
+				
 			}
 		}
 	}

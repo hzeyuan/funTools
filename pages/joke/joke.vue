@@ -6,12 +6,12 @@
 		</cu-custom>
 		<s-pull-scroll ref="pullScroll" :pullDown="pullDown" :pullUp="loadData" :headerHeight="StatusBar+CustomBar">
 			<!-- <image class="bgImg" src="https://wngj.oss-cn-shenzhen.aliyuncs.com/bg/17e9375ddc620b58dae035e982012be5.jpg"></image> -->
-			<view v-for="(jokeObj,index) in jokeList" class="flex flex-direction margin-sm padding-sm bg-white" @tap="copyText(jokeObj.joke)">
+			<view v-for="(jokeObj,index) in jokeList" :key="jokeObj.joke" class="flex flex-direction margin-sm padding-sm bg-white" @tap="copyText(jokeObj.joke)">
 				<text>{{index+1}}. {{jokeObj.joke.substring(2)}}</text>
 				<view class="text-gray text-sm text-right padding">
 					<!-- <text class="cuIcon-attentionfill margin-lr-xs"></text> 10 -->
-					<text class="cuIcon-appreciatefill margin-lr-xs"></text>{{jokeObj.zan}}
-					<!-- <text class="cuIcon-messagefill margin-lr-xs"></text> 30 -->
+					<text class="cuIcon-appreciatefill margin-lr-xs " :class="jokeObj.zan>=1?'text-red':''" @tap.stop="zan(index)"></text>{{jokeObj.zan}}
+					<!-- <text class="cuIcon-forwardfill margin-lr-xs text-green" @tap.stop="shareJoke(jokeObj.joke)"></text> -->
 				</view>
 			</view>
 			<!-- 使用插槽自定义空白布局 -->
@@ -40,7 +40,8 @@
 				CustomBar: this.CustomBar,
 				windowHeight: this.windowHeight,
 				randomStart: Math.floor(Math.random() * 8200),
-				jokeList: []
+				jokeList: [],
+				zanList: []
 			}
 		},
 		methods: {
@@ -52,7 +53,7 @@
 					},
 					url: 'https://wngj.hzeyuan.cn/api/v1/joke',
 					success: (res) => {
-						console.log(res.data.data)
+						// console.log(res.data.data)
 						this.jokeList.splice(this.jokeList.length, 0, ...res.data.data)
 						this.randomStart += 20
 						success(res.data.data)
@@ -65,7 +66,7 @@
 			},
 			copyText(text) {
 				this.utils.copyText(text)
-				console.log(text)
+				// console.log(text)
 			},
 			refresh() {
 				this.$nextTick(() => {
@@ -78,18 +79,31 @@
 				this.loadData(pullScroll);
 			},
 			loadData(pullScroll) {
-				setTimeout(() => {
-					this.getJoke((data) => {
-						if (data.length <= 0) {
-							pullScroll.finish();
-						} else {
-							pullScroll.success();
-						}
-					})
-				}, 200);
+				this.getJoke((data) => {
+					if (data.length <= 0) {
+						pullScroll.finish();
+					} else {
+						pullScroll.success();
+					}
+				})
+			},
+			onShareAppMessage(options) {
 
+			},
+			zan(index){
+				console.log("zan")
+				for(let i=0;i<this.zanList.length;i++){
+					if(index ===this.zanList[i]){
+						return 
+					}
+				}
+				this.jokeList[index].zan +=1
+				this.zanList.push(index)
+			},
+			shareJoke(text){
+				console.log('123')
 			}
-
+			
 		}
 	}
 </script>

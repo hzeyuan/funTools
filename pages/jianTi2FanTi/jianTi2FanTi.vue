@@ -155,6 +155,9 @@ export default {
 		},
 		textareaInput(e) {
 			this.src = e.detail.value;
+		},
+		onShareAppMessage(options){
+			
 		}
 	}
 };
