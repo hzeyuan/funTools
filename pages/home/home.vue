@@ -329,15 +329,17 @@
 							url: '/pages/morseCode/morseCode'
 						})
 						break
-<<<<<<< HEAD
+
 					case 'huilv':
 						uni.navigateTo({
 							url: '/pages/huilv/huilv'
-=======
+						})
+						break
+						
 					case 'joke':
 						uni.navigateTo({
 							url: '/pages/joke/joke'
->>>>>>> master
+
 						})
 						break
 				}
