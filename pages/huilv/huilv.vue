@@ -1,39 +1,48 @@
 <template>
-	<view>
+	<view class="bg-gray">
 		<cu-custom :isBack="true" bgColor="bg-gradual-blue">
 			<!-- <block slot="backText">返回</block> -->
 			<block slot="content">汇率转换</block>
 		</cu-custom>
-		<uni-view class="flex">
-			<uni-view class="flex-sub  padding-sm margin-sm radius" >
-				<input type="text" name="" placeholder="基准货币" value="" @input="exchange">
-			</uni-view>
-			<uni-view class="flex-sub  padding-sm margin-sm radius  " style='text-align: left;'>
-				<view class="picker" style="width: 80%;display: inline-block;margin-left: 10rpx;">
-					<picker @change="PickerChange1" value="index1" :range="CurrencyPick">
-						<view style="width:50%;color: #888888;">{{CurrencyPick[index1]}}</view>
-					</picker>
+		<view class="flex bg-white ">
+			<view class="flex  justify-start padding-left" style="width: 50%;">
+				<text class="text-gray">基准货币</text>
+			</view>
+			<view class="flex justify-end padding-right" style="width: 50%;">
+				<text class="text-gray">更换</text>
+			</view>
+		</view>
+		
+		<view class="flex  bg-white padding-tb" style="height: 100%;">	
+			<view class="flex padding-left align-center" style="width: 50%;">
+				<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
+				<view class="flex justify-center align-center padding-left"><text class="text-bold text-xl">EUR</text></view>
+			</view>
+			<view class="flex flex-direction align-end padding-right" style="width: 50%;">
+				<text class="text-xxl text-grey">100</text>
+				<text>欧元</text>
+			</view>
+		</view>
+		<view class="padding-left padding-tb-sm">
+			<text class="text-gray">货币换算</text>
+		</view>
+		
+		<view class="flex  bg-white padding-tb solids-bottom" v-for="i in 5" style="height: 100%;">
+			<view class="flex padding-left align-center" style="width: 50%;">
+				<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
+				<view class="flex justify-center align-center padding-left">
+					<text class="text-bold text-xl">EUR</text>
+					<text class="cuIcon-playfill text-sm text-gray padding-left"></text>
 				</view>
-					<uni-view class="cu-item " style="width:10rpx;display: inline-block;">
-						<uni-text  class="lg text-gray cuIcon-unfold" style=''><span></span></uni-text>
-					</uni-view>
-			</uni-view>
-		</uni-view>
-		<uni-view class="flex">
-			<uni-view class="flex-sub  padding-sm margin-sm radius">
-				<input type="text" name="" id="" :value="value2" placeholder="货币兑换">
-			</uni-view>
-			<uni-view class="flex-sub  padding-sm margin-sm radius" style='text-align: left;'>
-				<view class="picker" style="width: 80%;display: inline-block;margin-left: 10rpx;">
-					<picker @change="PickerChange2" value="index2" :range="CurrencyPick">
-						<view style="width:50%;color: #888888;">{{CurrencyPick[index2]}}</view>
-					</picker>
-				</view>
-				<uni-view class="cu-item " style="width:10rpx;display: inline-block;">
-					<uni-text  class="lg text-gray cuIcon-unfold" style=''><span></span></uni-text>
-				</uni-view>
-			</uni-view>
-		</uni-view>						
+			</view>
+			<view class="flex flex-direction align-end padding-right" style="width: 50%;">
+				<text class="text-xxl text-grey">100</text>
+				<text>欧元</text>
+			</view>
+		</view>	
+		<view class="padding-tb flex justify-center align-center bg-white">
+			<text class="text-xl">+添加货币</text>
+		</view>
 	</view>
 </template>
 
