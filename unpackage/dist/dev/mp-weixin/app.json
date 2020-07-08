@@ -19,7 +19,8 @@
     "pages/jianTi2FanTi/jianTi2FanTi",
     "pages/tuchuang/tuchuang",
     "pages/morseCode/morseCode",
-    "pages/joke/joke"
+    "pages/joke/joke",
+    "pages/huilv/huilv"
   ],
   "subPackages": [
     {
@@ -91,5 +92,5 @@
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
   },
-  "sitemapLocation": "sitemap62.json"
+  "sitemapLocation": "sitemap75.json"
 }

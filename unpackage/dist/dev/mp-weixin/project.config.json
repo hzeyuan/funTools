@@ -22,7 +22,7 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -55,13 +55,6 @@
 		"miniprogram": {
 			"current": -1,
 			"list": [
-				{
-					"id": -1,
-					"name": "pages/home/home",
-					"pathName": "pages/home/home",
-					"query": "",
-					"scene": null
-				},
 				{
 					"id": -1,
 					"name": "pages/joke/joke",

@@ -6,9 +6,21 @@
 		</cu-custom>
 		<s-pull-scroll ref="pullScroll" :pullDown="pullDown" :pullUp="loadData" :headerHeight="StatusBar+CustomBar">
 			<!-- <image class="bgImg" src="https://wngj.oss-cn-shenzhen.aliyuncs.com/bg/17e9375ddc620b58dae035e982012be5.jpg"></image> -->
-			<view v-for="(jokeObj,index) in jokeList" :key="jokeObj.joke" class="flex flex-direction margin-sm padding-sm bg-white" @tap="copyText(jokeObj.joke)">
-				<text>{{index+1}}. {{jokeObj.joke.substring(2)}}</text>
-				<view class="text-gray text-sm text-right padding">
+			<view v-for="(jokeObj,index) in jokeList" :key="jokeObj.joke" class="flex cu-card article flex-direction margin-sm padding-sm bg-white" @tap="copyText(jokeObj.joke)">
+				<view class="cu-item shadow">
+					<view class="title"><view class="text-cut">{{index+1}}.{{jokeObj.title}}</view></view>
+					<view class="content">
+						<view class="desc">
+							<view class=""> {{jokeObj.joke}}</view>
+							<!-- <view>
+								<view class="cu-tag bg-red light sm round">正义天使</view>
+								<view class="cu-tag bg-green light sm round">史诗</view>
+							</view> -->
+						</view>
+					</view>
+				</view>
+				<!-- <text>{{index+1}}. {{jokeObj.joke}}</text> -->
+				<view class="text-gray text-sm text-right padding-lr text-xl">
 					<!-- <text class="cuIcon-attentionfill margin-lr-xs"></text> 10 -->
 					<text class="cuIcon-appreciatefill margin-lr-xs " :class="jokeObj.zan>=1?'text-red':''" @tap.stop="zan(index)"></text>{{jokeObj.zan}}
 					<!-- <text class="cuIcon-forwardfill margin-lr-xs text-green" @tap.stop="shareJoke(jokeObj.joke)"></text> -->

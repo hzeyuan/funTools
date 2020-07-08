@@ -78,7 +78,10 @@
     },
     "mp-qq" : {
         "setting" : {
-            "postcss" : true
-        }
+            "postcss" : true,
+            "es6" : true,
+            "minified" : true
+        },
+        "appid" : "1110590625"
     }
 }

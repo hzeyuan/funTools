@@ -59,10 +59,14 @@
 			"path": "pages/morseCode/morseCode",
 			"style": {}
 		}
-	    ,{
-            "path" : "pages/joke/joke",
-            "style" : {}
-        }
+	    , { 
+			"path" : "pages/joke/joke",
+			"style" : {}
+		}
+		,{
+			"path" : "pages/huilv/huilv",
+			"style": {}
+		}
     ],
 	"subPackages": [{
 		"root": "pagesComm",
