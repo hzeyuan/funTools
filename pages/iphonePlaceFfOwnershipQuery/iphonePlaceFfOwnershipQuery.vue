@@ -83,6 +83,9 @@ export default {
 				  })
 				  console.log('fail');
 			  })
+		},
+		onShareAppMessage(options){
+			
 		}
 	}
 };

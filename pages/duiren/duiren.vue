@@ -52,6 +52,9 @@ export default {
 				   this.duirenInstanceList = res.result
 				   this.duiren()
 			  });
+		},
+		onShareAppMessage(options){
+			
 		}
 	}
 };

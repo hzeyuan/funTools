@@ -5,23 +5,27 @@ export default {
 		uni.getSystemInfo({
 			success: function(e) {
 				console.log(e);
+				Vue.prototype.StatusBar = e.statusBarHeight;
+				console.log('导航条高度为:');
+				console.log(e.statusBarHeight);
 				Vue.prototype.windowWidth = e.windowWidth; //屏幕可以使用的宽度
 				// #ifndef MP
 				Vue.prototype.StatusBar = e.statusBarHeight;
 				if (e.platform == 'android') {
 					Vue.prototype.CustomBar = e.statusBarHeight + 50;
 					Vue.prototype.windowHeight = e.windowHeight -50 - e.statusBarHeight
-					Vue.prototype.windowWidth = e.windowWidth
 				} else {
 					Vue.prototype.CustomBar = e.statusBarHeight + 45;
-					Vue.prototype.windowHeight = e.windowHeight -45 - e.statusBarHeight
-					Vue.prototype.windowWidth = e.windowWidth
-				}
-				
+					Vue.prototype.windowHeight = e.windowHeight -45 - e.statusBarHeight			
+				}	
 				// #endif
-
+				
+				// #ifdef MP-QQ
+				Vue.prototype.CustomBar = e.statusBarHeight + 45;
+				Vue.prototype.windowHeight = e.screenHeight - e.statusBarHeight - 45;
+				// #endif
+				
 				// #ifdef MP-WEIXIN
-				Vue.prototype.StatusBar = e.statusBarHeight;
 				let custom = wx.getMenuButtonBoundingClientRect();
 				Vue.prototype.Custom = custom;
 				Vue.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
@@ -29,7 +33,6 @@ export default {
 				// #endif
 
 				// #ifdef MP-ALIPAY
-				Vue.prototype.StatusBar = e.statusBarHeight;
 				Vue.prototype.CustomBar = e.statusBarHeight + e.titleBarHeight;
 				// #endif
 			}

@@ -1,56 +1,47 @@
 <template>
-	<view>
+	<view class="bg-gray">
 		<cu-custom :isBack="true" bgColor="bg-gradual-blue">
 			<!-- <block slot="backText">返回</block> -->
 			<block slot="content">汇率转换</block>
 		</cu-custom>
-		<view class="flex justify-around ">
-		<view class="flex justify-start padding-left" style="width: 50%;">基准货币</view>			
-		<view class="flex justify-end padding-right" style="width: 50%;">更换</view>	
-		</view>
-		<view class="flex justify-around" style="height: 50px;">
-			<view class="flex justify-center align-center  justify-start">
-				<image src="" mode="" style="width: 50px;height: 50px;"></image>		
-				<text class="text-bold text-xl ">EUR</text>
+		<view class="flex bg-white ">
+			<view class="flex  justify-start padding-left padding-top-xs" style="width: 50%;">
+				<text class="text-gray">基准货币</text>
 			</view>
-			<view class="flex flex-direction justify-end ">
-				<text>100</text>
-				<text>欧元</text>
+			<view class="flex justify-end padding-right padding-top-xs" style="width: 50%;">
+				<text class="text-gray" @tap="ChangeCurent">更换</text>
 			</view>
 		</view>
-		<!-- <uni-view class="flex">
-			<uni-view class="flex-sub  padding-sm margin-sm radius" >
-				<input type="text" name="" placeholder="基准货币" value="" @input="exchange">
-			</uni-view>
-			<uni-view class="flex-sub  padding-sm margin-sm radius  " style='text-align: left;'>
-				<view class="picker" style="width: 80%;display: inline-block;margin-left: 10rpx;">
-					<picker @change="PickerChange1" value="index1" :range="CurrencyPick">
-						<view style="width:50%;color: #888888;">{{CurrencyPick[index1]}}</view>
-					</picker>
+		
+		<view class="flex  bg-white padding-tb" style="height: 100%;">	
+			<view class="flex padding-left align-center" style="width: 50%;">
+				<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
+				<view class="flex justify-center align-center padding-left"><text class="text-bold text-xl" value=''>{{CurrencyName[index1]}}</text></view>
+			</view>
+			<view class="flex flex-direction align-end padding-right" style="width: 50%;">
+				<input class="text-xxl text-grey " type="text" value='value1' placeholder="100" style="text-align: end;" />
+				<text>{{CurrencyPick[index1]}}</text>
+			</view>
+		</view>
+		<view class="padding-left padding-tb-sm">
+			<text class="text-gray">货币换算</text>
+		</view>
+		
+		<view class="flex  bg-white padding-tb solids-bottom" v-for="i in 5" style="height: 100%;">
+			<view class="flex padding-left align-center" style="width: 50%;">
+				<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
+				<view class="flex justify-center align-center padding-left">
+					<text class="text-bold text-xl">{{CurrencyName[index2]}}</text>
+					<text class="cuIcon-playfill text-sm text-gray padding-left"></text>
 				</view>
-					<uni-view class="cu-item " style="width:10rpx;display: inline-block;">
-						<uni-text  class="lg text-gray cuIcon-unfold" style=''><span></span></uni-text>
-					</uni-view>
-			</uni-view>
-		</uni-view> -->
-		<!-- <hr> -->
-		<!-- <uni-view class="flex">
-			<uni-view class="flex-sub  padding-sm margin-sm radius">
-				<input type="text" name="" id="" :value="value2" placeholder="货币换算">
-			</uni-view>
-			<uni-view class="flex-sub  padding-sm margin-sm radius" style='text-align: left;'>
-				<view class="picker" style="width: 80%;display: inline-block;margin-left: 10rpx;">
-					<picker @change="PickerChange2" value="index2" :range="CurrencyPick">
-						<view style="width:50%;color: #888888;">{{CurrencyPick[index2]}}</view>
-					</picker>
-				</view>
-				<uni-view class="cu-item " style="width:10rpx;display: inline-block;">
-					<uni-text  class="lg text-gray cuIcon-unfold" style=''><span></span></uni-text>
-				</uni-view>
-			</uni-view>
-		</uni-view> -->
-		<view class="add">
-			<text>+ 添加货币</text>
+			</view>
+			<view class="flex flex-direction align-end padding-right" style="width: 50%;">
+				<input class="text-xxl text-grey " type="text" value="" placeholder="100" style="text-align: end;" />
+				<text>{{CurrencyPick[index2]}}</text>
+			</view>
+		</view>
+		<view class="padding-tb flex justify-center align-center bg-white">
+			<text class="text-xl">+添加货币</text>
 		</view>
 	</view>
 </template>
@@ -95,29 +86,32 @@
 				value2:'',
 				pri:{},
 				CurrencyPick:CurrencyPick,
-				// CurrencyRate: [
-				// 	'USD',
-				// 	'EUR',
-				// 	'HKD',
-				// 	'JPY',
-				// 	'GBP',
-				// 	'ASP',
-				// 	'SPD',
-				// 	'SFC',
-				// 	'DKE',
-				// 	'PTA',
-				// 	'RGT',
-				// 	'NKE',
-				// 	'NZD',
-				// 	'PSO',
-				// 	'RBE',
-				// 	'SKA',
-				// 	'NTD',
-				// 	'BRL',
-				// 	'WON',
-				// 	'SAR',
+				CurrencyName: [
+					'USD',
+					'EUR',
+					'HKD',
+					'JPY',
+					'GBP',
+					'ASP',
+					'CND',
+					'THB',
+					'SPD',
+					'SFC',
+					'DKE',
+					'PTA',
+					'RGT',
+					'NKE',
+					'NZD',
+					'PSO',
+					'RBE',
+					'SKA',
+					'NTD',
+					'BRL',
+					'WON',
+					'SAR',
+					'RMB',
 					
-				// ],
+				],
 					
 				
 			}
@@ -151,7 +145,7 @@
 							header: {
 								'Content-Type' : 'application/json'
 							},
-							url: 'http://web.juhe.cn:8080/finance/exchange/rmbquot?key=ccb02207097d84ac2bfdd45f73233184',
+							// url: 'http://web.juhe.cn:8080/finance/exchange/rmbquot?key=ccb02207097d84ac2bfdd45f73233184',
 							data:{
 								
 							},

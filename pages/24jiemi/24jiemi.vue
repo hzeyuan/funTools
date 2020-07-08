@@ -79,6 +79,9 @@
 					data: text
 				});
 			},
+			onShareAppMessage(options){
+				
+			}
 		}
 	}
 </script>

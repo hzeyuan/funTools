@@ -153,6 +153,9 @@ export default {
 			this.SpeedIdx = (this.SpeedIdx + 1) % this.speedList.length;
 			this.stopInterval();
 			this.startInterval(this.SpeedIdx);
+		},
+		onShareAppMessage(options){
+			
 		}
 	}
 };

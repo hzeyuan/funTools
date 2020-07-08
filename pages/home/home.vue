@@ -4,7 +4,7 @@
 			<!-- <block slot="backText">返回</block> -->
 			<block slot="content">四次元口袋</block>
 		</cu-custom>
-		<scroll-view scroll-y class="scrollPage">
+		<scroll-view scroll-y class="scrollPage" style="padding-top:50px">
 			<view class="cu-bar bg-white search fixed" :style="[{top:CustomBar + 'px'}]">
 				<view class="search-form round">
 					<text class="cuIcon-search"></text>
@@ -54,12 +54,15 @@
 				animation: '',
 				searchResult: [],
 				heightercentage: 0.65,
-				list: [{
+				list: [
+					// #ifdef MP-WEIXIN
+					{
 						animation: 'fade',
 						color: 'blue',
 						name: 'chp',
 						Function: '彩虹屁捧杀',
 					},
+					// #endif
 					{
 						animation: 'scale-up',
 						color: 'blue',
@@ -78,12 +81,12 @@
 						name: 'rmbZhuanHuan',
 						Function: '人民币大写转换'
 					},
-					{
-						animation: 'scale-down',
-						color: 'blue',
-						name:'sfzQuery',
-						Function: '身份证查询'
-					},
+					// {
+					// 	animation: 'scale-down',
+					// 	color: 'blue',
+					// 	name:'sfzQuery',
+					// 	Function: '身份证查询'
+					// },
 					{
 						name: 'slide-right',
 						color: 'blue',
@@ -191,7 +194,7 @@
 					{
 						animation: 'slide-left',
 						color: 'blue',
-						name: 'img2char',
+						name: 'xxx',
 						Function: '敬请期待!'
 					},
 					{
@@ -359,8 +362,10 @@
 						this.searchResult.push(this.list[i])
 					}
 				}
+			},
+			onShareAppMessage(options){
+				
 			}
-
 		}
 	};
 </script>
@@ -377,6 +382,6 @@
 	}
 
 	page {
-		padding-top: 50px;
+		/* padding-top: 50px; */
 	}
 </style>

@@ -71,7 +71,10 @@
 			    },
 			    clickToday(data) {
 			      console.log(data); // 跳到了本月
-			    }
+			    },
+				onShareAppMessage(options){
+					
+				}
 		}
 	}
 </script>

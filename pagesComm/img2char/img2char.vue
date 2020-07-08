@@ -30,7 +30,7 @@
 			</view>
 		</view>
 		
-		<scroll-view scroll-x  scroll-y :style="[{'height':windowHeight/2-20+'px;','font-size': fontSize+'px;','width':windowWidth-40+'px'}]" style="display: block;font-family: monospace;white-space: pre;margin: 20px 20px;text-align: center;">{{artText}}</scroll-view>
+		<scroll-view scroll-x  scroll-y :style="[{'height':windowHeight/2-20+'px;','font-size': fontSize+'px;','width':windowWidth-40+'px'}]" @tap="utils.copyText(artText)" style="display: block;font-family: monospace;white-space: pre;margin: 20px 20px;text-align: center;">{{artText}}</scroll-view>
 		
 	</view>
 </template>
@@ -204,6 +204,9 @@ XXXEEXXXXXXEEEEEEEEEEEEEEEEEEEEEXXXXXXXCCCCXXXXXXXXXXXXXXXXXXXXEEEEOOOO$$$$$$$$$
 					}
 				}
 			});
+		},
+		onShareAppMessage(options){
+			
 		}
 	}
 };

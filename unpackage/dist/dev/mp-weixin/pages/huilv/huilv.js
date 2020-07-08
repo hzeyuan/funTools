@@ -178,15 +178,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 
 {
@@ -226,31 +217,34 @@ var _default =
       value1: '',
       value2: '',
       pri: {},
-      CurrencyPick: CurrencyPick
-      // CurrencyRate: [
-      // 	'USD',
-      // 	'EUR',
-      // 	'HKD',
-      // 	'JPY',
-      // 	'GBP',
-      // 	'ASP',
-      // 	'SPD',
-      // 	'SFC',
-      // 	'DKE',
-      // 	'PTA',
-      // 	'RGT',
-      // 	'NKE',
-      // 	'NZD',
-      // 	'PSO',
-      // 	'RBE',
-      // 	'SKA',
-      // 	'NTD',
-      // 	'BRL',
-      // 	'WON',
-      // 	'SAR',
+      CurrencyPick: CurrencyPick,
+      CurrencyName: [
+      'USD',
+      'EUR',
+      'HKD',
+      'JPY',
+      'GBP',
+      'ASP',
+      'CND',
+      'THB',
+      'SPD',
+      'SFC',
+      'DKE',
+      'PTA',
+      'RGT',
+      'NKE',
+      'NZD',
+      'PSO',
+      'RBE',
+      'SKA',
+      'NTD',
+      'BRL',
+      'WON',
+      'SAR',
+      'RMB'] };
 
-      // ],
-    };
+
+
 
 
   },
@@ -283,7 +277,7 @@ var _default =
             header: {
               'Content-Type': 'application/json' },
 
-            url: 'http://web.juhe.cn:8080/finance/exchange/rmbquot?key=ccb02207097d84ac2bfdd45f73233184',
+            // url: 'http://web.juhe.cn:8080/finance/exchange/rmbquot?key=ccb02207097d84ac2bfdd45f73233184',
             data: {},
 
 

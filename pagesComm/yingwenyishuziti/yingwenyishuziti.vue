@@ -90,6 +90,9 @@ iiiiiiii     llllllll   ooooooooooo              vvv               eeeeeeeeeeeee
 			},
 			changefontSize(number){
 				this.fontSize +=number
+			},
+			onShareAppMessage(options){
+				
 			}
 		}
 	}

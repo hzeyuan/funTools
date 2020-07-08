@@ -1,6 +1,8 @@
 <template>
 	<view>
-		<cu-custom :isBack="true" bgColor="bg-gradual-blue"><block slot="content">亲戚计算器</block></cu-custom>
+		<cu-custom :isBack="true" bgColor="bg-gradual-blue">
+			<block slot="content">亲戚计算器</block>
+		</cu-custom>
 		<view class="container">
 			<view class="cu-form-group">
 				<view class="title">您的性别:</view>
@@ -50,98 +52,105 @@
 </template>
 
 <script>
-// var t = require("../../utils/weight.js");
-var rs = require('../../utils/relationship.min.js');
-export default {
-	onLoad() {
-		let result = rs({ text: '爸爸的哥哥', sex: 1 });
-		console.log('结果：' + result);
-	},
-	data() {
-		return {
-			indexSix: 0,
-			inputValueSix: 1,
-			typeDc: ['我称呼对方', '对方称呼我'],
-			indexType: 0,
-			inputValueType: !1,
-			infix: '轻松搞定亲戚关系～',
-			messageR: '逢年过节再不尴尬！',
-			disabledlg: !0,
-			disabledlp: !1
-		};
-	},
-	methods: {
-		SwitchSex(e){
-			this.indexSix = e.detail.value?1:0
-			this.computed()
+	// var t = require("../../utils/weight.js");
+	var rs = require('../../utils/relationship.min.js');
+	export default {
+		onLoad() {
+			let result = rs({
+				text: '爸爸的哥哥',
+				sex: 1
+			});
+			console.log('结果：' + result);
 		},
-		changeTypeDc() {
-			this.indexType = this.indexType == 0 ? 1 : 0;
-			this.inputValueType = ! this.inputValueType
-			this.computed()
-		},
-		bindViewTapInput(i) {
-			var e = i.currentTarget.id,
-				a = this.infix;
-			'轻松搞定亲戚关系～' == a
-				? this.infix = e
-				: this.infix = a + '的' + e		  
-			var t = '爸爸,老公,儿子,哥哥,弟弟'.indexOf(e) > -1;
-			this.disabledlg = t
-			this.disabledlp = !t
-		},
-		bindViewTapOpt(e) {
-			var a = e.currentTarget.id.trim();
-			if ('ac' == a) this.clearAll();
-			else if ('=' == a) {
-				this.computed()
-			}
-		},
-		computed(){
-			var t = {
-				text: this.infix,
-				sex: this.indexSix,
-				type: 'default',
-				reverse: this.inputValueType
+		data() {
+			return {
+				indexSix: 0,
+				inputValueSix: 1,
+				typeDc: ['我称呼对方', '对方称呼我'],
+				indexType: 0,
+				inputValueType: !1,
+				infix: '轻松搞定亲戚关系～',
+				messageR: '逢年过节再不尴尬！',
+				disabledlg: !0,
+				disabledlp: !1
 			};
-			let result = rs(t)
-			console.log(result)
-			if(result.length==0){
-				this.messageR = '超出计算范围啦！'
-			}else{
-				this.messageR = result.length>0?result.join(','):result[0]
-			}
 		},
-		clearAll() {
-		        var i = 1 == this.inputValueSix;
-		        this.setData({
-		            disabledlg: i,
-		            disabledlp: !i,
-		            infix: "轻松搞定亲戚关系～",
-		            messageR: ""
-		        });
-		    },
-	}
-};
+		methods: {
+			SwitchSex(e) {
+				this.indexSix = e.detail.value ? 1 : 0
+				this.computed()
+			},
+			changeTypeDc() {
+				this.indexType = this.indexType == 0 ? 1 : 0;
+				this.inputValueType = !this.inputValueType
+				this.computed()
+			},
+			bindViewTapInput(i) {
+				var e = i.currentTarget.id,
+					a = this.infix;
+				'轻松搞定亲戚关系～' == a
+					?
+					this.infix = e :
+					this.infix = a + '的' + e
+				var t = '爸爸,老公,儿子,哥哥,弟弟'.indexOf(e) > -1;
+				this.disabledlg = t
+				this.disabledlp = !t
+			},
+			bindViewTapOpt(e) {
+				var a = e.currentTarget.id.trim();
+				if ('ac' == a) this.clearAll();
+				else if ('=' == a) {
+					this.computed()
+				}
+			},
+			computed() {
+				var t = {
+					text: this.infix,
+					sex: this.indexSix,
+					type: 'default',
+					reverse: this.inputValueType
+				};
+				let result = rs(t)
+				console.log(result)
+				if (result.length == 0) {
+					this.messageR = '超出计算范围啦！'
+				} else {
+					this.messageR = result.length > 0 ? result.join(',') : result[0]
+				}
+			},
+			clearAll() {
+				var i = 1 == this.inputValueSix;
+				this.setData({
+					disabledlg: i,
+					disabledlp: !i,
+					infix: "轻松搞定亲戚关系～",
+					messageR: ""
+				});
+			},
+			onShareAppMessage(options) {
+
+			}
+		}
+	};
 </script>
 
 <style scoped>
-.keyboard {
-	width: 100vw;
-}
+	.keyboard {
+		width: 100vw;
+	}
 
-.key-rows {
-	display: flex;
-	width: 100vw;
-}
+	.key-rows {
+		display: flex;
+		width: 100vw;
+	}
 
-.key {
-	width: 25vw;
-}
+	.key {
+		width: 25vw;
+	}
 
-.key button {
-	height: 10vh;
-	line-height: 10vh;
-	border-radius: 0px;
-}
+	.key button {
+		height: 10vh;
+		line-height: 10vh;
+		border-radius: 0px;
+	}
 </style>

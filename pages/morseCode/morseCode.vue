@@ -166,6 +166,9 @@
 				}
 				return msg.join('');
 			},
+			onShareAppMessage(options){
+				
+			}
 		}
 	}
 </script>

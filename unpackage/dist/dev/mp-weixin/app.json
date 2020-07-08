@@ -20,7 +20,8 @@
     "pages/tuchuang/tuchuang",
     "pages/morseCode/morseCode",
     "pages/joke/joke",
-    "pages/huilv/huilv"
+    "pages/huilv/huilv",
+    "pages/huilv/huilvChange"
   ],
   "subPackages": [
     {
@@ -92,5 +93,5 @@
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
   },
-  "sitemapLocation": "sitemap1.json"
+  "sitemapLocation": "sitemap12.json"
 }
