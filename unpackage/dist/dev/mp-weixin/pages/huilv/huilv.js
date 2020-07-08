@@ -180,6 +180,8 @@ var _default =
     '日元',
     '英镑',
     '澳大利元',
+    '加拿大元',
+    '泰国铢',
     '新加坡元',
     '瑞士法郎',
     '丹麦克朗',
@@ -193,14 +195,14 @@ var _default =
     '新台币',
     '巴西雷亚尔',
     '韩国元',
-    '南非兰特'];
+    '南非兰特',
+    '人民币'];
 
 
 
     return {
-      placeholderA: '输入',
       index1: '0',
-      index2: '0',
+      index2: '22',
       src: '',
       dst: '',
       value1: '',
@@ -272,10 +274,19 @@ var _default =
                   r.push(Object.values(dic[key]));
                 }
 
-                console.log(r[0][0]);
-                console.log(r);
-                _this.value2 = _this.value1 * (r[_this.index1][0] / 100) / (r[_this.index2][0] / 100);
-
+                // console.log(r[0][0]);
+                // console.log(r);
+                // == 等于 ===严格等于
+                if (_this.index1 == 22 && _this.index2 !== 22) {
+                  console.log(' index1 rmb');
+                  _this.value2 = _this.value1 * 1 / (r[_this.index2][0] / 100);
+                } else if (_this.index2 == 22 && _this.index1 !== 22) {
+                  console.log(' index2 rmb');
+                  _this.value2 = _this.value1 * (r[_this.index1][0] / 100);
+                } else
+                {
+                  _this.value2 = _this.value1 * (r[_this.index1][0] / 100) / (r[_this.index2][0] / 100);
+                }
                 console.log(_this.index1);
                 console.log(_this.index2);
                 console.log(_this.value1);

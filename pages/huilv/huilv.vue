@@ -6,7 +6,7 @@
 		</cu-custom>
 		<uni-view class="flex">
 			<uni-view class="flex-sub  padding-sm margin-sm radius" >
-				<input type="text" name="" placeholder="输入" value="" @input="exchange">
+				<input type="text" name="" placeholder="基准货币" value="" @input="exchange">
 			</uni-view>
 			<uni-view class="flex-sub  padding-sm margin-sm radius  " style='text-align: left;'>
 				<view class="picker" style="width: 80%;display: inline-block;margin-left: 10rpx;">
@@ -21,7 +21,7 @@
 		</uni-view>
 		<uni-view class="flex">
 			<uni-view class="flex-sub  padding-sm margin-sm radius">
-				<input type="text" name="" id="" :value="value2" placeholder="输出">
+				<input type="text" name="" id="" :value="value2" placeholder="货币兑换">
 			</uni-view>
 			<uni-view class="flex-sub  padding-sm margin-sm radius" style='text-align: left;'>
 				<view class="picker" style="width: 80%;display: inline-block;margin-left: 10rpx;">
@@ -48,6 +48,8 @@
 				'日元',
 				'英镑',
 				'澳大利元',
+				'加拿大元',
+				'泰国铢',
 				'新加坡元',
 				'瑞士法郎',
 				'丹麦克朗',
@@ -62,13 +64,13 @@
 				'巴西雷亚尔',
 				'韩国元',
 				'南非兰特',
+				'人民币'
 				];
 				
 				
 			return {
-				placeholderA: '输入',
 				index1: '0',
-				index2: '0',
+				index2: '22',
 				src: '',
 				dst: '',
 				value1:'',
@@ -140,10 +142,19 @@
 									r.push(Object.values(dic[key]))			
 									}
 									
-									console.log(r[0][0]);
-									console.log(r);
+									// console.log(r[0][0]);
+									// console.log(r);
+									// == 等于 ===严格等于
+									if(this.index1 == 22 && this.index2 !== 22){
+										console.log(' index1 rmb')
+										this.value2 = this.value1*1/(r[this.index2][0]/100)
+									}else if(this.index2 == 22 && this.index1 !==22){
+										console.log(' index2 rmb')
+										this.value2 = this.value1*(r[this.index1][0]/100)
+									}
+									else{
 									this.value2 = this.value1*(r[this.index1][0]/100)/(r[this.index2][0]/100)
-									
+									}
 									console.log(this.index1)
 									console.log(this.index2)
 									console.log(this.value1)
