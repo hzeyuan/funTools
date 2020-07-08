@@ -1,0 +1,1 @@
+<cu-custom vue-id="41ba3b6e-1" isBack="{{true}}" bgColor="bg-gradual-blue" bind:__l="__l" vue-slots="{{['content']}}"><view slot="content">汇率转换</view></cu-custom>

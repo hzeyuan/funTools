@@ -8,8 +8,9 @@
 			<view class="flex  justify-start padding-left padding-top-xs" style="width: 50%;">
 				<text class="text-gray">基准货币</text>
 			</view>
-			<view class="flex justify-end padding-right padding-top-xs" style="width: 50%;">
+			<view class="flex justify-end align-center padding-right-xs padding-top-xs" style="width: 50%;">
 				<text class="text-gray" @tap="ChangeCurent">更换</text>
+				<text class="cuIcon-playfill text-sm text-gray "></text>
 			</view>
 		</view>
 		
@@ -19,7 +20,7 @@
 				<view class="flex justify-center align-center padding-left"><text class="text-bold text-xl" value=''>{{CurrencyName[index1]}}</text></view>
 			</view>
 			<view class="flex flex-direction align-end padding-right" style="width: 50%;">
-				<input class="text-xxl text-grey " type="text" value='value1' placeholder="100" style="text-align: end;" />
+				<input class="text-xxl text-grey " type="text" :value='value1' placeholder="100" style="text-align: end;" />
 				<text>{{CurrencyPick[index1]}}</text>
 			</view>
 		</view>
@@ -36,12 +37,12 @@
 				</view>
 			</view>
 			<view class="flex flex-direction align-end padding-right" style="width: 50%;">
-				<input class="text-xxl text-grey " type="text" value="" placeholder="100" style="text-align: end;" />
+				<input class="text-xxl text-grey " type="text" :value="value2" placeholder="100" style="text-align: end;" />
 				<text>{{CurrencyPick[index2]}}</text>
 			</view>
 		</view>
 		<view class="padding-tb flex justify-center align-center bg-white">
-			<text class="text-xl">+添加货币</text>
+			<text class="text-xl" @tap="AddCurreny">+添加货币</text>
 		</view>
 	</view>
 </template>
@@ -131,6 +132,13 @@
 				})
 				console.log('更换')
 			},
+			AddCurreny(){
+				uni.navigateTo({
+					url:'/pages/huilv/huilvAdd'
+				})
+				console.log('更换')
+			},
+			
 			exchange(e) {
 				// let src = this.CurrencyRate[this.index1];
 				// let dst = this.CurrencyRate[this.index2];

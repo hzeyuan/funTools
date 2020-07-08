@@ -67,6 +67,14 @@
 			"path" : "pages/huilv/huilv",
 			"style": {}
 		}
+		,{
+			"path" : "pages/huilv/huilvChange",
+			"style": {}
+		}
+		,{
+			"path" : "pages/huilv/huilvAdd",
+			"style": {}
+		}
         
     ],
 	"subPackages": [{

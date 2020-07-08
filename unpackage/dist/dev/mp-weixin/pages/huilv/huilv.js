@@ -178,6 +178,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 
 {
@@ -263,6 +264,13 @@ var _default =
 
       console.log('更换');
     },
+    AddCurreny: function AddCurreny() {
+      uni.navigateTo({
+        url: '/pages/huilv/huilvAdd' });
+
+      console.log('更换');
+    },
+
     exchange: function exchange(e) {var _this = this;
       // let src = this.CurrencyRate[this.index1];
       // let dst = this.CurrencyRate[this.index2];

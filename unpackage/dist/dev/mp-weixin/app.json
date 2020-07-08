@@ -21,7 +21,8 @@
     "pages/morseCode/morseCode",
     "pages/joke/joke",
     "pages/huilv/huilv",
-    "pages/huilv/huilvChange"
+    "pages/huilv/huilvChange",
+    "pages/huilv/huilvAdd"
   ],
   "subPackages": [
     {
@@ -92,6 +93,5 @@
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  },
-  "sitemapLocation": "sitemap12.json"
+  }
 }
