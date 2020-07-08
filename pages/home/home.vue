@@ -193,7 +193,13 @@
 						color: 'blue',
 						name: 'img2char',
 						Function: '敬请期待!'
-					}
+					},
+					{
+						animation: 'slide-left',
+						color: 'blue',
+						name: 'huilv',
+						Function: '汇率转换'
+					},
 				],
 				toggleDelay: false,
 				windowHeight: this.windowHeight
@@ -323,9 +329,17 @@
 							url: '/pages/morseCode/morseCode'
 						})
 						break
+
+					case 'huilv':
+						uni.navigateTo({
+							url: '/pages/huilv/huilv'
+						})
+						break
+						
 					case 'joke':
 						uni.navigateTo({
 							url: '/pages/joke/joke'
+
 						})
 						break
 				}
