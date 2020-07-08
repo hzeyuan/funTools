@@ -92,5 +92,9 @@
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
   },
+<<<<<<< HEAD
   "sitemapLocation": "sitemap75.json"
+=======
+  "sitemapLocation": "sitemap27.json"
+>>>>>>> 788a7c59226eb2bc2b875c08e103070714af577d
 }
