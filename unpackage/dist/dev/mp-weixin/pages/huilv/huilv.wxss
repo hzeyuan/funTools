@@ -9,4 +9,19 @@
 .cu-item.data-v-9909ed58{
 		margin-right: 10rpx;
 }
+.text-title.data-v-9909ed58 {
+	color: #333333;
+	margin-top: 10rpx;
+	margin-left: 10rpx;
+	display: inline-block;
+}
+.text-right.data-v-9909ed58 {
+
+	color: #333333;
+	display: inline-block;
+	text-align: right;
+}
+.add.data-v-9909ed58 {
+	text-align: center;
+}
 

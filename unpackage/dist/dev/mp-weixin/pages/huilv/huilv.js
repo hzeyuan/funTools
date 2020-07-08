@@ -169,6 +169,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 
 {
@@ -238,12 +256,18 @@ var _default =
   },
   methods: {
     PickerChange1: function PickerChange1(e) {
-      console.log(e.detail.value);
+      // console.log(e.detail.value)
       this.index1 = e.detail.value;
     },
     PickerChange2: function PickerChange2(e) {
-      console.log(e.detail.value);
+      // console.log(e.detail.value)
       this.index2 = e.detail.value;
+    },
+    ChangeCurent: function ChangeCurent() {
+      uni.navigateTo({
+        url: '/pages/huilv/huilvChange' });
+
+      console.log('更换');
     },
     exchange: function exchange(e) {var _this = this;
       // let src = this.CurrencyRate[this.index1];
@@ -267,29 +291,25 @@ var _default =
               console.log(res);
 
               if (res.data.error_code === 0) {
-
                 var r = [];
                 var dic = res.data.result[0];
                 for (var key in dic) {
                   r.push(Object.values(dic[key]));
                 }
-
                 // console.log(r[0][0]);
                 // console.log(r);
                 // == 等于 ===严格等于
                 if (_this.index1 == 22 && _this.index2 !== 22) {
-                  console.log(' index1 rmb');
                   _this.value2 = _this.value1 * 1 / (r[_this.index2][0] / 100);
                 } else if (_this.index2 == 22 && _this.index1 !== 22) {
-                  console.log(' index2 rmb');
                   _this.value2 = _this.value1 * (r[_this.index1][0] / 100);
                 } else
                 {
                   _this.value2 = _this.value1 * (r[_this.index1][0] / 100) / (r[_this.index2][0] / 100);
                 }
-                console.log(_this.index1);
-                console.log(_this.index2);
-                console.log(_this.value1);
+                // console.log(this.index1)
+                // console.log(this.index2)
+                // console.log(this.value1)
               }
             },
             fail: function fail(err) {

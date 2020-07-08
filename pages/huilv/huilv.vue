@@ -4,7 +4,21 @@
 			<!-- <block slot="backText">返回</block> -->
 			<block slot="content">汇率转换</block>
 		</cu-custom>
-		<uni-view class="flex">
+		<view class="flex justify-around ">
+		<view class="flex justify-start padding-left" style="width: 50%;">基准货币</view>			
+		<view class="flex justify-end padding-right" style="width: 50%;">更换</view>	
+		</view>
+		<view class="flex justify-around" style="height: 50px;">
+			<view class="flex justify-center align-center  justify-start">
+				<image src="" mode="" style="width: 50px;height: 50px;"></image>		
+				<text class="text-bold text-xl ">EUR</text>
+			</view>
+			<view class="flex flex-direction justify-end ">
+				<text>100</text>
+				<text>欧元</text>
+			</view>
+		</view>
+		<!-- <uni-view class="flex">
 			<uni-view class="flex-sub  padding-sm margin-sm radius" >
 				<input type="text" name="" placeholder="基准货币" value="" @input="exchange">
 			</uni-view>
@@ -18,10 +32,11 @@
 						<uni-text  class="lg text-gray cuIcon-unfold" style=''><span></span></uni-text>
 					</uni-view>
 			</uni-view>
-		</uni-view>
-		<uni-view class="flex">
+		</uni-view> -->
+		<!-- <hr> -->
+		<!-- <uni-view class="flex">
 			<uni-view class="flex-sub  padding-sm margin-sm radius">
-				<input type="text" name="" id="" :value="value2" placeholder="货币兑换">
+				<input type="text" name="" id="" :value="value2" placeholder="货币换算">
 			</uni-view>
 			<uni-view class="flex-sub  padding-sm margin-sm radius" style='text-align: left;'>
 				<view class="picker" style="width: 80%;display: inline-block;margin-left: 10rpx;">
@@ -33,7 +48,10 @@
 					<uni-text  class="lg text-gray cuIcon-unfold" style=''><span></span></uni-text>
 				</uni-view>
 			</uni-view>
-		</uni-view>						
+		</uni-view> -->
+		<view class="add">
+			<text>+ 添加货币</text>
+		</view>
 	</view>
 </template>
 
@@ -106,12 +124,18 @@
 		},
 		methods: {
 			PickerChange1(e) {
-				console.log(e.detail.value)
+				// console.log(e.detail.value)
 				this.index1 = e.detail.value; 
 			},
 			PickerChange2(e) {
-				console.log(e.detail.value)
+				// console.log(e.detail.value)
 				this.index2 = e.detail.value; 
+			},
+			ChangeCurent(){
+				uni.navigateTo({
+					url:'/pages/huilv/huilvChange'
+				})
+				console.log('更换')
 			},
 			exchange(e) {
 				// let src = this.CurrencyRate[this.index1];
@@ -134,30 +158,26 @@
 							success: res => {
 								console.log(res);
 								
-								if(res.data.error_code === 0){
-					
+								if(res.data.error_code === 0){					
 									let r = [];
 									let dic = res.data.result[0];
 									for(var key in dic){				
 									r.push(Object.values(dic[key]))			
-									}
-									
+									}									
 									// console.log(r[0][0]);
 									// console.log(r);
 									// == 等于 ===严格等于
-									if(this.index1 == 22 && this.index2 !== 22){
-										console.log(' index1 rmb')
+									if(this.index1 == 22 && this.index2 !== 22){										
 										this.value2 = this.value1*1/(r[this.index2][0]/100)
-									}else if(this.index2 == 22 && this.index1 !==22){
-										console.log(' index2 rmb')
+									}else if(this.index2 == 22 && this.index1 !==22){									
 										this.value2 = this.value1*(r[this.index1][0]/100)
 									}
 									else{
 									this.value2 = this.value1*(r[this.index1][0]/100)/(r[this.index2][0]/100)
 									}
-									console.log(this.index1)
-									console.log(this.index2)
-									console.log(this.value1)
+									// console.log(this.index1)
+									// console.log(this.index2)
+									// console.log(this.value1)
 								}
 							},
 							fail: err => {
@@ -188,5 +208,21 @@
 	}
 	.cu-item{
 			margin-right: 10rpx;
+	}
+	.text-title {
+		color: #333333;
+		margin-top: 10upx;
+		margin-left: 10upx;
+		display: inline-block;
+	}
+	.text-right {
+
+		color: #333333;
+		display: inline-block;
+		text-align: right;
+	}
+	.add {
+		text-align: center;
+		
 	}
 </style>

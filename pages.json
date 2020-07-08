@@ -67,6 +67,7 @@
 			"path" : "pages/huilv/huilv",
 			"style": {}
 		}
+        
     ],
 	"subPackages": [{
 		"root": "pagesComm",
