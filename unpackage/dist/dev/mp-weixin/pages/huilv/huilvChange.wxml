@@ -1,1 +1,1 @@
-<cu-custom vue-id="60a76162-1" isBack="{{true}}" bgColor="bg-gradual-blue" bind:__l="__l" vue-slots="{{['content']}}"><view slot="content">汇率更换</view></cu-custom>
+<view class="hello _div"><view class="_ul"><block wx:for="{{users}}" wx:for-item="user" wx:for-index="__i0__"><view class="_li">{{user}}</view></block>//遍历传递过来的值，然后呈现到页面</view></view>

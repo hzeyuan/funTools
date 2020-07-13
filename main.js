@@ -6,6 +6,8 @@ import utils from 'utils/index.js'
 
 
 import cuCustom from './colorui/components/cu-custom.vue'
+import store from './store'  
+Vue.prototype.$store = store  
 Vue.component('cu-custom',cuCustom)
 Vue.prototype.utils = utils
 Vue.config.productionTip = false
@@ -33,7 +35,8 @@ Vue.prototype.setData = function(obj){
 App.mpType = 'app'
 
 const app = new Vue({
-    ...App
+
+	...App
 })
 app.$mount()
 

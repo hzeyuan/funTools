@@ -27,27 +27,36 @@
 		<view class="padding-left padding-tb-sm">
 			<text class="text-gray">货币换算</text>
 		</view>
-		
-		<view class="flex  bg-white padding-tb solids-bottom" v-for="i in 5" style="height: 100%;">
+		<!-- 货币换算 -->
+		<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-show='1' v-for="i in CurrencyName.length">
 			<view class="flex padding-left align-center" style="width: 50%;">
 				<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
 				<view class="flex justify-center align-center padding-left">
-					<text class="text-bold text-xl">{{CurrencyName[index2]}}</text>
+					<text class="text-bold text-xl">{{CurrencyName[i]}}</text>
 					<text class="cuIcon-playfill text-sm text-gray padding-left"></text>
 				</view>
 			</view>
 			<view class="flex flex-direction align-end padding-right" style="width: 50%;">
 				<input class="text-xxl text-grey " type="text" :value="value2" placeholder="100" style="text-align: end;" />
-				<text>{{CurrencyPick[index2]}}</text>
+				<text>{{CurrencyPick[i]}}</text>
 			</view>
-		</view>
+		</view>	
+		<!-- <users  @parentFunction='hello'></users> -->
 		<view class="padding-tb flex justify-center align-center bg-white">
 			<text class="text-xl" @tap="AddCurreny">+添加货币</text>
 		</view>
+	
+	
+	
+			
+		</view>
+		
 	</view>
 </template>
 
 <script>
+	import users from 'pages/huilv/huilvAdd'
+	
 	
 	export default {
 		data() {
@@ -79,6 +88,8 @@
 				
 				
 			return {
+				users:["Henry","Bucky","Emily"],
+				name: 'hdh',
 				index1: '0',
 				index2: '22',
 				src: '',
@@ -113,6 +124,7 @@
 					'RMB',
 					
 				],
+				isShow : false,
 					
 				
 			}
@@ -137,6 +149,9 @@
 					url:'/pages/huilv/huilvAdd'
 				})
 				console.log('更换')
+			},
+			hello(msg){
+				console.log('子传父', msg)
 			},
 			
 			exchange(e) {
@@ -195,7 +210,13 @@
 				})
 			},	
 			
+		},
+		components: {
+			
+			users
 		}
+		
+	
 	}
 </script>
 
