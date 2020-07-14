@@ -2,6 +2,12 @@ import Vuex from 'vuex'
 import Vue from 'vue'
 Vue.use(Vuex)
 
+let r = ['true',]
+for(var i=0;i<22;i++){
+	r.push('false')
+}
+
+
 const store = new Vuex.Store({  
     state: {  
      CurrencyPick : [
@@ -55,6 +61,8 @@ const store = new Vuex.Store({
 			'RMB',
 			
 		],
+		flag : r,
+		pri : [],
 		
 		
     },  

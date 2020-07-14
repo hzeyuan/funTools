@@ -20,31 +20,34 @@
 				<view class="flex justify-center align-center padding-left"><text class="text-bold text-xl" value=''>{{CurrencyName[index1]}}</text></view>
 			</view>
 			<view class="flex flex-direction align-end padding-right" style="width: 50%;">
-				<input class="text-xxl text-grey " type="text" :value='value1' placeholder="100" style="text-align: end;" />
+				<input class="text-xxl text-grey " type="text"  :value="value1" placeholder="100" @input="inputValue" @change='exchange'  style="text-align: end;" />
 				<text>{{CurrencyPick[index1]}}</text>
+				{{value1}}
 			</view>
 		</view>
 		<view class="padding-left padding-tb-sm">
 			<text class="text-gray">货币换算</text>
 		</view>
 		<!-- 货币换算 -->
-		<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-show='1' v-for="i in CurrencyName.length">
+		<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-if='flag[index]' v-for="(i,index) in CurrencyName.length">
 			<view class="flex padding-left align-center" style="width: 50%;">
 				<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
 				<view class="flex justify-center align-center padding-left">
-					<text class="text-bold text-xl">{{CurrencyName[i]}}</text>
+					<text class="text-bold text-xl">{{CurrencyName[index]}}</text>
 					<text class="cuIcon-playfill text-sm text-gray padding-left"></text>
 				</view>
 			</view>
 			<view class="flex flex-direction align-end padding-right" style="width: 50%;">
-				<input class="text-xxl text-grey " type="text" :value="value2" placeholder="100" style="text-align: end;" />
-				<text>{{CurrencyPick[i]}}</text>
+				<input class="text-xxl text-grey " type="text" :value="value2[index]" placeholder="100" @change='exchange2(index)' style="text-align: end;" />
+				<text>{{CurrencyPick[index]}}</text>
 			</view>
+			
 		</view>	
 		<!-- <users  @parentFunction='hello'></users> -->
 		<view class="padding-tb flex justify-center align-center bg-white">
 			<text class="text-xl" @tap="AddCurreny">+添加货币</text>
 		</view>
+		<button type="default" @click="test">test</button>
 	
 	
 	
@@ -91,12 +94,11 @@
 				users:["Henry","Bucky","Emily"],
 				name: 'hdh',
 				index1: '0',
-				index2: '22',
+				index2: '',
 				src: '',
 				dst: '',
 				value1:'',
-				value2:'',
-				pri:{},
+				value2:[],
 				CurrencyPick:CurrencyPick,
 				CurrencyName: [
 					'USD',
@@ -125,18 +127,22 @@
 					
 				],
 				isShow : false,
-					
+				flag : this.$store.state.flag,
+				pri:[],
 				
 			}
 		},
 		methods: {
-			PickerChange1(e) {
-				// console.log(e.detail.value)
-				this.index1 = e.detail.value; 
-			},
-			PickerChange2(e) {
-				// console.log(e.detail.value)
-				this.index2 = e.detail.value; 
+			// PickerChange1(e) {
+			// 	// console.log(e.detail.value)
+			// 	this.index1 = e.detail.value; 
+			// },
+			// PickerChange2(e) {
+			// 	// console.log(e.detail.value)
+			// 	this.index2 = e.detail.value; 
+			// },
+			test(){
+				console.log(this.$store.state.flag) 
 			},
 			ChangeCurent(){
 				uni.navigateTo({
@@ -145,6 +151,7 @@
 				console.log('更换')
 			},
 			AddCurreny(){
+				
 				uni.navigateTo({
 					url:'/pages/huilv/huilvAdd'
 				})
@@ -153,12 +160,22 @@
 			hello(msg){
 				console.log('子传父', msg)
 			},
+			exchange2(index){
+					console.log(this.value2)
+					
+					// this.index2 = index
+			},
+			inputValue(e){
+				console.log(e.target.value)
+				this.value1 = e.target.value
+			},
 			
-			exchange(e) {
+			exchange() {
 				// let src = this.CurrencyRate[this.index1];
 				// let dst = this.CurrencyRate[this.index2];
-				this.value1 = e.detail.value
-				console.log(this.value1);
+				// this.index2 = index
+			
+				// console.log(index);
 			
 				uni.showLoading({
 					title: "兑换中",
@@ -168,7 +185,7 @@
 							header: {
 								'Content-Type' : 'application/json'
 							},
-							// url: 'http://web.juhe.cn:8080/finance/exchange/rmbquot?key=ccb02207097d84ac2bfdd45f73233184',
+							url: 'http://web.juhe.cn:8080/finance/exchange/rmbquot?key=ccb02207097d84ac2bfdd45f73233184',
 							data:{
 								
 							},
@@ -180,21 +197,32 @@
 									let dic = res.data.result[0];
 									for(var key in dic){				
 									r.push(Object.values(dic[key]))			
-									}									
+									}
+									for(var i = 0;i<22;i++ ){
+										this.pri.push(this.value1*(r[this.index1][0]/100)/(r[i][0]/100))
+										
+									}
+								
+									console.log(this.pri)
+									// this.value2[index] = this.value1*(r[this.index1][0]/100)/(r[index][0]/100)	
+									this.value2 = this.pri
+									console.log(r[0][0])
+									// console.log(this.index2)
+									
 									// console.log(r[0][0]);
 									// console.log(r);
 									// == 等于 ===严格等于
-									if(this.index1 == 22 && this.index2 !== 22){										
-										this.value2 = this.value1*1/(r[this.index2][0]/100)
-									}else if(this.index2 == 22 && this.index1 !==22){									
-										this.value2 = this.value1*(r[this.index1][0]/100)
-									}
-									else{
-									this.value2 = this.value1*(r[this.index1][0]/100)/(r[this.index2][0]/100)
-									}
-									// console.log(this.index1)
-									// console.log(this.index2)
-									// console.log(this.value1)
+									// 人民币为基准转换
+									// if(this.index1 == 22 && this.index2 !== 22){										
+									// 	this.value2 = this.value1*1/(r[this.index2][0]/100)
+									
+									// }else if(this.index2 == 22 && this.index1 !==22){									
+									// 	this.value2 = this.value1*(r[this.index1][0]/100)
+									// }
+									// else{
+									// this.value2 = this.value1*(r[this.index1][0]/100)/(r[this.index2][0]/100)
+									// }
+									
 								}
 							},
 							fail: err => {
