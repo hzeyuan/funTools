@@ -11,18 +11,18 @@
 				<image src="https://wngj.oss-cn-shenzhen.aliyuncs.com/wave.gif" mode="scaleToFill" class="gif-wave"></image>
 			</view>
 			<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-				<view class="cu-item arrow">
+				<!-- <view class="cu-item arrow">
 					<navigator class="content" url="/pages/about/log/log" hover-class="none">
 						<text class="cuIcon-formfill text-green"></text>
 						<text class="text-grey">日志</text>
 					</navigator>
-				</view>
-				<view class="cu-item arrow">
+				</view> -->
+				<!-- <view class="cu-item arrow">
 					<view class="content" @tap="myWechartQrcode">
 						<text class="cuIcon-appreciatefill text-red"></text>
 						<text class="text-grey">赞赏支持</text>
 					</view>
-				</view>
+				</view> -->
 				<view class="cu-item arrow">
 					<button class="cu-btn content" open-type="feedback">
 						<text class="cuIcon-writefill text-cyan"></text>
@@ -45,7 +45,7 @@ export default {
 	methods: {
 		myWechartQrcode() {
 			uni.previewImage({
-				urls: ['http://hzeyuan.cn/static/WechatIMG926.jpeg'],
+				urls: ['https://wngj.oss-cn-shenzhen.aliyuncs.com/WechatIMG926.jpeg'],
 				longPressActions: {
 					itemList: ['发送给朋友', '保存图片', '收藏'],
 					success: function(data) {},

@@ -1,0 +1,11 @@
+
+.bgImg.data-v-0c6cfba2 {
+	/* height: 100%; */
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+	/* position: absolute;
+z-index: 0; */
+}
+

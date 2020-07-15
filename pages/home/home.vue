@@ -30,10 +30,10 @@
 		</scroll-view>
 		<view class="cu-bar bg-white solid-bottom margin-top flex-direction">
 			<view class="cu-progress radius striped" style="width:85%">
-				<view class="bg-red" :style="[{ width:'10%'}]">10%</view>
+				<view class="bg-red" :style="[{ width:list.length/2+'%'}]">{{list.length/2}}%</view>
 			</view>
 			<view class="action text-sm">
-				<text class="cuIcon-title text-blue text-sm"></text><span class="text-sm">各种神奇道具，应有尽有！欢迎探讨和意见，QQ群：</span>
+				<text class="cuIcon-title text-blue text-sm"></text><span class="text-sm">欢迎探讨和意见，QQ群：</span>
 				<span class='text-blue light' @tap="utils.copyText('1087851472')">1087851472</span>
 			</view>
 		</view>
@@ -53,6 +53,7 @@
 				CustomBar: this.CustomBar,
 				animation: '',
 				searchResult: [],
+				process:0,
 				heightercentage: 0.65,
 				list: [
 					// #ifdef MP-WEIXIN
@@ -159,7 +160,7 @@
 						animation: 'slide-left',
 						color: 'blue',
 						name: '24jiemi',
-						Function: '24点游戏'
+						Function: '计算24点'
 					},
 					{
 						animation: 'slide-left',
@@ -191,17 +192,43 @@
 						name: 'joke',
 						Function: '笑话大全'
 					},
+					// {
+					// 	animation: 'slide-left',
+					// 	color: 'blue',
+					// 	name: 'huilv',
+					// 	Function: '汇率转换'
+					// },
+					{
+						animation: 'slide-left',
+						color: 'blue',
+						name: 'juzi',
+						Function: '句子'
+					},
+					{
+						animation: 'slide-left',
+						color: 'blue',
+						name: 'shenhuifu',
+						Function: '神回复'
+					},
+					{
+						animation: 'slide-left',
+						color: 'blue',
+						name: 'staggeringbeauty',
+						Function: 'staggeringbeauty'
+					},
+					// #ifdef MP-WEIXIN
+					{
+						animation: 'slide-left',
+						color: 'blue',
+						name: '2048',
+						Function: '2048'
+					},
+					// #endif
 					{
 						animation: 'slide-left',
 						color: 'blue',
 						name: 'xxx',
 						Function: '敬请期待!'
-					},
-					{
-						animation: 'slide-left',
-						color: 'blue',
-						name: 'huilv',
-						Function: '汇率转换'
 					},
 				],
 				toggleDelay: false,
@@ -345,6 +372,30 @@
 
 						})
 						break
+					case 'shenhuifu':
+						uni.navigateTo({
+							url: '/pages/shenhuifu/shenhuifu'
+						})
+						break
+					case 'juzi':
+						uni.navigateTo({
+							url: '/pages/juzi/juzi'
+					
+						})
+						break
+					case '2048':
+						uni.navigateTo({
+							url: '/pages/2048/2048'
+					
+						})
+						break
+					case 'staggeringbeauty':
+						uni.navigateTo({
+							url: '/pages/staggeringbeauty/staggeringbeauty'
+					
+						})
+						break
+						
 				}
 			},
 			search(e) {

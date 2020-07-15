@@ -51,7 +51,7 @@
 				StatusBar: this.StatusBar,
 				CustomBar: this.CustomBar,
 				windowHeight: this.windowHeight,
-				randomStart: Math.floor(Math.random() * 8200),
+				randomStart: Math.floor(Math.random() * 34831),
 				jokeList: [],
 				zanList: []
 			}

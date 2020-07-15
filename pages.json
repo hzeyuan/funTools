@@ -63,10 +63,26 @@
 			"path" : "pages/joke/joke",
 			"style" : {}
 		}
+		, {
+			"path" : "pages/juzi/juzi",
+			"style" : {}
+		}
+		, {
+			"path" : "pages/shenhuifu/shenhuifu",
+			"style" : {}
+		}
 		,{
 			"path" : "pages/huilv/huilv",
 			"style": {}
 		}
+        ,{
+            "path" : "pages/2048/2048",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/staggeringbeauty/staggeringbeauty",
+            "style" : {}
+        }
     ],
 	"subPackages": [{
 		"root": "pagesComm",

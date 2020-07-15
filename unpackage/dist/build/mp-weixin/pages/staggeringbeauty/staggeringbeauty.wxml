@@ -1,0 +1,1 @@
+<view><cu-custom vue-id="4eb33020-1" isBack="{{true}}" bgColor="bg-gradual-blue" bind:__l="__l" vue-slots="{{['content']}}"><view slot="content">2048</view></cu-custom><web-view webview-styles="{{webviewStyles}}" src="https://wngj.hzeyuan.cn/drugBeauty"></web-view></view>
