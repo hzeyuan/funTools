@@ -75,6 +75,14 @@
 			"path" : "pages/huilv/huilv",
 			"style": {}
 		}
+		,{
+			"path" : "pages/huilv/huilvChange",
+			"style": {}
+		}
+		,{
+			"path" : "pages/huilv/huilvAdd",
+			"style": {}
+		}
         ,{
             "path" : "pages/2048/2048",
             "style" : {}

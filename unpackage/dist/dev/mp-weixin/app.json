@@ -23,6 +23,8 @@
     "pages/juzi/juzi",
     "pages/shenhuifu/shenhuifu",
     "pages/huilv/huilv",
+    "pages/huilv/huilvChange",
+    "pages/huilv/huilvAdd",
     "pages/2048/2048",
     "pages/staggeringbeauty/staggeringbeauty"
   ],
@@ -95,6 +97,5 @@
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  },
-  "sitemapLocation": "sitemap98.json"
+  }
 }
