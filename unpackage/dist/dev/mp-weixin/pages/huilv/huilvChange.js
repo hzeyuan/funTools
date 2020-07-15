@@ -178,7 +178,8 @@ var _default =
       name: this.$store.state.CurrencyName,
       cname: this.$store.state.CurrencyPick,
       index1: '22',
-      flag: this.$store.state.flag2 };
+      flag: this.$store.state.flag2,
+      index3: this.$store.state.index };
 
   },
   methods: {

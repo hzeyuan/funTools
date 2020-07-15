@@ -13,7 +13,7 @@
 				<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
 			</view>
 			<view class="padding-tb-sm" style="text-align: center;">
-				<text>{{name[index1]}} {{cname[index1]}}</text>
+				<text>{{name[index3]}} {{cname[index3]}}</text>
 			</view>
 		</view>
 		<!-- 内容 -->
@@ -48,7 +48,8 @@ export default {
 			name : this.$store.state.CurrencyName,
 			cname : this.$store.state.CurrencyPick,
 			index1 : '22',
-			flag : this.$store.state.flag2
+			flag : this.$store.state.flag2,
+			index3 : this.$store.state.index
 		}
 	},
 	methods:{
