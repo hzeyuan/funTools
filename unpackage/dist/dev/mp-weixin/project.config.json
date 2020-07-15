@@ -64,6 +64,13 @@
 					"id": -1,
 					"name": "pages/huilv/huilv",
 					"pathName": "pages/huilv/huilv",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/huilv/huilvChange",
+					"pathName": "pages/huilv/huilvChange",
 					"scene": null
 				}
 			]

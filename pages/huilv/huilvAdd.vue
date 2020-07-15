@@ -18,11 +18,9 @@
 						</view>
 					</view>
 					<view class="flex flex-direction align-end padding-right" style="width: 50%;" >
-						<!-- <input class="text-xxl text-grey " type="text" value="" placeholder="100" style="text-align: end;" />
-						<text>{{b[i]}}</text> -->	
 						<checkbox-group v-show='' name=""  @click="sendparent" @tap="getIndex(index)" >
 							<label>
-								<checkbox :value="b[i]" :name="status" :checked="!c[index]"/><text></text>
+								<checkbox :value="b[i]" :name="status" :checked="c[index]"/><text></text>
 							</label>
 						</checkbox-group>		            
 					 </view>

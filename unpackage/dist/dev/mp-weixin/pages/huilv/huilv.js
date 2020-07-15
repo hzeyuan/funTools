@@ -190,6 +190,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 var _huilvAdd = _interopRequireDefault(__webpack_require__(/*! pages/huilv/huilvAdd */ 171));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
@@ -249,10 +252,10 @@ var _huilvAdd = _interopRequireDefault(__webpack_require__(/*! pages/huilv/huilv
 //
 //
 //
-var _default = { data: function data() {var CurrencyPick = ['美元', '欧元', '港币', '日元', '英镑', '澳大利元', '加拿大元', '泰国铢', '新加坡元', '瑞士法郎', '丹麦克朗', '澳门元', '马来西亚林吉特', '挪威克朗', '新西兰元', '菲律宾比索', '卢布', '瑞典克朗', '新台币', '巴西雷亚尔', '韩国元', '南非兰特', '人民币'];return { users: ["Henry", "Bucky", "Emily"], name: 'hdh', index1: '0', index2: '', src: '', dst: '', value1: '', value2: [], CurrencyPick: CurrencyPick, CurrencyName: ['USD', 'EUR', 'HKD', 'JPY', 'GBP', 'ASP', 'CND', 'THB', 'SPD', 'SFC', 'DKE', 'PTA', 'RGT', 'NKE', 'NZD', 'PSO', 'RBE',
-      'SKA',
-      'NTD',
-      'BRL',
+//
+//
+//
+var _default = { data: function data() {var CurrencyPick = ['美元', '欧元', '港币', '日元', '英镑', '澳大利元', '加拿大元', '泰国铢', '新加坡元', '瑞士法郎', '丹麦克朗', '澳门元', '马来西亚林吉特', '挪威克朗', '新西兰元', '菲律宾比索', '卢布', '瑞典克朗', '新台币', '巴西雷亚尔', '韩国元', '南非兰特', '人民币'];return { users: ["Henry", "Bucky", "Emily"], name: 'hdh', index1: '0', index2: '', src: '', dst: '', value1: '', value2: [], CurrencyPick: CurrencyPick, CurrencyName: ['USD', 'EUR', 'HKD', 'JPY', 'GBP', 'ASP', 'CND', 'THB', 'SPD', 'SFC', 'DKE', 'PTA', 'RGT', 'NKE', 'NZD', 'PSO', 'RBE', 'SKA', 'NTD', 'BRL',
       'WON',
       'SAR',
       'RMB'],
@@ -260,7 +263,8 @@ var _default = { data: function data() {var CurrencyPick = ['美元', '欧元', 
 
       isShow: false,
       flag: this.$store.state.flag,
-      pri: [] };
+      //更换基准货币获取的index
+      index3: this.$store.state.index };
 
 
   },
@@ -292,6 +296,7 @@ var _default = { data: function data() {var CurrencyPick = ['美元', '欧元', 
     hello: function hello(msg) {
       console.log('子传父', msg);
     },
+    //非基准货币输入
     exchange2: function exchange2(index) {
       console.log(this.value2);
 
@@ -300,14 +305,14 @@ var _default = { data: function data() {var CurrencyPick = ['美元', '欧元', 
     inputValue: function inputValue(e) {
       console.log(e.target.value);
       this.value1 = e.target.value;
+
     },
 
     exchange: function exchange() {var _this = this;
-      // let src = this.CurrencyRate[this.index1];
-      // let dst = this.CurrencyRate[this.index2];
-      // this.index2 = index
 
-      // console.log(index);
+
+
+
 
       uni.showLoading({
         title: "兑换中",
@@ -330,29 +335,35 @@ var _default = { data: function data() {var CurrencyPick = ['美元', '欧元', 
                 for (var key in dic) {
                   r.push(Object.values(dic[key]));
                 }
-                for (var i = 0; i < 22; i++) {
-                  _this.pri.push(_this.value1 * (r[_this.index1][0] / 100) / (r[i][0] / 100));
 
-                }
+                // for(var i = 0;i<22;i++ ){
+                // 	this.value2.push(this.value1*(r[this.index3][0]/100)/(r[i][0]/100))
+                // }
 
-                console.log(_this.pri);
+
+                // console.log(this.pri)
                 // this.value2[index] = this.value1*(r[this.index1][0]/100)/(r[index][0]/100)	
-                _this.value2 = _this.pri;
-                console.log(r[0][0]);
+                // this.value2 = this.pri
+                // console.log(r[0][0])
                 // console.log(this.index2)
 
                 // console.log(r[0][0]);
                 // console.log(r);
                 // == 等于 ===严格等于
                 // 人民币为基准转换
-                // if(this.index1 == 22 && this.index2 !== 22){										
-                // 	this.value2 = this.value1*1/(r[this.index2][0]/100)
-
-                // }else if(this.index2 == 22 && this.index1 !==22){									
+                if (_this.index3 == 22) {
+                  for (var i = 0; i < 22; i++) {
+                    _this.value2.push((_this.value1 * 1 / (r[i][0] / 100)).toFixed(2));
+                  }
+                }
+                //其他币为基准
+                else {
+                    for (var i = 0; i < 22; i++) {
+                      _this.value2.push((_this.value1 * (r[_this.index3][0] / 100) / (r[i][0] / 100)).toFixed(2));
+                    }
+                  }console.log(_this.value2);
+                // else if(this.index2 == 22 && this.index1 !==22){									
                 // 	this.value2 = this.value1*(r[this.index1][0]/100)
-                // }
-                // else{
-                // this.value2 = this.value1*(r[this.index1][0]/100)/(r[this.index2][0]/100)
                 // }
 
               }
@@ -371,6 +382,9 @@ var _default = { data: function data() {var CurrencyPick = ['美元', '欧元', 
     } },
 
 
+  onLoad: function onLoad() {
+    console.log(this.index3);
+  },
   components: {
 
     users: _huilvAdd.default } };exports.default = _default;
@@ -493,8 +507,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
 //
 //
 //

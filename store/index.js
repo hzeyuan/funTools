@@ -2,9 +2,13 @@ import Vuex from 'vuex'
 import Vue from 'vue'
 Vue.use(Vuex)
 
-let r = ['true',]
-for(var i=0;i<22;i++){
-	r.push('false')
+let r = [false,true,true,true,true]
+for(var i=0;i<18;i++){
+	r.push(false)
+}
+let f = []
+for(var i=0;i<23;i++){
+	f.push(false)
 }
 
 
@@ -62,7 +66,8 @@ const store = new Vuex.Store({
 			
 		],
 		flag : r,
-		pri : [],
+		flag2: f,
+		index : '0',
 		
 		
     },  

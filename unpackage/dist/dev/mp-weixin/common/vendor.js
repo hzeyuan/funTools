@@ -1902,9 +1902,13 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 _vue.default.use(_vuex.default);
 
-var r = ['true'];
-for (var i = 0; i < 22; i++) {
-  r.push('false');
+var r = [false, true, true, true, true];
+for (var i = 0; i < 18; i++) {
+  r.push(false);
+}
+var f = [];
+for (var i = 0; i < 23; i++) {
+  f.push(false);
 }
 
 
@@ -1962,7 +1966,8 @@ var store = new _vuex.default.Store({
 
 
     flag: r,
-    pri: [] } });var _default =
+    flag2: f,
+    index: '0' } });var _default =
 
 
 

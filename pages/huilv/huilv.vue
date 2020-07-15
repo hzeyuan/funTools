@@ -17,16 +17,19 @@
 		<view class="flex  bg-white padding-tb" style="height: 100%;">	
 			<view class="flex padding-left align-center" style="width: 50%;">
 				<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
-				<view class="flex justify-center align-center padding-left"><text class="text-bold text-xl" value=''>{{CurrencyName[index1]}}</text></view>
+				<view class="flex justify-center align-center padding-left"><text class="text-bold text-xl" value=''>{{CurrencyName[index3]}}</text></view>
 			</view>
 			<view class="flex flex-direction align-end padding-right" style="width: 50%;">
-				<input class="text-xxl text-grey " type="text"  :value="value1" placeholder="100" @input="inputValue" @change='exchange'  style="text-align: end;" />
-				<text>{{CurrencyPick[index1]}}</text>
-				{{value1}}
+				<input class="text-xxl text-grey " type="text"  :value="value1" placeholder="100" @input="inputValue" style="text-align: end;" />
+				<text>{{CurrencyPick[index3]}}</text>				
 			</view>
 		</view>
-		<view class="padding-left padding-tb-sm">
-			<text class="text-gray">货币换算</text>
+		<view class="flex padding-left padding-tb-sm">
+			<text class=" flex justify-start  text-gray align-center" style="width: 50%;" >货币换算</text>
+			<view class="flex justify-end" style="width: 50%;">	
+			<button type="default" class="margin-right-sm " style="font-size: x-small;" @tap="exchange" ><text class="text-gray">换算</text></button>
+			</view>
+			
 		</view>
 		<!-- 货币换算 -->
 		<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-if='flag[index]' v-for="(i,index) in CurrencyName.length">
@@ -47,7 +50,7 @@
 		<view class="padding-tb flex justify-center align-center bg-white">
 			<text class="text-xl" @tap="AddCurreny">+添加货币</text>
 		</view>
-		<button type="default" @click="test">test</button>
+	<!-- 	<button type="default" @click="test">test</button> -->
 	
 	
 	
@@ -128,7 +131,8 @@
 				],
 				isShow : false,
 				flag : this.$store.state.flag,
-				pri:[],
+				//更换基准货币获取的index
+				index3 : this.$store.state.index
 				
 			}
 		},
@@ -160,6 +164,7 @@
 			hello(msg){
 				console.log('子传父', msg)
 			},
+			//非基准货币输入
 			exchange2(index){
 					console.log(this.value2)
 					
@@ -168,14 +173,14 @@
 			inputValue(e){
 				console.log(e.target.value)
 				this.value1 = e.target.value
+				
 			},
 			
 			exchange() {
-				// let src = this.CurrencyRate[this.index1];
-				// let dst = this.CurrencyRate[this.index2];
-				// this.index2 = index
+				
 			
-				// console.log(index);
+			
+				
 			
 				uni.showLoading({
 					title: "兑换中",
@@ -198,29 +203,35 @@
 									for(var key in dic){				
 									r.push(Object.values(dic[key]))			
 									}
-									for(var i = 0;i<22;i++ ){
-										this.pri.push(this.value1*(r[this.index1][0]/100)/(r[i][0]/100))
+									
+									// for(var i = 0;i<22;i++ ){
+									// 	this.value2.push(this.value1*(r[this.index3][0]/100)/(r[i][0]/100))
+									// }
 										
-									}
 								
-									console.log(this.pri)
+									// console.log(this.pri)
 									// this.value2[index] = this.value1*(r[this.index1][0]/100)/(r[index][0]/100)	
-									this.value2 = this.pri
-									console.log(r[0][0])
+									// this.value2 = this.pri
+									// console.log(r[0][0])
 									// console.log(this.index2)
 									
 									// console.log(r[0][0]);
 									// console.log(r);
 									// == 等于 ===严格等于
 									// 人民币为基准转换
-									// if(this.index1 == 22 && this.index2 !== 22){										
-									// 	this.value2 = this.value1*1/(r[this.index2][0]/100)
-									
-									// }else if(this.index2 == 22 && this.index1 !==22){									
+									if(this.index3 == 22 ){	
+										for(var i = 0;i<22;i++ ){
+										this.value2.push((this.value1*1/(r[i][0]/100)).toFixed(2))	
+										}
+									}
+									//其他币为基准
+									else{
+									for(var i = 0;i<22;i++ ){
+										this.value2.push((this.value1*(r[this.index3][0]/100)/(r[i][0]/100)).toFixed(2))
+									}
+									}console.log(this.value2)
+									// else if(this.index2 == 22 && this.index1 !==22){									
 									// 	this.value2 = this.value1*(r[this.index1][0]/100)
-									// }
-									// else{
-									// this.value2 = this.value1*(r[this.index1][0]/100)/(r[this.index2][0]/100)
 									// }
 									
 								}
@@ -238,6 +249,9 @@
 				})
 			},	
 			
+		},
+		onLoad() {
+		console.log(this.index3)	
 		},
 		components: {
 			
