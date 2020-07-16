@@ -49,11 +49,15 @@
 				type: String,
 				default: ''
 			},
+			delta:{
+				type:[Number],
+				default:1
+			}
 		},
 		methods: {
 			BackPage() {
 				uni.navigateBack({
-					delta: 1
+					delta: this.delta
 				});
 			}
 		}
