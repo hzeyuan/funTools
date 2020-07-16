@@ -67,7 +67,7 @@
 			// },
 			confirm(){
 				console.log('tiaozhuan')
-				uni.navigateTo({
+				uni.redirectTo({
 					url:'/pages/huilv/huilv'
 				})
 			},

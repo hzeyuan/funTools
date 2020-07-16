@@ -199,7 +199,7 @@ var _default =
     // },
     confirm: function confirm() {
       console.log('tiaozhuan');
-      uni.navigateTo({
+      uni.redirectTo({
         url: '/pages/huilv/huilv' });
 
     },

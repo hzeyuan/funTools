@@ -57,7 +57,7 @@ export default {
 		pick(index){
 			this.index1 = index
 			this.$store.state.index = index	
-			uni.navigateTo({
+			uni.redirectTo({
 				url:'/pages/huilv/huilv'
 			})
 		},
