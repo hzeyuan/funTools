@@ -9,7 +9,7 @@
 				<view class="padding-left padding-tb-sm">
 					<text class="text-gray">所有货币</text>
 				</view>
-				<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-for="(i, index) in b.length+1" >
+				<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-for="(i, index) in b.length+1" :key='index'>
 					<view class="flex padding-left align-center" style="width: 50%;">
 						<image :src="imgUrl[index]" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
 						<view class="flex justify-center align-center padding-left">
@@ -18,9 +18,9 @@
 						</view>
 					</view>
 					<view class="flex flex-direction align-end padding-right" style="width: 50%;" >
-						<checkbox-group v-show='' name=""  @click="sendparent" @tap="getIndex(index)" >
+						<checkbox-group v-show='' name=""   @click="getIndex(index)" >
 							<label>
-								<checkbox :value="b[i]" :name="status" :checked="c[index]"/><text></text>
+								<checkbox :value="b[i]"  :checked="c[index]"/><text></text>
 							</label>
 						</checkbox-group>		            
 					 </view>
@@ -40,11 +40,11 @@
 				 c : this.$store.state.flag,
 				 index : '',
 				 
-				 status : [
-					 {state : true},
-					 {state : false},
-				 ],
-				 name : 'hdh',
+				 // status : [
+					//  {state : true},
+					//  {state : false},
+				 // ],
+				 
 				 imgUrl : [],
 				 
 				 
@@ -61,18 +61,19 @@
 				
 		
 			},
-			sendparent(){
-				this.$emit('parentFunction', this.name)
-				console.log('传递')
-			},
+			// sendparent(){
+			// 	this.$emit('parentFunction', this.name)
+			// 	console.log('传递')
+			// },
 			confirm(){
+				console.log('tiaozhuan')
 				uni.navigateTo({
 					url:'/pages/huilv/huilv'
 				})
 			},
 			getIndex(index){
 				this.c[index] = !this.c[index]
-				
+				console.log(index)
 			},
 			image(){
 				// console.log(CurrencyName[index])
