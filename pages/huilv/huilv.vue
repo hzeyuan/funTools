@@ -16,7 +16,7 @@
 		
 		<view class="flex  bg-white padding-tb" style="height: 100%;">	
 			<view class="flex padding-left align-center" style="width: 50%;">
-				<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
+				<image :src="imgUrl[index3]"  mode="aspectFit"  style="width:64rpx;height:64rpx;" ></image>
 				<view class="flex justify-center align-center padding-left"><text class="text-bold text-xl" value=''>{{CurrencyName[index3]}}</text></view>
 			</view>
 			<view class="flex flex-direction align-end padding-right" style="width: 50%;">
@@ -34,14 +34,14 @@
 		<!-- 货币换算 -->
 		<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-if='flag[index]' v-for="(i,index) in CurrencyName.length">
 			<view class="flex padding-left align-center" style="width: 50%;">
-				<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
+				<image :src="imgUrl[index]"  mode="aspectFit"  style="width:64rpx;height:64rpx;" ></image>
 				<view class="flex justify-center align-center padding-left">
 					<text class="text-bold text-xl">{{CurrencyName[index]}}</text>
 					<text class="cuIcon-playfill text-sm text-gray padding-left"></text>
 				</view>
 			</view>
 			<view class="flex flex-direction align-end padding-right" style="width: 50%;">
-				<input class="text-xxl text-grey " type="text" :value="value2[index]" placeholder="100" @change='exchange2(index)' style="text-align: end;" />
+				<input class="text-xxl text-grey " type="text" :value="value2[index]" placeholder="100" @input="inputValue2($event, index)" style="text-align: end;" />
 				<text>{{CurrencyPick[index]}}</text>
 			</view>
 			
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-	import users from 'pages/huilv/huilvAdd'
+	
 	
 	
 	export default {
@@ -94,7 +94,7 @@
 				
 				
 			return {
-				users:["Henry","Bucky","Emily"],
+				
 				name: 'hdh',
 				index1: '0',
 				index2: '',
@@ -104,58 +104,49 @@
 				value2:[],
 				CurrencyPick:CurrencyPick,
 				CurrencyName: [
-					'USD',
-					'EUR',
-					'HKD',
-					'JPY',
-					'GBP',
-					'ASP',
-					'CND',
-					'THB',
-					'SPD',
-					'SFC',
-					'DKE',
-					'PTA',
-					'RGT',
-					'NKE',
-					'NZD',
-					'PSO',
-					'RBE',
-					'SKA',
-					'NTD',
-					'BRL',
-					'WON',
-					'SAR',
-					'RMB',
+					'USD',//1
+					'EUR',//2
+					'HKD',//3
+					'JPY',//4
+					'GBP',//5
+					'AUD',//6
+					'CAD',//7
+					'THB',//8
+					'SGD',//9
+					'CHF',//10
+					'DKE',//11  0
+					'MOP',//12
+					'MYR',//13
+					'NWD',//14 0
+					'NZD',//15 
+					'PSO',//16 0
+					'RUB',//17
+					'SEK',//18 
+					'TWD',//19
+					'BRL',//20 0
+					'KRD',//21
+					'SAR',//22 0
+					'CNY',//23 
 					
 				],
 				isShow : false,
 				flag : this.$store.state.flag,
 				//更换基准货币获取的index
-				index3 : this.$store.state.index
+				index3 : this.$store.state.index,
+				imgUrl : []
 				
 			}
 		},
 		methods: {
-			// PickerChange1(e) {
-			// 	// console.log(e.detail.value)
-			// 	this.index1 = e.detail.value; 
-			// },
-			// PickerChange2(e) {
-			// 	// console.log(e.detail.value)
-			// 	this.index2 = e.detail.value; 
-			// },
-			test(){
-				console.log(this.$store.state.flag) 
-			},
+			
 			ChangeCurent(){
+				this.$store.state.index = this.index3
 				uni.navigateTo({
-					url:'/pages/huilv/huilvChange'
+					url:'/pages/huilv/huilvChange',
 				})
 				console.log('更换')
 			},
-			AddCurreny(){
-				
+			AddCurreny(){				
 				uni.navigateTo({
 					url:'/pages/huilv/huilvAdd'
 				})
@@ -165,15 +156,27 @@
 				console.log('子传父', msg)
 			},
 			//非基准货币输入
-			exchange2(index){
-					console.log(this.value2)
-					
-					// this.index2 = index
+			inputValue2(e, index){
+					console.log(index)
+					console.log(e.target.value)
+					this.flag[this.index3] = true
+					this.index3 = index
+					this.value1 = e.target.value
 			},
 			inputValue(e){
 				console.log(e.target.value)
 				this.value1 = e.target.value
 				
+			},
+			image(){
+				for(var i = 0;i<23;i++){
+				this.imgUrl.push(`../../static/country/${this.CurrencyName[i]}.png`) 
+				}
+			
+				
+			},
+			getIndex(index){
+				console.log(index)
 			},
 			
 			exchange() {
@@ -230,11 +233,12 @@
 			
 		},
 		onLoad() {
-		console.log(this.index3)	
+			this.image()
+			
 		},
 		components: {
 			
-			users
+			
 		}
 		
 	

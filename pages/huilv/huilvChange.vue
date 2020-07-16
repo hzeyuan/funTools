@@ -10,7 +10,7 @@
 				<text>当前基准货币</text>
 			</view>
 			<view class="" style="text-align: center;">
-				<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
+				<image :src="imgUrl[index3]" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
 			</view>
 			<view class="padding-tb-sm" style="text-align: center;">
 				<text>{{name[index3]}} {{cname[index3]}}</text>
@@ -22,7 +22,7 @@
 		</view>
 		<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-for="(i,index) in name.length">
 			<view class="flex padding-left align-center" style="width: 50%;">
-				<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
+				<image :src="imgUrl[index]" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
 				<view class="flex justify-center align-center padding-left">
 					<text class="text-bold text-xl">{{name[index]}}</text>
 					<text class="cuIcon-playfill text-sm text-gray padding-left"></text>
@@ -49,22 +49,29 @@ export default {
 			cname : this.$store.state.CurrencyPick,
 			index1 : '22',
 			flag : this.$store.state.flag2,
-			index3 : this.$store.state.index
+			index3 : this.$store.state.index,
+			imgUrl : []
 		}
 	},
 	methods:{
 		pick(index){
 			this.index1 = index
-			this.$store.state.index = index
-			console.log(this.$store.state.index)
-			console.log(this.flag)
+			this.$store.state.index = index	
 			uni.navigateTo({
 				url:'/pages/huilv/huilv'
 			})
-		}
+		},
+		image(){
+			
+			for(var i = 0;i<23;i++){
+			this.imgUrl.push(`../../static/country/${this.name[i]}.png`) 
+			}
+			
+			
+		},
 	},
 	onLoad() {
-		console.log(this.$store.state.index)
+		this.image()
 	}
  
 }

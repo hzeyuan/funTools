@@ -329,12 +329,12 @@ var _default =
         name: 'joke',
         Function: '笑话大全' },
 
-      // {
-      // 	animation: 'slide-left',
-      // 	color: 'blue',
-      // 	name: 'huilv',
-      // 	Function: '汇率转换'
-      // },
+      {
+        animation: 'slide-left',
+        color: 'blue',
+        name: 'huilv',
+        Function: '汇率转换' },
+
       {
         animation: 'slide-left',
         color: 'blue',
@@ -532,6 +532,7 @@ var _default =
 
 
           break;}
+
 
 
     },

@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "s-pull-scroll": "/components/s-pull-scroll/index"
+  }
+}

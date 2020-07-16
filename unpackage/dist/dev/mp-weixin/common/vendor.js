@@ -1915,55 +1915,55 @@ for (var i = 0; i < 23; i++) {
 var store = new _vuex.default.Store({
   state: {
     CurrencyPick: [
-    '美元',
-    '欧元',
-    '港币',
-    '日元',
-    '英镑',
-    '澳大利元',
-    '加拿大元',
-    '泰国铢',
-    '新加坡元',
-    '瑞士法郎',
-    '丹麦克朗',
-    '澳门元',
-    '马来西亚林吉特',
-    '挪威克朗',
-    '新西兰元',
-    '菲律宾比索',
-    '卢布',
-    '瑞典克朗',
-    '新台币',
-    '巴西雷亚尔',
-    '韩国元',
-    '南非兰特',
-    '人民币'],
-
+    '美元', //1
+    '欧元', //2
+    '港币', //3
+    '日元', //4
+    '英镑', //5
+    '澳大利元', //6
+    '加拿大元', //7
+    '泰国铢', //8
+    '新加坡元', //9
+    '瑞士法郎', //10
+    '丹麦克朗', //11  
+    '澳门元', //12
+    '马来西亚林吉特', //13
+    '挪威克朗', //14
+    '新西兰元', //15
+    '菲律宾比索', //16  
+    '卢布', //17
+    '瑞典克朗', //18 
+    '新台币', //19
+    '巴西雷亚尔', //20 
+    '韩国元', //21
+    '南非兰特', //22 
+    '人民币' //23
+    ],
     CurrencyName: [
-    'USD',
-    'EUR',
-    'HKD',
-    'JPY',
-    'GBP',
-    'ASP',
-    'CND',
-    'THB',
-    'SPD',
-    'SFC',
-    'DKE',
-    'PTA',
-    'RGT',
-    'NKE',
-    'NZD',
-    'PSO',
-    'RBE',
-    'SKA',
-    'NTD',
-    'BRL',
-    'WON',
-    'SAR',
-    'RMB'],
-
+    'USD', //1
+    'EUR', //2
+    'HKD', //3
+    'JPY', //4
+    'GBP', //5
+    'AUD', //6
+    'CAD', //7
+    'THB', //8
+    'SGD', //9
+    'CHF', //10
+    'DKE', //11  0
+    'MOP', //12
+    'MYR', //13
+    'NWD', //14 0
+    'NZD', //15 
+    'PSO', //16 0
+    'RUB', //17
+    'SEK', //18 
+    'TWD', //19
+    'BRL', //20 0
+    'KRD', //21
+    'SAR', //22 0
+    'CNY' //23 
+    ],
 
     flag: r,
     flag2: f,
@@ -8957,7 +8957,7 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 220:
+/***/ 250:
 /*!**************************************************************************************!*\
   !*** /Users/hdheart/Documents/GitHub/funTools/components/s-pull-scroll/back-top.png ***!
   \**************************************************************************************/
@@ -10042,7 +10042,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/user/user": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/duiren/duiren": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/chishenme/chishenme": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/rmbZhuanHuan/rmbZhuanHuan": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/sfzQuery/sfzQuery": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/iphonePlaceFfOwnershipQuery/iphonePlaceFfOwnershipQuery": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/goodNickName/goodNickName": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/screenTwinkle/screenTwinkle": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/bmiWeightIndex/bmiWeightIndex": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/ip2Locations/ip2Locations": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/zhinanzhen/zhinanzhen": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/relationship/relationship": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/biaozhunsanwei/biaozhunsanwei": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/24jiemi/24jiemi": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/index/index": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/jianTi2FanTi/jianTi2FanTi": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/tuchuang/tuchuang": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/morseCode/morseCode": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/joke/joke": { "usingComponents": { "s-pull-scroll": "/components/s-pull-scroll/index" }, "usingAutoImportComponents": {} }, "pages/huilv/huilv": { "usingComponents": { "users": "/pages/huilv/huilvAdd" }, "usingAutoImportComponents": {} }, "pages/huilv/huilvChange": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pages/huilv/huilvAdd": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pagesComm/img2char/img2char": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pagesComm/yingwenyishuziti/yingwenyishuziti": { "usingComponents": {}, "usingAutoImportComponents": {} }, "pagesComm/wannianli/wannianli": { "usingComponents": { "calendar": "/pagesComm/components/vue-calendar-component/vue-calendar-component" }, "usingAutoImportComponents": {} }, "pages/juzi/juzi": {}, "pages/shenhuifu/shenhuifu": {}, "pages/2048/2048": {}, "pages/staggeringbeauty/staggeringbeauty": {} }, "globalStyle": { "navigationBarBackgroundColor": "#0081ff", "navigationBarTitleText": "ColorUi for UniApp", "navigationStyle": "custom", "navigationBarTextStyle": "white" } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": { "pages/home/home": {}, "pages/user/user": {}, "pages/duiren/duiren": {}, "pages/chishenme/chishenme": {}, "pages/rmbZhuanHuan/rmbZhuanHuan": {}, "pages/sfzQuery/sfzQuery": {}, "pages/iphonePlaceFfOwnershipQuery/iphonePlaceFfOwnershipQuery": {}, "pages/goodNickName/goodNickName": {}, "pages/screenTwinkle/screenTwinkle": {}, "pages/bmiWeightIndex/bmiWeightIndex": {}, "pages/ip2Locations/ip2Locations": {}, "pages/zhinanzhen/zhinanzhen": {}, "pages/relationship/relationship": {}, "pages/biaozhunsanwei/biaozhunsanwei": {}, "pages/24jiemi/24jiemi": {}, "pages/index/index": {}, "pages/jianTi2FanTi/jianTi2FanTi": {}, "pages/tuchuang/tuchuang": {}, "pages/morseCode/morseCode": {}, "pages/joke/joke": {}, "pages/juzi/juzi": {}, "pages/shenhuifu/shenhuifu": {}, "pages/huilv/huilv": {}, "pages/huilv/huilvChange": {}, "pages/huilv/huilvAdd": {}, "pages/2048/2048": {}, "pages/staggeringbeauty/staggeringbeauty": {}, "pagesComm/img2char/img2char": {}, "pagesComm/yingwenyishuziti/yingwenyishuziti": {}, "pagesComm/wannianli/wannianli": {} }, "globalStyle": { "navigationBarBackgroundColor": "#0081ff", "navigationBarTitleText": "ColorUi for UniApp", "navigationStyle": "custom", "navigationBarTextStyle": "white" } };exports.default = _default;
 
 /***/ }),
 

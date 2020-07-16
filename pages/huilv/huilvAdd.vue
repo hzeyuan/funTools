@@ -11,9 +11,9 @@
 				</view>
 				<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-for="(i, index) in b.length+1" >
 					<view class="flex padding-left align-center" style="width: 50%;">
-						<image src="../../static/eur.png" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
+						<image :src="imgUrl[index]" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
 						<view class="flex justify-center align-center padding-left">
-							<text class="text-bold text-xl">{{a[i]}}</text>
+							<text class="text-bold text-xl">{{a[index]}}</text>
 							<text class="cuIcon-playfill text-sm text-gray padding-left"></text>
 						</view>
 					</view>
@@ -44,7 +44,8 @@
 					 {state : true},
 					 {state : false},
 				 ],
-				 name : 'hdh'
+				 name : 'hdh',
+				 imgUrl : [],
 				 
 				 
 			}
@@ -58,17 +59,7 @@
 				
 				
 				
-				
-				// var values = e.detail.value;
-			 //    for (var i = 0, lenI = this.a.length; i < lenI; ++i) {
-				// 				const item = this.a[i]
-				// 				if(values.includes(item.value)){
-				// 					this.$set(item,'checked',true)
-				// 				}else{
-				// 					this.$set(item,'checked',false)
-				// 				}
-							
-				// }
+		
 			},
 			sendparent(){
 				this.$emit('parentFunction', this.name)
@@ -81,14 +72,20 @@
 			},
 			getIndex(index){
 				this.c[index] = !this.c[index]
-				console.log(index)
-				console.log(this.c)
-			}
+				
+			},
+			image(){
+				// console.log(CurrencyName[index])
+				for(var i = 0;i<23;i++){
+				this.imgUrl.push(`../../static/country/${this.b[i]}.png`) 
+				}
 			
+				
+			},			
 			
-			
-			
-			
+		},
+		onLoad() {
+			this.image()
 			
 		}
 		
