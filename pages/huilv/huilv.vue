@@ -1,6 +1,6 @@
 <template>
 	<view class="bg-gray">
-		<cu-custom :isBack="true" bgColor="bg-gradual-blue">
+		<cu-custom :isBack="true" bgColor="bg-gradual-blue" delta="99">
 			<!-- <block slot="backText">返回</block> -->
 			<block slot="content">汇率转换</block>
 		</cu-custom>
@@ -32,7 +32,7 @@
 			
 		</view>
 		<!-- 货币换算 -->
-		<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-if='flag[index]' v-for="(i,index) in CurrencyName.length" :key='index'>
+		<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-if='flag[index]' v-for="(i,index) in CurrencyName.length" :key="index">
 			<view class="flex padding-left align-center" style="width: 50%;">
 				<image :src="imgUrl[index]"  mode="aspectFit"  style="width:64rpx;height:64rpx;" ></image>
 				<view class="flex justify-center align-center padding-left">

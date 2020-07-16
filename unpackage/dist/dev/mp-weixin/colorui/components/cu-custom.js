@@ -161,13 +161,17 @@ var _default =
 
     bgImage: {
       type: String,
-      default: '' } },
+      default: '' },
+
+    delta: {
+      type: [Number],
+      default: 1 } },
 
 
   methods: {
     BackPage: function BackPage() {
       uni.navigateBack({
-        delta: 1 });
+        delta: this.delta });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

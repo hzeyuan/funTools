@@ -9,7 +9,7 @@
 				<view class="padding-left padding-tb-sm">
 					<text class="text-gray">所有货币</text>
 				</view>
-				<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-for="(i, index) in b.length+1" :key='index'>
+				<view class="flex  bg-white padding-tb solids-bottom"  style="height: 100%;" v-for="(i, index) in b.length+1" :key="index">
 					<view class="flex padding-left align-center" style="width: 50%;">
 						<image :src="imgUrl[index]" mode="aspectFit" style="width:64rpx;height:64rpx;" ></image>
 						<view class="flex justify-center align-center padding-left">
@@ -66,7 +66,6 @@
 			// 	console.log('传递')
 			// },
 			confirm(){
-				console.log('tiaozhuan')
 				uni.redirectTo({
 					url:'/pages/huilv/huilv'
 				})

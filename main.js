@@ -3,8 +3,6 @@ import App from './App'
 import utils from 'utils/index.js'
 
 
-
-
 import cuCustom from './colorui/components/cu-custom.vue'
 import store from './store'  
 Vue.prototype.$store = store  

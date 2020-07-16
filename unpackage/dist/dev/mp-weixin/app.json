@@ -97,5 +97,10 @@
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
+<<<<<<< HEAD
   }
+=======
+  },
+  "sitemapLocation": "sitemap.json"
+>>>>>>> 30002169ecbde19ac2d1bc585ae20781127f4af2
 }
