@@ -1,4 +1,4 @@
-let jinzhi2ten = (obj)=>{
+let jinzhi2ten = (obj)=>{ // 其他进制转换为10进制
     let res = 0
     let str = String(obj.value)
     for(let i=str.length-1;i>=0;i--){
@@ -21,11 +21,16 @@ let duojinzhi = (obj1='',needChangeJinzhi=10,rules='0123456789ABCDEFGHIJKLMNOPQR
     return res
 
 }
-
-// let obj = {jinzhi:10,value:'27'}
+var beginTime = +new Date();
+let obj = {jinzhi:10,value:'999999999999999999999999999'}
+for(let i=0;i<10000;i++){
+    let r = duojinzhi(obj,2)
+}
+// console.log(duojinzhi(obj,2))
 // console.log(duojinzhi(obj,4))
 // console.log(duojinzhi(obj,5))
 // console.log(duojinzhi(obj,6))
 // console.log(duojinzhi(obj,7))
-
-export {duojinzhi}
+var endTime = +new Date();
+console.log("排序用时共计"+(endTime-beginTime)+"ms");
+// export {duojinzhi}

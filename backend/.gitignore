@@ -1,0 +1,22 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+*.py[cod]
+*.env
+.idea
+.DS_Store
+
+logs/*
+!logs/index.html
+
+.coverage
+htmlcov/
+.coveralls.yml
+
+
+apps/utils/test.py/_trial_temp/
+
+# virtualenv
+venv
+*.env
+
+gunicorn.pid

@@ -146,6 +146,12 @@
 						name: 'tuchuang',
 						Function: '免费公共图床'
 					},
+					{
+						name: 'slide-right',
+						color: 'blue',
+						name: 'jinzhi',
+						Function: '多进制转换'
+					},
 					/* {
 						animation: 'slide-bottom',
 						color: 'cyan',
@@ -395,7 +401,12 @@
 					
 						})
 						break
+					case 'jinzhi':
+						uni.navigateTo({
+							url: '/pages/jinzhi/jinzhi'
 					
+						})
+						break
 						
 				}
 			},

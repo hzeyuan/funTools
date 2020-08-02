@@ -26,7 +26,8 @@
     "pages/huilv/huilvChange",
     "pages/huilv/huilvAdd",
     "pages/2048/2048",
-    "pages/staggeringbeauty/staggeringbeauty"
+    "pages/staggeringbeauty/staggeringbeauty",
+    "pages/jinzhi/jinzhi"
   ],
   "subPackages": [
     {
@@ -97,6 +98,5 @@
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }

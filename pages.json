@@ -91,6 +91,10 @@
             "path" : "pages/staggeringbeauty/staggeringbeauty",
             "style" : {}
         }
+        ,{
+            "path" : "pages/jinzhi/jinzhi",
+            "style" : {}
+        }
     ],
 	"subPackages": [{
 		"root": "pagesComm",
