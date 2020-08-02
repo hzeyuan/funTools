@@ -1,6 +1,10 @@
-### 前言
+### 工具箱小程序
 
-> 万能工具箱
+> 前端：uniapp(vue),colorui
+
+> 后端：python+flask Restful +mongo
+
+
 
 ###  功能：
 已经实现的功能：
@@ -14,14 +18,55 @@
 
 ### 2020-06-10
 7. 炫酷昵称功能
+8. 指南针
 
 ### 2020-06-13
-8. 屏幕闪烁功能
-9. BMi体重指数测量
-10. ip定位功能：获取本地ip,查询ip位置
+9. 屏幕闪烁功能
+10. BMi体重指数测量
+11. ip定位功能：获取本地ip,查询ip位置
 
 ### 2020-06-14
-11. 亲戚计算器
+12. 亲戚计算器
 
 ### 2020-06-15
-12. 标准三围
+13. 标准三围
+
+### 2020-07-10
+
+14. 万年历
+
+### 2020-07-13
+
+15. 免费图床
+
+### 2020-07-15
+
+16. 24点计算
+
+### 2020-07-18
+
+17. 英文艺术字体
+18. 图片转字符画
+
+### 2020-07-23
+
+19. 摩斯电码
+20. 笑话大全
+21. 句子
+22. 神回复
+
+### 2020-07-25
+
+23. 2048
+24. staggering beauty
+
+### 图片
+
+![](https://wngj.oss-cn-shenzhen.aliyuncs.com/9841596349481_.pic.jpg)
+![](https://wngj.oss-cn-shenzhen.aliyuncs.com/9851596349482_.pic.jpg)
+![](https://wngj.oss-cn-shenzhen.aliyuncs.com/9861596349483_.pic.jpg)
+![](https://wngj.oss-cn-shenzhen.aliyuncs.com/9871596349484_.pic.jpg)
+![](https://wngj.oss-cn-shenzhen.aliyuncs.com/9881596349485_.pic.jpg)
+![](https://wngj.oss-cn-shenzhen.aliyuncs.com/9891596349486_.pic.jpg)
+![](https://wngj.oss-cn-shenzhen.aliyuncs.com/9901596349487_.pic.jpg)
+![](https://wngj.oss-cn-shenzhen.aliyuncs.com/9911596349488_.pic.jpg)
