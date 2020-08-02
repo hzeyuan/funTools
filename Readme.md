@@ -60,7 +60,7 @@
 23. 2048
 24. staggering beauty
 
-### 图片
+### 部分图片
 
 ![](https://wngj.oss-cn-shenzhen.aliyuncs.com/9841596349481_.pic.jpg?x-oss-process=style/yasuo)
 ![](https://wngj.oss-cn-shenzhen.aliyuncs.com/9851596349482_.pic.jpg?x-oss-process=style/yasuo)
