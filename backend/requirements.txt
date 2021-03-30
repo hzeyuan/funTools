@@ -47,7 +47,7 @@ prompt-toolkit==3.0.5
 ptyprocess==0.6.0
 pycryptodome==3.9.8
 PyExecJS==1.5.1
-Pygments==2.6.1
+Pygments==2.7.4
 pymongo==3.10.1
 PyMySQL==0.9.3
 pyparsing==2.4.7
