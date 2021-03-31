@@ -29,7 +29,7 @@ jedi==0.17.1
 Jinja2==2.11.2
 jmespath==0.10.0
 kiwisolver==1.2.0
-lxml==4.5.1
+lxml==4.6.3
 MarkupSafe==1.1.1
 matplotlib==3.2.2
 mongoengine==0.20.0
